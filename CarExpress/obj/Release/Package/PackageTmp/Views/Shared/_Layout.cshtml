@@ -1,0 +1,347 @@
+﻿@using PremiumPosWebsite.Models;
+@using PremiumPosWebsite.Helpers;
+@{
+
+}
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Samia Crafts</title>
+    <meta name="description" content="SamiaCrafts. com is a marketplace for handcrafted goods from around the world. Our focus is on quality and craftsmanship, so all items are made by hand. You'll find furniture, clothing, jewelry, pottery, glassware, and much more. In our search for the best handmade items from around the world, we've handpicked a diverse collection of artisans from around the world. We work closely with these artisans to bring you a quality product that is well-crafted and timeless. You'll find quality furniture, clothing, jewelry, pottery, glassware, and much more.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index, follow">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="~/assets/images/favicon.ico">
+    @Styles.Render("~/assets/cache/style.min.css")
+    @if (IsSectionDefined("LinkStyleSection"))
+    {
+@RenderSection("LinkStyleSection");
+}
+    @if (IsSectionDefined("InLineStyleSection"))
+    {
+@RenderSection("InLineStyleSection");
+}
+
+</head>
+<!-- END HEAD -->
+<body class="@(ViewBag.PageType == "Checkout" ? "checkout-page" : "")">
+    <div id="loader_wrapper" class="loader-wrapper">
+        <img src="~/assets/images/loading.gif">
+    </div>
+    @if (ViewBag.PageType == "Checkout")
+    {
+        @:<div id="page">
+        }
+    <div class="wrapper">
+        <!-- header start -->
+        <header>
+            <div class="header-area transparent-bar@(ViewBag.PageTitle != "Home" ? " remove" : "")">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-sm-5 col-5">
+                            <div class="language-currency">
+                                @*<div class="language">
+                                        <select class="select-header orderby">
+                                            <option value="" onclick="_lang(); return false;" id="_lang">عربى</option>
+
+                                        </select>
+                                    </div>*@
+                            </div>
+                            <div class="sticky-logo">
+                                <a href="/"><img src="~/assets/images/logo.svg" alt="" /></a>
+                            </div>
+                            <div class="logo-small-device">
+                                <a href="/"><img alt="" src="~/assets/images/logo.svg"></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-8 d-none d-md-block">
+                            <div class="logo-menu-wrapper text-center">
+                                <div class="logo">
+                                    <a href="/"><img src="~/assets/images/logo.svg" alt="" /></a>
+                                </div>
+                                <div class="main-menu">
+                                    <nav>
+                                        <ul>
+                                            <li>
+                                                <a href="/">home</a>
+                                            </li>
+                                            <li><a href="/@ApplicationHelper.PageAboutUs">about us </a></li>
+                                            <li>
+                                                @if (ViewBag.CategoryMenuRecords != null)
+                                                {
+                                                    <a href="/@ApplicationHelper.PageShopListing">Categories <i class="ion-ios-arrow-down"></i></a>
+                                                    <ul>
+                                                        @foreach (CategoryModel CatRecord in ViewBag.CategoryMenuRecords)
+                                                        {
+                                                            <li><a href="/@ApplicationHelper.PageShopListing?categoryid=@CatRecord.ID">@CatRecord.Name</a></li>
+                                                        }
+                                                        <li><a href="/@ApplicationHelper.PageShopListing">View All</a></li>
+                                                    </ul>
+                                                }
+                                                else
+                                                {
+                                                    <a href="/@ApplicationHelper.PageShopListing">Categories</a>
+                                                }
+                                            </li>
+                                            <li><a href="/@ApplicationHelper.PageContactUs">contact us</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-7 col-7">
+                            <div class="header-site-icon">
+                                @*<div class="header-search same-style language-box">
+                                        <a onclick="_lang(); return false;" id="_lang" data-translate="0002">عربى</a>
+                                    </div>*@
+                                <div class="header-search same-style">
+                                    <button class="sidebar-trigger-search">
+                                        <span class="ti-search"></span>
+                                    </button>
+                                </div>
+                                <div class="header-login same-style">
+                                    <a href="/@(ViewBag.CustomerRecord != null ? ApplicationHelper.PageDashboard : ApplicationHelper.PageLogin)">
+                                        <span class="ti-user"></span>
+                                    </a>
+                                </div>
+                                @if (ViewBag.CustomerRecord != null)
+                                {
+                                    <div class="header-login same-style">
+                                        <a title="logout" href="/@ApplicationHelper.PageLogout">
+                                            <span class="ti-unlock"></span>
+                                        </a>
+                                    </div>
+                                }
+                                <div class="header-cart same-style">
+                                    <a class="sidebar-trigger" href="/@ApplicationHelper.PageWishListing">
+                                        <i class="ti-heart"></i>
+                                        <span class="count-style" data-login="@(ViewBag.CustomerRecord != null ? "Yes" : "No")" id="wish_list_total_count">@(ViewBag.CustomerWishListCount != null ? ViewBag.CustomerWishListCount : 0)</span>
+                                    </a>
+                                </div>
+                                <div class="header-cart same-style">
+                                    <button class="sidebar-trigger" href="/@ApplicationHelper.PageCartListing">
+                                        <i class="ti-shopping-cart"></i>
+                                        <span class="count-style" id="cart_total_count">0</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mobile-menu-area col-12">
+                            <div class="mobile-menu">
+                                <nav id="mobile-menu-active">
+                                    <ul class="menu-overflow">
+                                        <li>
+                                            <a href="/">home</a>
+
+                                        </li>
+                                        <li><a href="/@ApplicationHelper.PageAboutUs">about us </a></li>
+                                        <li>
+                                            @if (ViewBag.CategoryMenuRecords != null)
+                                            {
+                                                <a href="#">shop</a>
+                                                <ul>
+                                                    @foreach (CategoryModel CatRecord in ViewBag.CategoryMenuRecords)
+                                                    {
+                                                        <li><a href="/@ApplicationHelper.PageShopListing?categoryid=@CatRecord.ID">@CatRecord.Name</a></li>
+                                                    }
+                                                    <li><a href="/@ApplicationHelper.PageShopListing">View All</a></li>
+                                                </ul>
+                                            }
+                                            else
+                                            {
+                                                <a href="/@ApplicationHelper.PageShopListing">shop</a>
+                                            }
+                                        </li>
+                                        <li><a href="/@ApplicationHelper.PageContactUs">contact us</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- sidebar-cart start -->
+        <div class="sidebar-cart onepage-sidebar-area">
+            <div class="wrap-sidebar">
+                <div class="sidebar-cart-all">
+                    <div class="sidebar-cart-icon">
+                        <button class="op-sidebar-close"><span class="ti-close"></span></button>
+                    </div>
+                    <div class="cart-content">
+                        <h3>Shopping Cart</h3>
+                        <ul id="cart_listing_area"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- main-search start -->
+        <div class="main-search-active">
+            <div class="sidebar-search-icon">
+                <button class="search-close"><span class="ti-close"></span></button>
+            </div>
+            <div class="sidebar-search-input">
+                <form id="frm_search" autocomplete="off" method="get" action="/@ApplicationHelper.PageShopListing">
+                    <div class="form-search">
+                        <input name="search_text" class="input-text" value="@ViewBag.SearchText" placeholder="Search Entire Store" type="search">
+                        <button type="submit">
+                            <i class="ti-search"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        @RenderBody()
+        <footer class="@(ViewBag.PageType == "Home" ? "gray-bg footer-padding" : "hm-4-padding")">
+            <div class="container">
+                <div class="footer-top pt-60 pb-25">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="footer-widget mb-30">
+                                <div class="footer-widget-title">
+                                    <img src="~/assets/images/logo.svg" alt="" />
+                                </div>
+                                <div class="food-info-wrapper">
+                                    <p>We hope to indulge you with our extraordinary pieces that are beautifully crafted with intricate designs which will not only transform your space magically but also inspire you everyday.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="offset-2 col-md-2">
+                            <div class="footer-widget mb-30">
+                                <div class="footer-widget-title">
+                                    <h3>Information</h3>
+                                </div>
+                                <div class="food-widget-content">
+                                    <ul class="quick-link">
+                                        <li><a href="/">Home</a></li>
+                                        <li><a href="/@ApplicationHelper.PageAboutUs">About Us</a></li>
+                                        <li><a href="/@ApplicationHelper.PageShopListing">Shop</a></li>
+                                        <li><a href="/@ApplicationHelper.PageContactUs">Contact Us</a></li>
+                                        <li><a href="/@ApplicationHelper.PageTerm">Terms & Conditions</a></li>
+                                        <li><a href="/@ApplicationHelper.PagePrivacy">Privacy Policy</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="offset-1 col-md-3">
+                            <div class="footer-widget mb-30">
+                                <div class="footer-widget-title">
+                                    <h3>Get in Touch</h3>
+                                </div>
+                                <div class="food-info-wrapper">
+                                    <div class="food-address">
+                                        <div class="food-info-icon">
+                                            <i class="ion-ios-home-outline"></i>
+                                        </div>
+                                        <div class="food-info-content">
+                                            <p>Sh Mohd Bin Ahmed Salman Ave, Riffa, Bahrain</p>
+                                        </div>
+                                    </div>
+                                    <div class="food-address">
+                                        <div class="food-info-icon">
+                                            <i class="ion-ios-telephone-outline"></i>
+                                        </div>
+                                        <div class="food-info-content">
+                                            <p>+97338499313 </p>
+                                        </div>
+                                    </div>
+                                    <div class="food-address">
+                                        <div class="food-info-icon">
+                                            <i class="ion-ios-email-outline"></i>
+                                        </div>
+                                        <div class="food-info-content">
+                                            <p><a href="mailto:info@samiacrafts.com">info@samiacrafts.com</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom border-top-1 ptb-15">
+                    <div class="row">
+                        <div class="col-md-6 col-12">
+                            <div class="copyright-payment">
+                                <div class="copyright">
+                                    <p>Copyright ©  @ApplicationHelper.GetDateTime().Year <a href="http://airtechsolutions.pk/" target="_blank"> Airtech Solutions</a> All RIght Reserved.</p>
+                                </div>
+                            </div>
+                        </div>
+                        @*<div class="col-md-5 col-12">
+                                <div class="footer-payment-method">
+                                    <a href="#"><img alt="" src="~/assets/images/icon-img/7.png"></a>
+                                </div>
+                            </div>*@
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    @if (ViewBag.PageType == "Checkout")
+    {
+    @:</div>
+}
+    <!-- START JAVASCRIPT -->
+    @Scripts.Render("~/assets/cache/jquery.min.js")
+    @Scripts.Render("~/assets/cache/core.min.js")
+    @Scripts.Render("~/assets/cache/validate.min.js")
+    @if (IsSectionDefined("LinkScriptSection"))
+    {
+        @RenderSection("LinkScriptSection");
+    }
+    @Scripts.Render("~/assets/cache/custom.min.js")
+    @if (IsSectionDefined("InLineScriptSection"))
+    {
+        @RenderSection("InLineScriptSection");
+    }
+    <script src="~/assets/js/cookie/js.cookie.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            var currLang = Cookies.get('lang');
+            if (currLang == null || currLang == "" || currLang == undefined) {
+
+                Cookies.set('lang', 'en', { expires: 365 });
+                $('#_lang').html('عربى');
+            }
+            if (currLang == "en") {
+                $('#_lang').html("عربى");
+                $("._arabic").css("direction", "ltr")
+                $("._arabic-text").css("text-align", "left")
+                $(".icon-media").css("left", "0")
+                $(".icon-title").css("padding-left", "43px")
+            }
+            else {
+                $('#_lang').html("English");
+                $("._arabic").css("direction", "rtl")
+                $("p, h1, h2, h3, h4, h5, h6, a,div").css("font-family", "GE_Dinar_One_Medium")
+                $("._arabic-text").css("text-align", "right")
+                $(".icon-media").css("right", "0")
+                $(".icon-title").css("padding-right", "43px")
+            }
+        });
+
+        function _lang() {
+            var currLang = Cookies.get('lang');
+            //var currLang = localStorage.getItem("_lang");
+            if (currLang == null || currLang == "") {
+                Cookies.set('lang', 'en', { expires: 365 });
+                $('#_lang').html('عربى');
+            }
+            if (currLang == "en") {
+                Cookies.set('lang', 'ar', { expires: 365 });
+                $('#_lang').html('English');
+                location.reload();
+            }
+            if (currLang == "ar") {
+                Cookies.set('lang', 'en', { expires: 365 });
+                $('#_lang').html('عربى');
+                location.reload();
+            }
+        }
+    </script>
+    <script src="~/language/translations.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+﻿@model CarExpress.Models.ForgotModel
+@using CarExpress.Helpers;
+@using CarExpress.Models;
+@{Html.RenderPartial("_BreadCrumb");}
+<div class="login-register-area ptb-30 hm-3-padding">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-7 ml-auto mr-auto">
+                <div class="login-register-wrapper">
+                    <div class="login-register-tab-list nav">
+                        <a class="active" href="#">
+                            <h4> Forgot Password </h4>
+                        </a>
+                    </div>
+                    <div class="login-form-container">
+                        <div class="login-form">
+                            @using (Ajax.BeginForm("Forgot", "Ajax", null, new AjaxOptions { HttpMethod = "POST", OnBegin = "OnFormBegin", OnComplete = "OnFormComplete", OnSuccess = "OnFormSuccess", OnFailure = "OnFormFailure" }, new { @id = "FormForgot", @autocomplete = "off" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.TextBoxFor(m => m.EmailAddress, null, new { @class = "form-control", @placeholder = "Email Address *", @tabindex = "1" })
+                                @Html.ValidationMessageFor(m => m.EmailAddress, "", new { @class = "text-danger" })
+                                <div class="button-box">
+                                    <div class="login-toggle-btn">
+                                        <a href="/@ApplicationHelper.PageLogin">Back To Login?</a>
+                                    </div>
+                                    <button type="submit" class="btn-style cr-btn msg-area button-submit" data-text="<span>Send</span>" tabindex="2"><span>Send</span></button>
+                                </div>
+                            }
+                        </div>
+                        <p class="msg-area"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

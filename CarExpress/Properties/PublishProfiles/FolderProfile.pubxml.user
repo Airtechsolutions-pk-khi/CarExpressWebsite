@@ -1,0 +1,1108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\Publish\SamiaCraft_Publish</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="assets/css/animate.css">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/css/bootstrap.min.css">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/css/bundle.css">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/css/chosen.min.css">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/css/custom.css">
+      <publishTime>11/12/2021 12:07:07</publishTime>
+    </File>
+    <File Include="assets/css/easyzoom.css">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/css/ionicons.min.css">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/css/jquery-ui.css">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/css/meanmenu.min.css">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/css/owl.carousel.min.css">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/css/responsive.css">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/css/slick.css">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/css/style.css">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/css/themify-icons.css">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/emailtemplates/contact-admin.txt">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/emailtemplates/contact-customer.txt">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/emailtemplates/emailpattern-admin.txt">
+      <publishTime>09/17/2021 15:40:13</publishTime>
+    </File>
+    <File Include="assets/emailtemplates/emailpattern.txt">
+      <publishTime>09/17/2021 15:40:00</publishTime>
+    </File>
+    <File Include="assets/emailtemplates/forgot-password.txt">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/emailtemplates/order-admin.txt">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/emailtemplates/order-customer.txt">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/fonts/ionicons.eot">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/fonts/ionicons.svg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/fonts/ionicons.ttf">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/fonts/ionicons.woff">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/fonts/PainterPERSONALUSEONLY.eot">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/fonts/PainterPERSONALUSEONLY.ttf">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/fonts/PainterPERSONALUSEONLY.woff">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/fonts/PainterPERSONALUSEONLY.woff2">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/fonts/themify.eot">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/fonts/themify.svg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/fonts/themify.ttf">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/fonts/themify.woff">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/banner/1.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/banner/1.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/banner/10.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/banner/11.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/banner/12.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/banner/13.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/banner/14.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/banner/15.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/banner/16.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/banner/17.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/banner/2.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/banner/2.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/banner/3.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/banner/3.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/banner/4.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/banner/4.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/banner/5.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/banner/5.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/banner/6.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/banner/7.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/banner/8.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/banner/9.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/bgimg.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/blog/1.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/blog/2.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/blog/3.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/blog/blog-1.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/blog/blog-2.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/blog/blog-administrator.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/blog/blog-author.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/blog/blog-comment1.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/blog/blog-comment2.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/blog/blog-dec-img1.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/blog/blog-dec-img2.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/blog/blog-details1.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/blog/blog-gallery1.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/blog/blog-link-post2.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/blog/blog-masonry-1.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/blog/blog-masonry-2.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/blog/blog-recentpost-1.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/blog/blog-recentpost-2.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/blog/blog-recentpost-3.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/blog/blog-recentpost-4.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/blog/link-post.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/blog/quote-post.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/brand-logo/1.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/brand-logo/2.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/brand-logo/3.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/brand-logo/4.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/brand-logo/5.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/cart/1.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/cart/2.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/cart/3.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/cart/4.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/cart/5.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/cart/6.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/cart/7.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/cart/8.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/favicon.ico">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/favicon.png">
+      <publishTime>06/24/2021 11:42:43</publishTime>
+    </File>
+    <File Include="assets/images/icon-img/1.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/icon-img/1.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/icon-img/2.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/icon-img/2.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/icon-img/3.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/icon-img/4.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/icon-img/5.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/icon-img/6.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/icon-img/7.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/icon-img/8.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/icon-img/commas.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/icon-img/discount.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/icon-img/followinstaicon.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/instagram/instagram1.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/instagram/instagram2.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/instagram/instagram3.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/instagram/instagram4.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/instagram/instagram5.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/instagram/instagram6.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/loading.gif">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/logo.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/logo.svg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/logo/2.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/logo/logo.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/message-thumb.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product-details/bl1.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product-details/bl2.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product-details/bl3.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product-details/bl4.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product-details/details-sticky1.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product-details/details-sticky2.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product-details/details-sticky3.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product-details/details-sticky4.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product-details/details8-s1.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product-details/details8-s2.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product-details/details8-s3.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product-details/details8-s4.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product-details/details8-s5.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product-details/l1-details-4.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product-details/l1.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product-details/l2.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product-details/l3.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product-details/l4.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product-details/s1-details4.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product-details/s1.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product-details/s2-details4.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product-details/s2.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product-details/s3-details4.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product-details/s3.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product-details/s4.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/1.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/10.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/11.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/12.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/13.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/14.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/15.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/16.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/17.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/18.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/19.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/2.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/20.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/21.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/22.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/23.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/24.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/25.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/26.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/27.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/28.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/29.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/3.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/30.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/31.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/32.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/33.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/34.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/35.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/36.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/37.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/38.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/39.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/4.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/40.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/41.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/42.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/43.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/5.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/6.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/7.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/8.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/product/9.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/quick-view/l1.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/quick-view/l10.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/quick-view/l11.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/quick-view/l12.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/quick-view/l13.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/quick-view/l2.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/quick-view/l3.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/quick-view/l4.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/quick-view/l5.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/quick-view/l6.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/quick-view/l7.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/quick-view/l8.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/quick-view/l9.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/quick-view/s1.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/quick-view/s10.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/quick-view/s11.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/quick-view/s12.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/quick-view/s13.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/quick-view/s2.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/quick-view/s3.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/quick-view/s4.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/quick-view/s5.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/quick-view/s6.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/quick-view/s7.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/quick-view/s8.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/quick-view/s9.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/reviewbg.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/security.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/side-flower.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/slider-bg.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/slider-img.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/slider/1.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/slider/1.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/slider/2.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/slider/3.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/slider/4.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/slider/5.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/slider/6.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/small-banner-1.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/small-banner-2.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/subscribe-bg.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/team/1.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/team/1.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/team/2.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/team/3.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/team/4.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/truck.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/ui-icons_444444_256x240.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/ui-icons_555555_256x240.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/ui-icons_777620_256x240.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/ui-icons_777777_256x240.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/ui-icons_cc0000_256x240.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/ui-icons_ffffff_256x240.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/upload/banner/banner-1.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/upload/banner/banner-2.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/upload/banner/banner-3.png">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/images/usericon.jpg">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/js/bootstrap.min.js">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/js/cookie/js.cookie.js">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/js/cookie/js.cookie.min.js">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/js/cookie/js.cookie.min.mjs">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/js/cookie/js.cookie.mjs">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/js/custom.js">
+      <publishTime>11/22/2021 18:19:07</publishTime>
+    </File>
+    <File Include="assets/js/imagesloaded.pkgd.min.js">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/js/instafeed.js">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/js/isotope.pkgd.min.js">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/js/jquery-1.12.0.min.js">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/js/jquery.counterup.min.js">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/js/jquery.lazy.min.js">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/js/jquery.unobtrusive-ajax.js">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/js/jquery.validate.js">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/js/jquery.validate.unobtrusive.js">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/js/main.js">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/js/modernizr-2.8.3.min.js">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/js/notify.js">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/js/owl.carousel.min.js">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/js/plugins.js">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/js/popper.js">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="assets/js/waypoints.min.js">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.pdb">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/PremiumPosWebsite.dll">
+      <publishTime>01/25/2022 13:51:19</publishTime>
+    </File>
+    <File Include="bin/PremiumPosWebsite.pdb">
+      <publishTime>01/25/2022 13:51:19</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe.config">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.rsp">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe.config">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.rsp">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Managed.Core.targets">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Win32.Primitives.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.AppContext.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Console.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.DiagnosticSource.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.FileVersionInfo.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.StackTrace.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Globalization.Calendars.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.Compression.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.Compression.ZipFile.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.Primitives.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Net.Http.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Net.Sockets.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Runtime.InteropServices.RuntimeInformation.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Algorithms.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Encoding.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Primitives.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.X509Certificates.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Text.Encoding.CodePages.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Threading.Tasks.Extensions.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.ValueTuple.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.ReaderWriter.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XmlDocument.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XPath.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XPath.XDocument.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe.config">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.rsp">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/System.Linq.Dynamic.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="language/translations.js">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="language/translations.json">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="Logs/logs.txt">
+      <publishTime>01/25/2022 13:52:38</publishTime>
+    </File>
+    <File Include="Models/DbModel.edmx.diagram">
+      <publishTime>01/25/2022 13:51:06</publishTime>
+    </File>
+    <File Include="Views/ContentPages/About.cshtml">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="Views/ContentPages/Contact.cshtml">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="Views/ContentPages/Privacy.cshtml">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="Views/ContentPages/Term.cshtml">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="Views/ContentPages/ThankYou.cshtml">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="Views/Customer/Dashboard.cshtml">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="Views/Customer/Forgot.cshtml">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="Views/Customer/Login.cshtml">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="Views/Customer/OrderDetail.cshtml">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="Views/Customer/Profile.cshtml">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="Views/Customer/Register.cshtml">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="Views/Pages/Cart.cshtml">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="Views/Pages/Checkout.cshtml">
+      <publishTime>11/12/2021 16:49:27</publishTime>
+    </File>
+    <File Include="Views/Pages/Detail.cshtml">
+      <publishTime>01/25/2022 13:32:24</publishTime>
+    </File>
+    <File Include="Views/Pages/Home.cshtml">
+      <publishTime>11/15/2021 18:44:31</publishTime>
+    </File>
+    <File Include="Views/Pages/Page.cshtml">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="Views/Pages/Shop.cshtml">
+      <publishTime>01/25/2022 13:28:06</publishTime>
+    </File>
+    <File Include="Views/Pages/Wish.cshtml">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="Views/Shared/_BreadCrumb.cshtml">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>11/11/2021 18:53:26</publishTime>
+    </File>
+    <File Include="Views/Shared/_ProductBox.cshtml">
+      <publishTime>01/25/2022 13:37:40</publishTime>
+    </File>
+    <File Include="Views/Shared/_QuickView.cshtml">
+      <publishTime>01/25/2022 13:44:48</publishTime>
+    </File>
+    <File Include="Views/Shared/_Shop.cshtml">
+      <publishTime>01/25/2022 13:45:20</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>10/22/2021 15:24:20</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>01/25/2022 13:57:58</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

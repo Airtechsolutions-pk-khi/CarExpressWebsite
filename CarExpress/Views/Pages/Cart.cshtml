@@ -1,0 +1,49 @@
+﻿@using CarExpress.Helpers;
+@using CarExpress.Models;
+@{Html.RenderPartial("_BreadCrumb");}
+
+<div class="product-cart-area hm-3-padding pt-120 pb-130">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="table-content table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="product-name">image</th>
+                                <th class="product-price">products name</th>
+                                <th class="product-price">quantity</th>
+                                <th class="product-name">price</th>
+                                <th class="product-quantity">total</th>
+                                <th class="product-subtotal">delete</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart_table_listing_area">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-100">
+            <div class="col-md-7 col-sm-6">
+                <div class="cart-shipping">
+                    <a class="btn-style cr-btn" href="/@ApplicationHelper.PageShopListing">
+                        <span>continue shopping</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-5 col-sm-6">
+                <div class="shop-total">
+                    <h3>cart total</h3>
+                    <ul id="cart_total_table_listing_area">
+
+                    </ul>
+                </div>
+                <div class="continue-shopping-btn text-center">
+                    <a href="/@ApplicationHelper.PageCheckout">proceed to checkout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="870b1a59832c42de9359abe828550f29" Name="Diagram1">
+        <EntityTypeShape EntityType="db_model.Banner" Width="1.5" PointX="11.25" PointY="70.875" />
+        <EntityTypeShape EntityType="db_model.CardType" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="db_model.Category" Width="1.5" PointX="11.25" PointY="112" />
+        <EntityTypeShape EntityType="db_model.City" Width="1.5" PointX="6.75" PointY="92.5" />
+        <EntityTypeShape EntityType="db_model.Company" Width="1.5" PointX="3" PointY="75.875" />
+        <EntityTypeShape EntityType="db_model.Country" Width="1.5" PointX="4.5" PointY="92.625" />
+        <EntityTypeShape EntityType="db_model.Coupon" Width="1.5" PointX="3" PointY="102.75" />
+        <EntityTypeShape EntityType="db_model.Customer" Width="1.5" PointX="6" PointY="80.875" />
+        <EntityTypeShape EntityType="db_model.CustomerAddress" Width="1.5" PointX="8.25" PointY="104.75" />
+        <EntityTypeShape EntityType="db_model.CustomerDetail" Width="1.5" PointX="14.25" PointY="82.75" />
+        <EntityTypeShape EntityType="db_model.CustomerOrder" Width="1.5" PointX="11.25" PointY="76.25" />
+        <EntityTypeShape EntityType="db_model.CustomerOrder1" Width="1.5" PointX="16.5" PointY="81.125" />
+        <EntityTypeShape EntityType="db_model.CustomerWishList" Width="1.5" PointX="11.25" PointY="83.125" />
+        <EntityTypeShape EntityType="db_model.DealsCategory" Width="1.5" PointX="13.5" PointY="107.75" />
+        <EntityTypeShape EntityType="db_model.DealsDetail" Width="1.5" PointX="21" PointY="110.625" />
+        <EntityTypeShape EntityType="db_model.DealsHeader" Width="1.5" PointX="11.25" PointY="106.75" />
+        <EntityTypeShape EntityType="db_model.Floor" Width="1.5" PointX="11.25" PointY="116.375" />
+        <EntityTypeShape EntityType="db_model.Inventory" Width="1.5" PointX="24" PointY="95.625" />
+        <EntityTypeShape EntityType="db_model.InventoryRecieve" Width="1.5" PointX="13.5" PointY="98.75" />
+        <EntityTypeShape EntityType="db_model.InventoryRequest" Width="1.5" PointX="13.5" PointY="102.625" />
+        <EntityTypeShape EntityType="db_model.IssueStock" Width="1.5" PointX="3" PointY="87.25" />
+        <EntityTypeShape EntityType="db_model.IssueStockDetail" Width="1.5" PointX="18" PointY="100.625" />
+        <EntityTypeShape EntityType="db_model.Item" Width="1.5" PointX="15.75" PointY="110" />
+        <EntityTypeShape EntityType="db_model.ItemImage" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="db_model.ItemModiferMapping" Width="1.5" PointX="18" PointY="112.5" />
+        <EntityTypeShape EntityType="db_model.ItemVariant" Width="1.5" PointX="21" PointY="100.25" />
+        <EntityTypeShape EntityType="db_model.Location" Width="1.5" PointX="9" PointY="78.5" />
+        <EntityTypeShape EntityType="db_model.Modifier" Width="1.5" PointX="3" PointY="141.375" />
+        <EntityTypeShape EntityType="db_model.Order" Width="1.5" PointX="14.25" PointY="74.375" />
+        <EntityTypeShape EntityType="db_model.OrderCheckout" Width="1.5" PointX="19.5" PointY="78.625" />
+        <EntityTypeShape EntityType="db_model.OrderDealDetail" Width="1.5" PointX="21.25" PointY="105.875" />
+        <EntityTypeShape EntityType="db_model.OrderDetail" Width="1.5" PointX="19" PointY="92.75" />
+        <EntityTypeShape EntityType="db_model.OrderModifierDetail" Width="1.5" PointX="23.25" PointY="110.125" />
+        <EntityTypeShape EntityType="db_model.OrderType" Width="1.5" PointX="11.25" PointY="67.375" />
+        <EntityTypeShape EntityType="db_model.PackageInfo" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="db_model.Payment" Width="1.5" PointX="16.5" PointY="77" />
+        <EntityTypeShape EntityType="db_model.PurchaseOrder" Width="1.5" PointX="16.5" PointY="86.75" />
+        <EntityTypeShape EntityType="db_model.PurchaseOrderDetail" Width="1.5" PointX="18.75" PointY="105.25" />
+        <EntityTypeShape EntityType="db_model.PurchaseReturn" Width="1.5" PointX="18.75" PointY="87.5" />
+        <EntityTypeShape EntityType="db_model.ReceiptPermission" Width="1.5" PointX="3" PointY="97" />
+        <EntityTypeShape EntityType="db_model.Reveiw" Width="1.5" PointX="18" PointY="140.75" />
+        <EntityTypeShape EntityType="db_model.Status" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="db_model.Stock" Width="1.5" PointX="21.75" PointY="93.75" />
+        <EntityTypeShape EntityType="db_model.StockStore" Width="1.5" PointX="16.5" PointY="92.5" />
+        <EntityTypeShape EntityType="db_model.Store" Width="1.5" PointX="11.25" PointY="95" />
+        <EntityTypeShape EntityType="db_model.SubCategory" Width="1.5" PointX="13.5" PointY="112" />
+        <EntityTypeShape EntityType="db_model.SubUser" Width="1.5" PointX="14.25" PointY="86.625" />
+        <EntityTypeShape EntityType="db_model.Supplier" Width="1.5" PointX="11.25" PointY="88.875" />
+        <EntityTypeShape EntityType="db_model.sysdiagram" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="db_model.Table_orderCheckoutDetail" Width="1.5" PointX="21.75" PointY="80.25" />
+        <EntityTypeShape EntityType="db_model.Table" Width="1.5" PointX="13.5" PointY="116.375" />
+        <EntityTypeShape EntityType="db_model.Tax" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="db_model.TaxJunction" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="db_model.Unit" Width="1.5" PointX="13.5" PointY="120.375" />
+        <EntityTypeShape EntityType="db_model.User" Width="1.5" PointX="0.75" PointY="79.125" />
+        <EntityTypeShape EntityType="db_model.UserPaymentInfo" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="db_model.Variant" Width="1.5" PointX="3" PointY="81.5" />
+        <AssociationConnector Association="db_model.FK__Banner__Location__44952D46" />
+        <AssociationConnector Association="db_model.FK_Category_Location" />
+        <AssociationConnector Association="db_model.FK_SubCategory_Category" />
+        <AssociationConnector Association="db_model.FK_City_Country" />
+        <AssociationConnector Association="db_model.FK_Customer_Customer" />
+        <AssociationConnector Association="db_model.FK_Location_City" />
+        <AssociationConnector Association="db_model.FK_SubUser_City" />
+        <AssociationConnector Association="db_model.FK_Company_Location" />
+        <AssociationConnector Association="db_model.FK_Company_User" />
+        <AssociationConnector Association="db_model.FK_Customer_Country" />
+        <AssociationConnector Association="db_model.FK_Location_Location" />
+        <AssociationConnector Association="db_model.FK_SubUser_Country" />
+        <AssociationConnector Association="db_model.FK_Coupons_User" />
+        <AssociationConnector Association="db_model.FK_Customer_User" />
+        <AssociationConnector Association="db_model.FK_CustomerAddress_Customer" />
+        <AssociationConnector Association="db_model.FK_CustomerDetail_Customer" />
+        <AssociationConnector Association="db_model.FK_CustomerOrder_Customer" />
+        <AssociationConnector Association="db_model.FK_CustomerWishList_Customer" />
+        <AssociationConnector Association="db_model.FK_Order_Customer" />
+        <AssociationConnector Association="db_model.FK_OrderCheckout_Customer" />
+        <AssociationConnector Association="db_model.FK_CustomerDetail_Order" />
+        <AssociationConnector Association="db_model.FK_CustomerOrder_Order" />
+        <AssociationConnector Association="db_model.FK_CustomerOrders_Order" />
+        <AssociationConnector Association="db_model.FK_CustomerWishList_Item" />
+        <AssociationConnector Association="db_model.FK_DealsCategory_DealsHeader" />
+        <AssociationConnector Association="db_model.FK_DealsDetail_DealsHeader" />
+        <AssociationConnector Association="db_model.FK_DealsDetail_Item" />
+        <AssociationConnector Association="db_model.FK_DealsHeader_Location" />
+        <AssociationConnector Association="db_model.FK_Floors_Location" />
+        <AssociationConnector Association="db_model.FK_Tables_Floors" />
+        <AssociationConnector Association="db_model.FK_Inventory_Inventory" />
+        <AssociationConnector Association="db_model.FK_Inventory_Item" />
+        <AssociationConnector Association="db_model.FK_Inventory_Location" />
+        <AssociationConnector Association="db_model.FK_Inventory_Supplier" />
+        <AssociationConnector Association="db_model.FK_InventoryRecieve_Store" />
+        <AssociationConnector Association="db_model.FK_InventoryRequest_Store" />
+        <AssociationConnector Association="db_model.FK_IssueStock_Store" />
+        <AssociationConnector Association="db_model.FK_IssueStock_Store1" />
+        <AssociationConnector Association="db_model.FK_IssueStock_User" />
+        <AssociationConnector Association="db_model.FK_IssueStockDetail_IssueStock" />
+        <AssociationConnector Association="db_model.FK_IssueStockDetail_Item" />
+        <AssociationConnector Association="db_model.FK_Item_SubCategory" />
+        <AssociationConnector Association="db_model.FK_Item_Unit" />
+        <AssociationConnector Association="db_model.FK_ItemModiferMapping_Item" />
+        <AssociationConnector Association="db_model.FK_ItemVariant_Item" />
+        <AssociationConnector Association="db_model.FK_OrderDealDetail_Item" />
+        <AssociationConnector Association="db_model.FK_OrderDetail_Item" />
+        <AssociationConnector Association="db_model.FK_PurchaseOrderDetail_Item" />
+        <AssociationConnector Association="db_model.FK_Reveiws_Item" />
+        <AssociationConnector Association="db_model.FK_Stock_Item" />
+        <AssociationConnector Association="db_model.FK_ItemModiferMapping_Modifiers" />
+        <AssociationConnector Association="db_model.FK_ItemModiferMapping_Variant" />
+        <AssociationConnector Association="db_model.FK_ItemVariant_Variant" />
+        <AssociationConnector Association="db_model.FK_Location_USer" />
+        <AssociationConnector Association="db_model.FK_Order_Location" />
+        <AssociationConnector Association="db_model.FK_OrderCheckout_Location" />
+        <AssociationConnector Association="db_model.FK_OrderType_Location" />
+        <AssociationConnector Association="db_model.FK_PurchaseOrder_Location" />
+        <AssociationConnector Association="db_model.FK_Stock_Location" />
+        <AssociationConnector Association="db_model.FK_Store_Location" />
+        <AssociationConnector Association="db_model.FK_SubUser_Location" />
+        <AssociationConnector Association="db_model.FK_Supplier_Location" />
+        <AssociationConnector Association="db_model.FK_Modifiers_User" />
+        <AssociationConnector Association="db_model.FK_OrderModifierDetail_Modifiers" />
+        <AssociationConnector Association="db_model.FK_OrderCheckout_Order" />
+        <AssociationConnector Association="db_model.FK_OrderDetail_Order" />
+        <AssociationConnector Association="db_model.FK_Payment_Order" />
+        <AssociationConnector Association="db_model.FK_Table_orderCheckoutDetail1_OrderCheckout" />
+        <AssociationConnector Association="db_model.FK_OrderDealDetail_OrderDetail" />
+        <AssociationConnector Association="db_model.FK_OrderModifierDetail_OrderDetail" />
+        <AssociationConnector Association="db_model.FK_OrderModifierDetail_Variant" />
+        <AssociationConnector Association="db_model.FK_PurchaseOrder_Store" />
+        <AssociationConnector Association="db_model.FK_PurchaseOrder_Supplier" />
+        <AssociationConnector Association="db_model.FK_PurchaseOrder_User" />
+        <AssociationConnector Association="db_model.FK_PurchaseOrderDetail_PurchaseOrder1" />
+        <AssociationConnector Association="db_model.FK_PurchaseReturn_PurchaseOrder" />
+        <AssociationConnector Association="db_model.FK_Stock_PurchaseOrder" />
+        <AssociationConnector Association="db_model.FK_ReceiptPermissions_User" />
+        <AssociationConnector Association="db_model.FK_StockStore_StockStore" />
+        <AssociationConnector Association="db_model.FK_StockStore_Store" />
+        <AssociationConnector Association="db_model.FK_StockStore_User" />
+        <AssociationConnector Association="db_model.FK_SubUser_USer" />
+        <AssociationConnector Association="db_model.FK_Variant_User" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

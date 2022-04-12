@@ -1,0 +1,230 @@
+﻿@model PremiumPosWebsite.Models.CheckoutModel
+@using PremiumPosWebsite.Helpers;
+@using PremiumPosWebsite.Models;
+@{Html.RenderPartial("_BreadCrumb");}
+<style>
+    #bc-img {
+        display: none
+    }
+    body {
+        padding: 50px;
+    }
+
+    .active {
+        background: #004270 !important;
+    }
+</style>
+@{ 
+    var countryList = new SelectList(
+   new List<SelectListItem>
+   {
+new SelectListItem {Text = "Bahrain", Value = "Bahrain"}
+   }, "Value", "Text");
+    var timeList = new SelectList(
+new List<SelectListItem>
+{
+new SelectListItem {Text = "11:00 am to 01:00 pm", Value = "11:00 am to 01:00 pm"},
+new SelectListItem {Text = "01:01 pm to 03:00 pm", Value = "01:01 pm to 03:00 pm"},
+new SelectListItem {Text = "03:01 pm to 05:00 pm", Value = "03:01 pm to 05:00 pm"},
+new SelectListItem {Text = "05:01 pm to 07:00 pm", Value = "05:01 pm to 07:00 pm"},
+new SelectListItem {Text = "07:01 pm to 09:00 pm", Value = "07:01 pm to 09:00 pm" },
+new SelectListItem {Text = "09:01 pm to 11:00 pm", Value = "09:01 pm to 11:00 pm" },
+new SelectListItem {Text = "11:01 pm to 12:00 pm", Value = "11:01 pm to 12:00 pm" }
+}, "Value", "Text");
+    var placeList = new SelectList(
+     new List<SelectListItem>
+     {
+new SelectListItem {Text = "Office", Value = "Office"},
+new SelectListItem {Text = "Hospital", Value = "Hospital"},
+new SelectListItem {Text = "House", Value = "House"},
+new SelectListItem {Text = "Apartment", Value = "Apartment"},
+new SelectListItem {Text = "Shop", Value = "Shop" },
+new SelectListItem {Text = "Outlet", Value = "Outlet" },
+new SelectListItem {Text = "Other", Value = "Other" }
+     }, "Value", "Text");
+}
+<div class="checkout-area pt-20 hm-3-padding pb-100">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="coupon-accordion">
+                    @if (ViewBag.CustomerRecord == null)
+                    {
+                        <h3>Returning customer? <a href="/@ApplicationHelper.PageLogin?type=checkout">Click here to login</a></h3>
+                    }
+                    <!-- ACCORDION START -->
+                    <div id="coupon_area" data-url="/@ApplicationHelper.PageAjaxCoupon">
+                            
+                    </div>
+                    <!-- ACCORDION END -->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-12">
+                @using (Ajax.BeginForm(ApplicationHelper.PageCheckout, "Ajax", null, new AjaxOptions { HttpMethod = "POST", OnBegin = "OnFormBegin", OnComplete = "OnFormComplete", OnSuccess = "OnFormSuccess", OnFailure = "OnFormFailure" }, new { @id = "FormCheckOut", @autocomplete = "off" }))
+                {
+            <div class="checkbox-form">
+                <h3>Sender Details</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="checkout-form-list">
+                            <label>Sender Name <span class="required">*</span></label>
+                            @Html.TextBoxFor(m => m.SenderName, null, new { @placeholder = "Sender Name *", @tabindex = "1" })
+                            @Html.ValidationMessageFor(m => m.SenderName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="checkout-form-list">
+                            <label>Sender Email Address <span class="required">*</span></label>
+                            @Html.TextBoxFor(m => m.SenderEmailAddress, null, new { @placeholder = "Sender Email Address *", @tabindex = "2" })
+                            @Html.ValidationMessageFor(m => m.SenderEmailAddress, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="checkout-form-list">
+                            <label>Sender Mobile No <span class="required">*</span></label>
+                            @Html.TextBoxFor(m => m.SenderMobileNumber, null, new { @class = "only-number", @placeholder = "Sender Mobile Number *", @tabindex = "3" })
+                            @Html.ValidationMessageFor(m => m.SenderMobileNumber, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+                            <div class="checkbox-form">
+                                <h3>Delivery Details</h3>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="checkout-form-list">
+                                            <label>Recipient Name <span class="required">*</span></label>
+                                            @Html.TextBoxFor(m => m.RecipientName, null, new { @placeholder = "Recipient Name *", @tabindex = "4" })
+                                            @Html.ValidationMessageFor(m => m.RecipientName, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checkout-form-list">
+                                            <label>Recipient Mobile No <span class="required">*</span></label>
+                                            @Html.TextBoxFor(m => m.RecipientMobileNumber, null, new { @class = "only-number", @placeholder = "Recipient Mobile Number *", @tabindex = "5" })
+                                            @Html.ValidationMessageFor(m => m.RecipientMobileNumber, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checkout-form-list">
+                                            <label>Delivery Date <span class="required">*</span></label>
+                                            @Html.TextBoxFor(m => m.DeliveryDate, null, new { @class = "date-picker", @placeholder = "mm/dd/yyy *", @tabindex = "6" })
+                                            @Html.ValidationMessageFor(m => m.DeliveryDate, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checkout-form-list">
+                                            <label>Delivery Time <span class="required">*</span></label>
+                                            @Html.DropDownListFor(m => m.DeliveryTime, timeList, "Choose Delivery Time...", new { @class = "", @tabindex = "7" })
+                                            @Html.ValidationMessageFor(m => m.DeliveryTime, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checkout-form-list">
+                                            <label>Country <span class="required">*</span></label>
+                                            @Html.DropDownListFor(m => m.Country, countryList, null, new { @tabindex = "7" })
+                                            @Html.ValidationMessageFor(m => m.Country, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checkout-form-list">
+                                            <label>City <span class="required">*</span></label>
+                                            @Html.TextBoxFor(m => m.City, null, new { @placeholder = "Enter City *", @tabindex = "7" })
+                                            @Html.ValidationMessageFor(m => m.City, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="checkout-form-list">
+                                            <label>Recipient Address <span class="required">*</span></label>
+                                            @Html.TextBoxFor(m => m.RecipientAddress, null, new { @placeholder = "Recipient Address *", @tabindex = "8" })
+                                            @Html.ValidationMessageFor(m => m.RecipientAddress, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checkout-form-list">
+                                            <label>Place Type <span class="required">*</span></label>
+                                            @Html.DropDownListFor(m => m.PlaceType, placeList, "Select Place Type...", new { @class = "", @tabindex = "9" })
+                                            @Html.ValidationMessageFor(m => m.PlaceType, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checkout-form-list">
+                                            <label>Nearest Place</label>
+                                            @Html.TextBoxFor(m => m.NearestPlace, null, new { @placeholder = "Nearest Place", @tabindex = "10" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="checkout-form-list">
+                                            <label>Customization Description* <span class="required">*</span></label>
+                                            @Html.TextAreaFor(m => m.Notes, new { @placeholder = "Notes, e.g. special things if you wanna customized  along with your orders.", @tabindex = "11" })
+                                            @Html.ValidationMessageFor(m => m.Notes, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="payment-method mt-40">
+                                            <h5>Payment Method</h5>
+
+
+                                            <div class="btn-group" data-toggle="buttons" id="modelselect" style="padding-top:20px;">
+                                                <label class="btn btn-secondary active" style="width:100px;">
+                                                    <input type="radio" name="payment_type" id="payment_type_cash" value="Cash" /> Cash
+                                                </label>
+                                                <label class="btn btn-secondary">
+                                                    <input type="radio" name="payment_type" id="payment_type_card" value="Credit/Debit" />  Credit/Debit
+                                                </label>
+
+                                            </div>
+                                          
+                                            <div class="order-button-payment">
+                                                <button type="button" class="button-submit" data-text="<span>Place Order</span>" id="btn_checkout"><span>Place Order</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                }
+                               </div>
+               
+            <div class="col-lg-6 col-md-12 col-12">
+                <div class="your-order">
+                    <h3>Your order</h3>
+                    <div class="your-order-table table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="product-name">Product</th>
+                                    <th class="product-total">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody id="checkout_table_listing_area"></tbody>
+                        </table>
+                    </div>
+                    @*<div class="payment-method mt-40">
+                        <h5>Payment Method</h5>
+
+
+                        <div class="btn-group" data-toggle="buttons" id="modelselect" style="padding-top:20px;">
+                            <label class="btn btn-secondary active" style="width:100px;">
+                                <input type="radio" name="payment_type" id="payment_type_cash" value="Cash"  /> Cash
+                            </label>
+                            <label class="btn btn-secondary">
+                                <input type="radio" name="payment_type" id="payment_type_card" value="Credit/Debit"  />  Credit/Debit
+                            </label>
+
+                        </div>
+                               
+                        <div class="order-button-payment">
+                            <button type="button" class="button-submit" data-text="<span>Place Order</span>" id="btn_checkout"><span>Place Order</span></button>
+                        </div>
+                    </div>*@
+                    <div id="msg-area"></div>
+                </div>
+            </div>
+               
+
+        </div>
+    </div>
+</div>
+<!-- checkout-area end -->	

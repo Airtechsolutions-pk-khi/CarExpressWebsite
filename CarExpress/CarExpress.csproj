@@ -1,0 +1,897 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{67777A02-BB48-4D16-BB94-74CAE009CFE1}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CarExpress</RootNamespace>
+    <AssemblyName>CarExpress</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=3.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.8\lib\net40\System.Linq.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AccessUrlRouteHandler.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AjaxController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\ApplicationHelper.cs" />
+    <Compile Include="Models\ABC_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Banner.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CardType.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Category.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\City.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Company.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Country.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Coupon.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Customer.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomerAddress.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomerDetail.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomerOrder.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomerOrder1.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomerWishList.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DbModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DbModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DbModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DealsCategory.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DealsDetail.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DealsHeader.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Floor.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Inventory.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InventoryRecieve.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InventoryRequest.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IssueStock.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IssueStockDetail.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Item.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ItemImage.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ItemModiferMapping.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ItemVariant.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Location.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MetaModel.cs" />
+    <Compile Include="Models\Modifier.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Order.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrderCheckout.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrderDealDetail.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrderDetail.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrderModifierDetail.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrderType.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PackageInfo.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Payment.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PurchaseOrder.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PurchaseOrderDetail.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PurchaseReturn.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ReceiptPermission.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Reveiw.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SplitStringGroup_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SplitString_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_DatewiseSalesSummaryMulitLoc_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_DatewiseSalesSummary_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_FilterOrderTest_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_FilterOrder_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_FinishItemsList_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_GetAdminOrders_api_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_GetAllBanners_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_getallusers_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_GetBanners_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_GetCategory_menu_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_GetCompany_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_GetCustomerOrders_api_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_GetDashboardDataMultiLoc_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_GetDashboardData_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_GetDashboardLastThreeMonthsSales_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_GetDashboardtop5Items_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_GetDashboardTopSellingItems_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_GetInventoryItems_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_GetItemModifierMapping_menu_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_GetItemsList_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_GetItemsNotInInventory_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_GetItem_menu_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_GetModifierAndVariant_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_GetModifiersForItem_menu_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_GetModifiers_menu_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_GetReceiptInfo_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_GetReceiptPermissions_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_GetStockOfMultipleItems_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_GetSubCategoryID_admin_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_GetSubCategory_menu_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_GetTables_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_GetVariantsForItem_menu_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_GetVariants_menu_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_InsertItemsMapping_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_Last7DaysSales_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_Login_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_Login_SubUser_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_OrderReportDetail_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_OrderReportHeaderMultiLoc_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_OrderReportHeader_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_PRoductSummaryMultiLoc_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_PRoductSummary_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_PurchaseOrderDetailList_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_RptCreditSales_MultiLoc_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_SalesSummaryMultiLoc_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_SalesSummary_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_ShiftData_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_SignupUserWebApi_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_SignupWizard_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_SignUser_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_StockInNotifcation_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_StockNotification_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_StockReportDetail_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_StockReportMultiLoc_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_StockReport_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_StockStoreReport_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_StockStoreSummaryMultiLoc_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_StockStoreSummary_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_UserActivateApi_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_UserPaymentDetails_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_UserSalesMultiLoc_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_ValidateEmail_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_ZXReport_Result.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Status.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Stock.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StockStore.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Store.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SubCategory.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SubUser.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Supplier.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Table.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Table_orderCheckoutDetail.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tax.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TaxJunction.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Unit.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserPaymentInfo.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Variant.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\animate.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\bundle.css" />
+    <Content Include="assets\css\chosen.min.css" />
+    <Content Include="assets\css\custom.css" />
+    <Content Include="assets\css\easyzoom.css" />
+    <Content Include="assets\css\ionicons.min.css" />
+    <Content Include="assets\css\jquery-ui.css" />
+    <Content Include="assets\css\meanmenu.min.css" />
+    <Content Include="assets\css\owl.carousel.min.css" />
+    <Content Include="assets\css\responsive.css" />
+    <Content Include="assets\css\slick.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\css\themify-icons.css" />
+    <Content Include="assets\emailtemplates\contact-admin.txt" />
+    <Content Include="assets\emailtemplates\contact-customer.txt" />
+    <Content Include="assets\emailtemplates\forgot-password.txt" />
+    <Content Include="assets\emailtemplates\order-admin.txt" />
+    <Content Include="assets\emailtemplates\order-customer.txt" />
+    <Content Include="assets\fonts\ionicons.svg" />
+    <Content Include="assets\fonts\themify.svg" />
+    <Content Include="assets\images\banner\1.jpg" />
+    <Content Include="assets\images\banner\1.png" />
+    <Content Include="assets\images\banner\10.jpg" />
+    <Content Include="assets\images\banner\11.jpg" />
+    <Content Include="assets\images\banner\12.jpg" />
+    <Content Include="assets\images\banner\13.jpg" />
+    <Content Include="assets\images\banner\14.jpg" />
+    <Content Include="assets\images\banner\15.jpg" />
+    <Content Include="assets\images\banner\16.jpg" />
+    <Content Include="assets\images\banner\17.jpg" />
+    <Content Include="assets\images\banner\2.jpg" />
+    <Content Include="assets\images\banner\2.png" />
+    <Content Include="assets\images\banner\3.jpg" />
+    <Content Include="assets\images\banner\3.png" />
+    <Content Include="assets\images\banner\4.jpg" />
+    <Content Include="assets\images\banner\4.png" />
+    <Content Include="assets\images\banner\5.jpg" />
+    <Content Include="assets\images\banner\5.png" />
+    <Content Include="assets\images\banner\6.jpg" />
+    <Content Include="assets\images\banner\7.jpg" />
+    <Content Include="assets\images\banner\8.jpg" />
+    <Content Include="assets\images\banner\9.jpg" />
+    <Content Include="assets\images\bgimg.jpg" />
+    <Content Include="assets\images\blog\1.jpg" />
+    <Content Include="assets\images\blog\2.jpg" />
+    <Content Include="assets\images\blog\3.jpg" />
+    <Content Include="assets\images\blog\blog-1.jpg" />
+    <Content Include="assets\images\blog\blog-2.jpg" />
+    <Content Include="assets\images\blog\blog-administrator.png" />
+    <Content Include="assets\images\blog\blog-author.png" />
+    <Content Include="assets\images\blog\blog-comment1.png" />
+    <Content Include="assets\images\blog\blog-comment2.png" />
+    <Content Include="assets\images\blog\blog-dec-img1.jpg" />
+    <Content Include="assets\images\blog\blog-dec-img2.jpg" />
+    <Content Include="assets\images\blog\blog-details1.jpg" />
+    <Content Include="assets\images\blog\blog-gallery1.jpg" />
+    <Content Include="assets\images\blog\blog-link-post2.png" />
+    <Content Include="assets\images\blog\blog-masonry-1.jpg" />
+    <Content Include="assets\images\blog\blog-masonry-2.jpg" />
+    <Content Include="assets\images\blog\blog-recentpost-1.jpg" />
+    <Content Include="assets\images\blog\blog-recentpost-2.jpg" />
+    <Content Include="assets\images\blog\blog-recentpost-3.jpg" />
+    <Content Include="assets\images\blog\blog-recentpost-4.jpg" />
+    <Content Include="assets\images\blog\link-post.png" />
+    <Content Include="assets\images\blog\quote-post.png" />
+    <Content Include="assets\images\brand-logo\1.png" />
+    <Content Include="assets\images\brand-logo\2.png" />
+    <Content Include="assets\images\brand-logo\3.png" />
+    <Content Include="assets\images\brand-logo\4.png" />
+    <Content Include="assets\images\brand-logo\5.png" />
+    <Content Include="assets\images\cart\1.jpg" />
+    <Content Include="assets\images\cart\2.jpg" />
+    <Content Include="assets\images\cart\3.jpg" />
+    <Content Include="assets\images\cart\4.jpg" />
+    <Content Include="assets\images\cart\5.jpg" />
+    <Content Include="assets\images\cart\6.jpg" />
+    <Content Include="assets\images\cart\7.jpg" />
+    <Content Include="assets\images\cart\8.jpg" />
+    <Content Include="assets\images\favicon.ico" />
+    <Content Include="assets\images\icon-img\commas.png" />
+    <Content Include="assets\images\icon-img\followinstaicon.png" />
+    <Content Include="assets\images\logo.svg" />
+    <Content Include="assets\images\message-thumb.png" />
+    <Content Include="assets\images\reviewbg.jpg" />
+    <Content Include="assets\images\security.png" />
+    <Content Include="assets\images\side-flower.png" />
+    <Content Include="assets\images\small-banner-2.jpg" />
+    <Content Include="assets\images\small-banner-1.png" />
+    <Content Include="assets\images\icon-img\1.jpg" />
+    <Content Include="assets\images\icon-img\1.png" />
+    <Content Include="assets\images\icon-img\2.jpg" />
+    <Content Include="assets\images\icon-img\2.png" />
+    <Content Include="assets\images\icon-img\3.png" />
+    <Content Include="assets\images\icon-img\4.png" />
+    <Content Include="assets\images\icon-img\5.png" />
+    <Content Include="assets\images\icon-img\6.png" />
+    <Content Include="assets\images\icon-img\7.png" />
+    <Content Include="assets\images\icon-img\8.png" />
+    <Content Include="assets\images\icon-img\discount.png" />
+    <Content Include="assets\images\instagram\instagram1.jpg" />
+    <Content Include="assets\images\instagram\instagram2.jpg" />
+    <Content Include="assets\images\instagram\instagram3.jpg" />
+    <Content Include="assets\images\instagram\instagram4.jpg" />
+    <Content Include="assets\images\instagram\instagram5.jpg" />
+    <Content Include="assets\images\instagram\instagram6.jpg" />
+    <Content Include="assets\images\loading.gif" />
+    <Content Include="assets\images\logo\2.png" />
+    <Content Include="assets\images\logo\logo.png" />
+    <Content Include="assets\images\product-details\bl1.jpg" />
+    <Content Include="assets\images\product-details\bl2.jpg" />
+    <Content Include="assets\images\product-details\bl3.jpg" />
+    <Content Include="assets\images\product-details\bl4.jpg" />
+    <Content Include="assets\images\product-details\details-sticky1.jpg" />
+    <Content Include="assets\images\product-details\details-sticky2.jpg" />
+    <Content Include="assets\images\product-details\details-sticky3.jpg" />
+    <Content Include="assets\images\product-details\details-sticky4.jpg" />
+    <Content Include="assets\images\product-details\details8-s1.jpg" />
+    <Content Include="assets\images\product-details\details8-s2.jpg" />
+    <Content Include="assets\images\product-details\details8-s3.jpg" />
+    <Content Include="assets\images\product-details\details8-s4.jpg" />
+    <Content Include="assets\images\product-details\details8-s5.jpg" />
+    <Content Include="assets\images\product-details\l1-details-4.jpg" />
+    <Content Include="assets\images\product-details\l1.jpg" />
+    <Content Include="assets\images\product-details\l2.jpg" />
+    <Content Include="assets\images\product-details\l3.jpg" />
+    <Content Include="assets\images\product-details\l4.jpg" />
+    <Content Include="assets\images\product-details\s1-details4.jpg" />
+    <Content Include="assets\images\product-details\s1.jpg" />
+    <Content Include="assets\images\product-details\s2-details4.jpg" />
+    <Content Include="assets\images\product-details\s2.jpg" />
+    <Content Include="assets\images\product-details\s3-details4.jpg" />
+    <Content Include="assets\images\product-details\s3.jpg" />
+    <Content Include="assets\images\product-details\s4.jpg" />
+    <Content Include="assets\images\product\1.jpg" />
+    <Content Include="assets\images\product\10.jpg" />
+    <Content Include="assets\images\product\11.jpg" />
+    <Content Include="assets\images\product\12.jpg" />
+    <Content Include="assets\images\product\13.jpg" />
+    <Content Include="assets\images\product\14.jpg" />
+    <Content Include="assets\images\product\15.jpg" />
+    <Content Include="assets\images\product\16.jpg" />
+    <Content Include="assets\images\product\17.jpg" />
+    <Content Include="assets\images\product\18.jpg" />
+    <Content Include="assets\images\product\19.jpg" />
+    <Content Include="assets\images\product\2.jpg" />
+    <Content Include="assets\images\product\20.jpg" />
+    <Content Include="assets\images\product\21.jpg" />
+    <Content Include="assets\images\product\22.jpg" />
+    <Content Include="assets\images\product\23.jpg" />
+    <Content Include="assets\images\product\24.jpg" />
+    <Content Include="assets\images\product\25.jpg" />
+    <Content Include="assets\images\product\26.jpg" />
+    <Content Include="assets\images\product\27.jpg" />
+    <Content Include="assets\images\product\28.jpg" />
+    <Content Include="assets\images\product\29.jpg" />
+    <Content Include="assets\images\product\3.jpg" />
+    <Content Include="assets\images\product\30.jpg" />
+    <Content Include="assets\images\product\31.jpg" />
+    <Content Include="assets\images\product\32.jpg" />
+    <Content Include="assets\images\product\33.jpg" />
+    <Content Include="assets\images\product\34.jpg" />
+    <Content Include="assets\images\product\35.jpg" />
+    <Content Include="assets\images\product\36.jpg" />
+    <Content Include="assets\images\product\37.jpg" />
+    <Content Include="assets\images\product\38.jpg" />
+    <Content Include="assets\images\product\39.jpg" />
+    <Content Include="assets\images\product\4.jpg" />
+    <Content Include="assets\images\product\40.jpg" />
+    <Content Include="assets\images\product\41.jpg" />
+    <Content Include="assets\images\product\42.jpg" />
+    <Content Include="assets\images\product\43.jpg" />
+    <Content Include="assets\images\product\5.jpg" />
+    <Content Include="assets\images\product\6.jpg" />
+    <Content Include="assets\images\product\7.jpg" />
+    <Content Include="assets\images\product\8.jpg" />
+    <Content Include="assets\images\product\9.jpg" />
+    <Content Include="assets\images\quick-view\l1.jpg" />
+    <Content Include="assets\images\quick-view\l10.jpg" />
+    <Content Include="assets\images\quick-view\l11.jpg" />
+    <Content Include="assets\images\quick-view\l12.jpg" />
+    <Content Include="assets\images\quick-view\l13.jpg" />
+    <Content Include="assets\images\quick-view\l2.jpg" />
+    <Content Include="assets\images\quick-view\l3.jpg" />
+    <Content Include="assets\images\quick-view\l4.jpg" />
+    <Content Include="assets\images\quick-view\l5.jpg" />
+    <Content Include="assets\images\quick-view\l6.jpg" />
+    <Content Include="assets\images\quick-view\l7.jpg" />
+    <Content Include="assets\images\quick-view\l8.jpg" />
+    <Content Include="assets\images\quick-view\l9.jpg" />
+    <Content Include="assets\images\quick-view\s1.jpg" />
+    <Content Include="assets\images\quick-view\s10.jpg" />
+    <Content Include="assets\images\quick-view\s11.jpg" />
+    <Content Include="assets\images\quick-view\s12.jpg" />
+    <Content Include="assets\images\quick-view\s13.jpg" />
+    <Content Include="assets\images\quick-view\s2.jpg" />
+    <Content Include="assets\images\quick-view\s3.jpg" />
+    <Content Include="assets\images\quick-view\s4.jpg" />
+    <Content Include="assets\images\quick-view\s5.jpg" />
+    <Content Include="assets\images\quick-view\s6.jpg" />
+    <Content Include="assets\images\quick-view\s7.jpg" />
+    <Content Include="assets\images\quick-view\s8.jpg" />
+    <Content Include="assets\images\quick-view\s9.jpg" />
+    <Content Include="assets\images\slider-bg.jpg" />
+    <Content Include="assets\images\slider-img.png" />
+    <Content Include="assets\images\slider\1.jpg" />
+    <Content Include="assets\images\slider\1.png" />
+    <Content Include="assets\images\slider\2.png" />
+    <Content Include="assets\images\slider\3.png" />
+    <Content Include="assets\images\slider\4.png" />
+    <Content Include="assets\images\slider\5.png" />
+    <Content Include="assets\images\slider\6.png" />
+    <Content Include="assets\images\subscribe-bg.png" />
+    <Content Include="assets\images\team\1.jpg" />
+    <Content Include="assets\images\team\1.png" />
+    <Content Include="assets\images\team\2.jpg" />
+    <Content Include="assets\images\team\3.jpg" />
+    <Content Include="assets\images\team\4.jpg" />
+    <Content Include="assets\images\logo.png" />
+    <Content Include="assets\images\truck.png" />
+    <Content Include="assets\images\ui-icons_444444_256x240.png" />
+    <Content Include="assets\images\ui-icons_555555_256x240.png" />
+    <Content Include="assets\images\ui-icons_777620_256x240.png" />
+    <Content Include="assets\images\ui-icons_777777_256x240.png" />
+    <Content Include="assets\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="assets\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="assets\images\upload\banner\banner-1.png" />
+    <Content Include="assets\images\upload\banner\banner-2.png" />
+    <Content Include="assets\images\upload\banner\banner-3.png" />
+    <Content Include="assets\images\usericon.jpg" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\cookie\js.cookie.js" />
+    <Content Include="assets\js\cookie\js.cookie.min.js" />
+    <Content Include="assets\js\custom.js" />
+    <Content Include="assets\js\imagesloaded.pkgd.min.js" />
+    <Content Include="assets\js\instafeed.js" />
+    <Content Include="assets\js\isotope.pkgd.min.js" />
+    <Content Include="assets\js\jquery.counterup.min.js" />
+    <Content Include="assets\js\jquery.lazy.min.js" />
+    <Content Include="assets\js\jquery.unobtrusive-ajax.js" />
+    <Content Include="assets\js\jquery.validate.js" />
+    <Content Include="assets\js\jquery.validate.unobtrusive.js" />
+    <Content Include="assets\js\main.js" />
+    <Content Include="assets\js\notify.js" />
+    <Content Include="assets\js\owl.carousel.min.js" />
+    <Content Include="assets\js\plugins.js" />
+    <Content Include="assets\js\popper.js" />
+    <Content Include="assets\js\jquery-1.12.0.min.js" />
+    <Content Include="assets\js\modernizr-2.8.3.min.js" />
+    <Content Include="assets\js\waypoints.min.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="language\translations.js" />
+    <Content Include="Logs\logs.txt" />
+    <Content Include="Models\DbModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DbModel.edmx</DependentUpon>
+      <LastGenOutput>DbModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DbModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DbModel.edmx</DependentUpon>
+      <LastGenOutput>DbModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="assets\cache\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Models\DbModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DbModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\DbModel.edmx.diagram">
+      <DependentUpon>DbModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="assets\fonts\ionicons.eot" />
+    <Content Include="assets\fonts\ionicons.ttf" />
+    <Content Include="assets\fonts\ionicons.woff" />
+    <Content Include="assets\fonts\PainterPERSONALUSEONLY.eot" />
+    <Content Include="assets\fonts\PainterPERSONALUSEONLY.ttf" />
+    <Content Include="assets\fonts\PainterPERSONALUSEONLY.woff" />
+    <Content Include="assets\fonts\PainterPERSONALUSEONLY.woff2" />
+    <Content Include="assets\fonts\themify.eot" />
+    <Content Include="assets\fonts\themify.ttf" />
+    <Content Include="assets\fonts\themify.woff" />
+    <Content Include="language\translations.json" />
+    <Content Include="assets\js\cookie\js.cookie.min.mjs" />
+    <Content Include="assets\js\cookie\js.cookie.mjs" />
+    <None Include="packages.config" />
+    <Content Include="Views\Pages\Home.cshtml" />
+    <Content Include="Views\Pages\Page.cshtml" />
+    <Content Include="Views\Shared\_QuickView.cshtml" />
+    <Content Include="Views\Pages\Shop.cshtml" />
+    <Content Include="Views\Shared\_BreadCrumb.cshtml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <Content Include="Views\Pages\Cart.cshtml" />
+    <Content Include="Views\Pages\Checkout.cshtml" />
+    <Content Include="Views\Pages\Wish.cshtml" />
+    <Content Include="Views\Customer\Login.cshtml" />
+    <Content Include="Views\Customer\Register.cshtml" />
+    <Content Include="Views\Customer\Forgot.cshtml" />
+    <Content Include="Views\Customer\Dashboard.cshtml" />
+    <Content Include="Views\Customer\Profile.cshtml" />
+    <Content Include="Views\Pages\Detail.cshtml" />
+    <Content Include="Views\Shared\_Shop.cshtml" />
+    <Content Include="Views\ContentPages\About.cshtml" />
+    <Content Include="Views\ContentPages\Contact.cshtml" />
+    <Content Include="Views\ContentPages\ThankYou.cshtml" />
+    <Content Include="Views\Shared\_ProductBox.cshtml" />
+    <Content Include="Views\ContentPages\Privacy.cshtml" />
+    <Content Include="Views\ContentPages\Term.cshtml" />
+    <Content Include="Views\Customer\OrderDetail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54871</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:54871/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

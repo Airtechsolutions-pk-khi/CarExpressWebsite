@@ -1,0 +1,32 @@
+﻿@using CarExpress.Models;
+<div class="breadcrumb-area hm-4-padding breadcrumb-top-margin" style="background: #f1f1f1;">
+    <div class="container-fluid">
+        <div class="breadcrumb-content text-center border-top-2 mb-20">
+            <h2>@ViewBag.PageTitle</h2>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                @if (ViewBag.BreadCrumbMenus != null)
+                {
+                    List<BreadCrumbMenu> BreadCrumbMenus = (List<BreadCrumbMenu>)ViewBag.BreadCrumbMenus;
+                    foreach (BreadCrumbMenu Menu in BreadCrumbMenus)
+                    {
+                        <li><a href="@Menu.AccessURL">@Menu.Name</a></li>
+                    }
+                }
+                <li>@ViewBag.PageTitle</li>
+            </ul>
+        </div>
+    </div>
+</div>
+@if (ViewBag.PageTitle == "About Us" || ViewBag.PageTitle == "Privacy Policy" || ViewBag.PageTitle == "Terms & Condition")
+{
+<div class="banner-area hm-4-padding " >
+    <div class="container-fluid">
+        <div class="banner-img">
+            <a href=""><img src="~/assets/images/bgimg.jpg" id="bc-img" alt=""></a>
+        </div>
+    </div>
+</div>
+}

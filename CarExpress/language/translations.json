@@ -1,0 +1,587 @@
+﻿{
+  "a0": {
+    "ar": "الصفحة الرئيسية",
+    "en": "Home"
+  },
+  "a1": {
+    "ar": "الدخول ‫/‬ تسجيل",
+    "en": "Login / Register"
+  },
+  "00a2": {
+    "ar": "تسجيل الدخول",
+    "en": "Login"
+  },
+  "00a3": {
+    "ar": "التسجيل",
+    "en": "Register"
+  },
+  "00a4": {
+    "ar": "المتابعة كزائر",
+    "en": "Continue as Guest"
+  },
+  "aa0": {
+    "ar": "عن فلاور لينك",
+    "en": "About Us"
+  },
+  "aa1": {
+    "ar": "عنا",
+    "en": "About"
+  },
+  "00aa2": {
+    "ar": "هلا بيكم في فلاور لينك",
+    "en": "Welcome To Flower Link"
+  },
+  "00aa3": {
+    "ar": "ابتدأنا مشوار فلاور لينك في البحرين من ٢٠١٣ مع فكرة توفير أفكار جديدة لتقديم الهدايا و تنسيق الورود و الخروج عن المألوف في عالم الهدايا، نوفر لكم كل جديد و جميل بفضل خبرة فريقنا المبدع في العمل و بخبرة وقيادة ادارة لها اكثر من ١٠ سنوات من الخبرة في هذا المجال",
+    "en": "Flower Link Bahrain, was established since 2013 with the main business core of Flower arrangements that offers an uncompromising haven of comfort providing multiple products and services. With high dedicated and passionate staff, of one of the most experience in the field of flowers and event management for more than 10 years of practice, giving a strong idea in making your events a memorable one."
+  },
+  "00aa4": {
+    "ar": "الاتصال بنا",
+    "en": "Contact Us"
+  },
+  "00aa5": {
+    "ar": "اشترك في البريد الالكتروني ",
+    "en": "Subscribe Our Newsletter"
+  },
+  "00cn0": {
+    "ar": "الاتصال بنا ",
+    "en": "Contact Us"
+  },
+  "00cn1": {
+    "ar": "الاتصال بنا",
+    "en": "Contact"
+  },
+  "00cn2": {
+    "ar": "اي استفسار",
+    "en": "ANY QUERY"
+  },
+  "00cn3": {
+    "ar": "ارسل بريد الكتروني",
+    "en": "Send Email"
+  },
+  "00cn4": {
+    "ar": "العنوان : ",
+    "en": "Address : "
+  },
+  "00cn5": {
+    "ar": "البريد الالكتروني : ",
+    "en": "Email : "
+  },
+  "00cn6": {
+    "ar": "الهاتف : ",
+    "en": "Telephone : "
+  },
+  "00cn7": {
+    "ar": "الموبايل : ",
+    "en": "Mobile : "
+  },
+  "00cn8": {
+    "ar": "فلاور لينك  مجمع الطويلة – الجفير البحرين ",
+    "en": "Flower Link, Al Taweela Complex, Building 20, Road 4101 Juffair, Kingdom of Bahrain"
+  },
+  "h0": {
+    "ar": "إختر باقتك و اضفها للسلة",
+    "en": "Choose your flower then click order in the website."
+  },
+  "h1": {
+    "ar": "إملأ معلومات طلبك و تأكد من صحتها",
+    "en": "Fill in your order data  form & make sure everything fits."
+  },
+  "00h2": {
+    "ar": "إدفع للطلب حسب مجموع الفاتورة",
+    "en": "Make payment according to the price listed on your order."
+  },
+  "00h3": {
+    "ar": "تم استلام طلبك و سيتم توصيله حسب الوقت المطلوب",
+    "en": "Your flowers is ready to process & delivery to your address."
+  },
+  "00h4": {
+    "ar": "الفرز حسب الكلمات",
+    "en": "FILTER BY TEXT"
+  },
+  "00h5": {
+    "ar": "التصنيف حسب السعر",
+    "en": "FILTER BY PRICE"
+  },
+  "00h6": {
+    "ar": "ابحث",
+    "en": "Search"
+  },
+  "00h7": {
+    "ar": "التصنيفات ",
+    "en": "CATEGORIES"
+  },
+  "00h8": {
+    "ar": "الالوان",
+    "en": "Color"
+  },
+  "00h9": {
+    "ar": "اشترك في البريد الالكتروني ",
+    "en": "Subscribe Our Newsletter"
+  },
+  "00h10": {
+    "ar": "مع فلاور لينك ،أرسل هدايا لمن تحب بأجمل اشكال التنسيق و الأفكار بأفضل الأسعار لتناسب مناسبتك و تسعد بها من تحب",
+    "en": "With FlowerLink, you can buy happy birthday flowers, thoughtful get well gifts, funeral and sympathy flower arrangements, and your everyday beautiful florals."
+  },
+  "00h11": {
+    "ar": "المنتجات المفضلة",
+    "en": "Featured Products"
+  },
+  "00h13": {
+    "ar": "جميع المنتجات",
+    "en": "All Products"
+  },
+  "00h12": {
+    "ar": "مشاهدة الكل",
+    "en": "View All"
+  },
+  "00ca0": {
+    "ar": "السلة",
+    "en": "Cart"
+  },
+  "00ca1": {
+    "ar": "الصور",
+    "en": "Images"
+  },
+  "00ca2": {
+    "ar": "المنتج",
+    "en": "Product"
+  },
+  "00ca3": {
+    "ar": "سعر الوحده",
+    "en": "Unit Price"
+  },
+  "00ca4": {
+    "ar": "الكمية",
+    "en": "Quantity"
+  },
+  "00ca5": {
+    "ar": "المجموع",
+    "en": "Total"
+  },
+  "00ca6": {
+    "ar": "حذف",
+    "en": "Remove"
+  },
+  "00ca7": {
+    "ar": "مواصلة التسوق",
+    "en": "Continue Shopping"
+  },
+  "00ca8": {
+    "ar": "المتابعة للدفع",
+    "en": "Proceed to checkout"
+  },
+  "00ch0": {
+    "ar": "الدفع",
+    "en": "Checkout"
+  },
+  "00ch1": {
+    "ar": "اصغط هنا لإضافه الكود",
+    "en": "Click here to enter your code"
+  },
+  "00ch2": {
+    "ar": "اضف كوبون",
+    "en": "Apply coupon"
+  },
+  "00ch3": {
+    "ar": "عنوان التوصيل",
+    "en": "Billing Details"
+  },
+  "00ch4": {
+    "ar": "مجموع المشتريات",
+    "en": "Cart Subtotal"
+  },
+  "00ch5": {
+    "ar": "سعر التوصيل",
+    "en": "Delivery Charges"
+  },
+  "00ch6": {
+    "ar": "تخفيض الكوبون",
+    "en": "Coupon Discount"
+  },
+  "00ch7": {
+    "ar": "مجموع الطلب",
+    "en": "Order Total"
+  },
+  "00ch8": {
+    "ar": "خيارات الدفع",
+    "en": "Payment Option"
+  },
+  "00ch9": {
+    "ar": "قيمة الضريبة",
+    "en": "Tax Amount"
+  },
+  "00ch10": {
+    "ar": "تفاصيل التسليم",
+    "en": "Delivery Details"
+  },
+  "00ch11": {
+    "ar": "طلبك",
+    "en": "Your Order"
+  },
+  "00ch12": {
+    "ar": "المنتج",
+    "en": "PRODUCT"
+  },
+  "00ch13": {
+    "ar": "مجموع",
+    "en": "TOTAL"
+  },
+  "00mo0": {
+    "ar": "طلبي",
+    "en": "My Orders"
+  },
+  "00mo1": {
+    "ar": "الطلبات",
+    "en": "Orders"
+  },
+  "00mo2": {
+    "ar": "جميع الطلبات",
+    "en": "-- All Orders --"
+  },
+  "00mo3": {
+    "ar": "الطلب‫#‬",
+    "en": "Order#"
+  },
+  "00mo4": {
+    "ar": "الاسم",
+    "en": "Name"
+  },
+  "00mo5": {
+    "ar": "المجموع",
+    "en": "Total"
+  },
+  "00mo6": {
+    "ar": "التاريخ",
+    "en": "Date"
+  },
+  "00mo7": {
+    "ar": "حالة الطلب",
+    "en": "Status"
+  },
+  "00oc0": {
+    "ar": "الغاء الطلب",
+    "en": "Order Cancel"
+  },
+  "00oc1": {
+    "ar": "لم تتم عملية الدفع بنجاح",
+    "en": "Your Payment through card not successfully done."
+  },
+  "00oc2": {
+    "ar": "جرب مرة ثانية",
+    "en": "Try Again"
+  },
+  "00oc3": {
+    "ar": "شكرا ",
+    "en": "THANK YOU"
+  },
+  "00oc4": {
+    "ar": "رقم الطلب",
+    "en": "Order Number"
+  },
+  "00oc5": {
+    "ar": "تم استلام طلبك بنجاح",
+    "en": "Your Order was completed successfully."
+  },
+  "00oc6": {
+    "ar": "الرجوع الى التسوق",
+    "en": "Back to shop"
+  },
+  "00od0": {
+    "ar": "مجموع الطلب",
+    "en": "Order Details"
+  },
+  "00od1": {
+    "ar": "التفاصيل",
+    "en": "Details"
+  },
+  "00od2": {
+    "ar": "تفاصيل الطلب",
+    "en": "-- Order Details --"
+  },
+  "00od3": {
+    "ar": "تفاصيل الطلب",
+    "en": "Order Information"
+  },
+  "00od4": {
+    "ar": "تفاصيل العميل",
+    "en": "Customer Information"
+  },
+  "00od5": {
+    "ar": "معلومات الطلب",
+    "en": "Order Details."
+  },
+  "00od6": {
+    "ar": "تفاصيل التوصيل",
+    "en": "Billing Information"
+  },
+  "00od7": {
+    "ar": "الرجوع للطلبات",
+    "en": "Back to Orders"
+  },
+  "00pd0": {
+    "ar": "منتج وحيد",
+    "en": "Single Product"
+  },
+  "00pd1": {
+    "ar": "الكميه",
+    "en": "Quantity :"
+  },
+  "00pd2": {
+    "ar": "الوصف",
+    "en": "Description"
+  },
+  "00pd3": {
+    "ar": "اضف هدية",
+    "en": "ADD GIFT"
+  },
+  "00w0": {
+    "ar": "قائمة التنمي",
+    "en": "Wishlist"
+  },
+  "00w1": {
+    "ar": "الصور",
+    "en": "Images"
+  },
+  "00w2": {
+    "ar": "المنتح",
+    "en": "Product"
+  },
+  "00w3": {
+    "ar": "سعر الوحدة",
+    "en": "Unit Price"
+  },
+  "00w4": {
+    "ar": "حالة الكمية",
+    "en": "Stock Status"
+  },
+  "00w5": {
+    "ar": "اضف للسلة",
+    "en": "Add to cart."
+  },
+  "00w6": {
+    "ar": "حذف",
+    "en": "Remove"
+  },
+  "00l0": {
+    "ar": "توصيل مجاني لجميع المناطق",
+    "en": "FREE Delivery nationwide"
+  },
+  "00l1": {
+    "ar": "مع فلاور لينك ،أرسل هدايا لمن تحب بأجمل اشكال التنسيق و الأفكار بأفضل الأسعار لتناسب مناسبتك و تسعد بها من تحب",
+    "en": "Most experience in the field of flowers and event management for more than 10 years of practice, giving a strong idea in making your events a memorable one."
+  },
+  "00l2": {
+    "ar": " فلاور لينك مجمع الطويلة – الجفير البحرين",
+    "en": "Flower Link, Al Taweela Complex, Building 20, Road 4101 Juffair, Kingdom of Bahrain"
+  },
+  "00l4": {
+    "ar": "تسجيل الدخول",
+    "en": "Login"
+  },
+  "00l5": {
+    "ar": "تسجيل خروج",
+    "en": "Logout"
+  },
+  "00s0": {
+    "ar": "وصلتك للمناسبة السعيدة",
+    "en": "Online Flower Shop"
+  },
+  "00s1": {
+    "ar": "المتجر",
+    "en": "Shop"
+  },
+  "00s3": {
+    "ar": "الاسم من أ ‫-‬ ي",
+    "en": "Name(A - Z)"
+  },
+  "00s4": {
+    "ar": "الاسم من أ - ي",
+    "en": "Name(Z - A)"
+  },
+  "00s5": {
+    "ar": "السعر ‫(‬ الاقل ‫>‬ الاكثر‫)‬",
+    "en": "Price(Low > High)"
+  },
+  "00s6": {
+    "ar": "السعر ‫(الاكثر >‬ الاقل ‫)",
+    "en": "Price(High > Low)"
+  },
+  "00s7": {
+    "ar": "وصلة سريعة",
+    "en": "QUICK LINK"
+  },
+  "00s8": {
+    "ar": "الاتصال سريعا",
+    "en": "QUICK CONTACT"
+  },
+  "00s9": {
+    "ar": "قائمة طعام",
+    "en": "Menu"
+  },
+  "00s10": {
+    "ar": "آخر",
+    "en": "Other"
+  },
+  "0002": {
+    "ar": "English",
+    "en": "عربى"
+  },
+  "000a3": {
+    "ar": "تسوق الآن,",
+    "en": "SHOP NOW"
+  },
+  "000a4": {
+    "ar": "منقي",
+    "en": "Filter"
+  },
+  "000aa5": {
+    "ar": "عرض عربة التسوق",
+    "en": "VIEW CART"
+  },
+  "000aa6": {
+    "ar": "الدفع",
+    "en": "CHECKOUT"
+  },
+  "000aa7": {
+    "ar": "افضل المنتجات",
+    "en": "BEST PRODUCTS"
+  },
+  "000aa8": {
+    "ar": "السعر: ",
+    "en": "Price: "
+  },
+  "000co1": {
+    "ar": "اسم المرسل ",
+    "en": "Sender Name * "
+  },
+  "000co2": {
+    "ar": "البريد الإلكتروني المرسل ",
+    "en": "Sender Email * "
+  },
+  "000co3": {
+    "ar": "جهة اتصال المرسل ",
+    "en": "Sender Contact * "
+  },
+  "000co4": {
+    "ar": "اسم المستلم ",
+    "en": "Recipient Name * "
+  },
+  "000co5": {
+    "ar": "جهة اتصال المستلم ",
+    "en": "Recipient Contact * "
+  },
+  "000co6": {
+    "ar": "تاريخ التسليم او الوصول ",
+    "en": "Delivery Date * "
+  },
+  "000co7": {
+    "ar": "موعد التسليم ",
+    "en": "Delivery Time * "
+  },
+  "000co8": {
+    "ar": "بلد ",
+    "en": "Country * "
+  },
+  "000co9": {
+    "ar": "مدينة ",
+    "en": "City  * "
+  },
+  "000co10": {
+    "ar": "عنوان المستلم ",
+    "en": "Recipient Address * "
+  },
+  "000co11": {
+    "ar": "نوع المكان ",
+    "en": "Place Type * "
+  },
+  "000co12": {
+    "ar": "أقرب مكان ",
+    "en": "Nearest Place * "
+  },
+  "000co13": {
+    "ar": "رسالة للحصول على بطاقة هدية ",
+    "en": "Message for Gift Card * "
+  },
+  "000co14": {
+    "ar": "تأكيد الطلب",
+    "en": "PLACE ORDER"
+  },
+  "000co15": {
+    "ar": "الدفع عند الاستلام ",
+    "en": "CASH ON DELIVERY"
+  },
+  "000co16": {
+    "ar": "الدفع ببطاقة الإئتمان",
+    "en": "Credimax"
+  },
+  "000co17": {
+    "ar": "هل لديك قسيمة ?",
+    "en": "Have A Coupon?"
+  },
+  "000co18": {
+    "ar": "الإشتراك",
+    "en": "Subscribe"
+  },
+  "000co19": {
+    "ar": "هاتف",
+    "en": "Phone"
+  },
+  "000co20": {
+    "ar": "البريد الإلكتروني",
+    "en": "Email"
+  },
+  "000co21": {
+    "ar": "عنوان",
+    "en": "Address"
+  },
+  "000co22": {
+    "ar": "٩٧٣ ٣٣٤٤١٤٨٠+",
+    "en": "+973 33441480"
+  },
+  "000co23": {
+    "ar": "المجموع الفرعي",
+    "en": "Sub-Total :"
+  },
+  "000co24": {
+    "ar": "مجموع",
+    "en": "Total :"
+  },
+  "000co25": {
+    "ar": "ساعات العمل",
+    "en": "Working hours"
+  },
+  "000co26": {
+    "ar": "الاثنين - الأحد: 10:00 صباحا - 02:00 مساءا",
+    "en": "Monday – Sunday: 10:00 AM – 02:00 PM"
+  },
+  "000co27": {
+    "ar": "الجمعة: مغلق",
+    "en": "Friday : Closed"
+  },
+  "000co28": {
+    "ar": "هاتف :",
+    "en": "Telephone :"
+  },
+  "000co29": {
+    "ar": "التليفون المحمول :",
+    "en": "Mobile :"
+  },
+  "000co30": {
+    "ar": "إرسال",
+    "en": "Submit"
+  },
+  "000co31": {
+    "ar": "04:00 م - 09:00 م",
+    "en": "04:00 PM – 09:00 PM"
+  },
+  "000co32": {
+    "ar": "إجماليات سلة التسوق",
+    "en": "Cart Totals"
+  },
+  "000co33": {
+    "ar": "سياسات",
+    "en": "Policy"
+  }
+}
+

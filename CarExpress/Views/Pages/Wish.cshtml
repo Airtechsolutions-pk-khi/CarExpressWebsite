@@ -1,0 +1,59 @@
+﻿@using CarExpress.Helpers;
+@using CarExpress.Models;
+@{Html.RenderPartial("_BreadCrumb");}
+<div class="product-cart-area hm-3-padding pt-120 pb-130">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                @if (ViewBag.CustomerRecord == null)
+                {
+                    <h5 class="text-danger text-center"><i class="ti-alert"></i> Please <a href="/@ApplicationHelper.PageLogin">login</a> to view wishlist</h5>
+                }
+                else
+                {
+                    <div class="table-content table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="product-name">image</th>
+                                    <th class="product-price">products name</th>
+                                    <th class="product-name">price</th>
+                                    <th class="product-subtotal">delete</th>
+                                </tr>
+                            </thead>
+                            <tbody id="wish_list_table_body">
+                                @if(ViewBag.WishListRecords != null)
+                                {
+                                    foreach(CustomerWishList Record in ViewBag.WishListRecords)
+                                    {
+                                        <tr class="wish-list-row">
+                                            <td class="product-thumbnail">
+                                                <a href="/@ApplicationHelper.PageProductDetail?item=@Record.ItemID">
+                                                    <img style="width:110px;" src="@ApplicationHelper.ParseString(ViewData["WebsiteImageURL"])@Record.Item.Image" />
+                                                </a>
+                                            </td>
+                                            <td class="product-name">
+                                                <a href="/@ApplicationHelper.PageProductDetail?item=@Record.ItemID">@Record.Item.Name</a>
+                                            </td>
+                                            <td class="product-price">
+                                                <span class="amount">@ApplicationHelper.ParseString(ViewData["CurrencySymbol"]) @Record.Item.Price.Value.ToString("0.00")</span>
+                                            </td>
+                                            <td class="product-cart-icon product-subtotal">
+                                                <a href="#" class="remove-wish-list-item" data-id="@Record.ID"><i class="ion-ios-trash-outline" aria-hidden="true"></i></a>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                                else
+                                {
+                                    <tr class="text-danger text-center"><td colspan="4">No Items in wishlist</td></tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>

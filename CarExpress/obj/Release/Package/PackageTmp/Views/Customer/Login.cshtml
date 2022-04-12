@@ -1,0 +1,53 @@
+﻿@model PremiumPosWebsite.Models.LoginModel
+@using PremiumPosWebsite.Helpers;
+@using PremiumPosWebsite.Models;
+@section InLineScriptSection{
+    @if (!string.IsNullOrWhiteSpace(Model.EmailAddress))
+    {
+        <script type="text/javascript">
+            $("#RememberMe").prop("checked", true);
+        </script>
+    }
+}
+@{Html.RenderPartial("_BreadCrumb");}
+<div class="login-register-area ptb-30 hm-3-padding">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-7 ml-auto mr-auto">
+                <div class="login-register-wrapper">
+                    <div class="login-register-tab-list nav">
+                        <a class="active" href="#">
+                            <h4> login </h4>
+                        </a>
+                        <a href="/@ApplicationHelper.PageRegister">
+                            <h4> register </h4>
+                        </a>
+                    </div>
+                    <div class="login-form-container">
+                        <div class="login-form">
+                            @using (Ajax.BeginForm(ApplicationHelper.PageLogin, "Ajax", null, new AjaxOptions { HttpMethod = "POST", OnBegin = "OnFormBegin", OnComplete = "OnFormComplete", OnSuccess = "OnFormSuccess", OnFailure = "OnFormFailure" }, new { @id = "FormLogin", @autocomplete = "off" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                <input type="hidden" name="LoginType" value="@ViewBag.LoginType" />
+                                @Html.TextBoxFor(m => m.EmailAddress, null, new { @placeholder = "Email Address *", @tabindex = "1" })
+                                @Html.ValidationMessageFor(m => m.EmailAddress, "", new { @class = "text-danger" })
+                                @Html.PasswordFor(m => m.Password, new { @Value = Model.Password, @class = "form-control", @placeholder = "Password *", @tabindex = "2" })
+                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                <div class="button-box">
+                                    <div class="login-toggle-btn">
+                                        <input id="RememberMe" name="RememberMe" type="checkbox" tabindex="3">
+                                        <label for="RememberMe">Remember me</label>
+                                        <a href="/@ApplicationHelper.PageForgot">Forgot Password?</a>
+                                    </div>
+                                    <button type="submit" class="btn-style msg-area cr-btn bg-cart button-submit" data-text="<span>Login</span>" tabindex="4"><span>Login</span></button>
+                                    <a href="/@ApplicationHelper.PageCheckout?type=guest" class="btn-style cr-btn float-right" tabindex="4"><span>Continue As Guest</span></a>
+                                </div>
+                            }
+                        </div>
+                        <p class="msg-area"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

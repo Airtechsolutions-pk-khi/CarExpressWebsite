@@ -1,0 +1,158 @@
+﻿@using CarExpress.Helpers;
+@using CarExpress.Models;
+@{Html.RenderPartial("_BreadCrumb");}
+<style>
+    .banner-area {
+        display: none
+    }
+    .modal-dialog {
+        margin: 50px auto;
+    }
+</style>
+<div class="shop-wrapper hm-3-padding pb-100">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="shop-topbar-wrapper">
+                    <div class="grid-list-options">
+                        <ul class="view-mode">
+                            <li class="active"><a href="#product-grid" data-view="product-grid"><i class="ion-grid"></i></a></li>
+                            <li><a href="#product-list" data-view="product-list"><i class="ion-navicon"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="product-short">
+                        <select class="SelectSort nice-select" id="sort_by" name="sortby">
+                            <option value="name|asc">Name(A - Z)</option>
+                            <option value="name|desc">Name(Z - A)</option>
+                            <option value="price|asc">Price(Low > High)</option>
+                            <option value="price|desc">Price(High > Low)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="product-filter-wrapper">
+                    <div class="product-filter mb-30">
+                        <h5>Filter By Text</h5>
+                        <input type="text" id="search_text" class="form-control" autocomplete="off" value="@ViewBag.SearchText" placeholder="Search" aria-label="Search" />
+                        <a href="/@ApplicationHelper.PageShopListing" id="btn_clear_filter" class="btn-style mt-10">Filter</a>
+                    </div>
+                    @*<div class="product-filter mb-30">
+                        <h5>Sort by</h5>
+                        <ul class="sort-by">
+                            <li><a href="#" class="sort-by-button active" data-name="default" data-dir="asc">Default</a></li>
+                            <li><a href="#" class="sort-by-button" data-name="name" data-dir="asc">Name (A-Z)</a></li>
+                            <li><a href="#" class="sort-by-button" data-name="name" data-dir="desc">Name (Z-A)</a></li>
+                            <li><a href="#" class="sort-by-button" data-name="price" data-dir="asc">Price: Low to High</a></li>
+                            <li><a href="#" class="sort-by-button" data-name="price" data-dir="desc">Price: High to Low</a></li>
+                        </ul>
+                    </div>*@
+                    @if (ViewBag.CategoryRecords != null)
+                    {
+                        <div class="product-filter mb-30">
+                            <h5>category</h5>
+                            <div class="mb-2">
+                                @foreach (ShopCategoryModel Rec in ViewBag.CategoryRecords)
+                                {
+                                    string category_selection = "";
+                                    if (ViewBag.MainCategoryID != null)
+                                    {
+                                        if (ViewBag.MainCategoryID == Rec.ID)
+                                        {
+                                            category_selection = " checked='checked'";
+                                        }
+                                    }
+                                    <input type="checkbox" class="shop-category" value="@Rec.ID" @category_selection /> @Rec.Name <br />
+                                }
+                            </div>
+                        </div>
+                    }
+                    <div class="product-filter mb-30">
+                        <h5>Filter by price</h5>
+                        <div id="price-range" data-max="@ViewBag.MaxPrice"></div>
+                        <div class="price-values">
+                            <span>Price:</span>
+                            <input type="text" class="price-amount">
+                        </div>
+                    </div>
+                    @if (ViewBag.BestProductRecords != null)
+                    {
+                        <div class="product-filter mb-30 mt-130">
+                            <h5>Best Products</h5>
+                            <div class="cart-content">
+                                <ul>
+                                    @foreach (ProductModel Rec in ViewBag.BestProductRecords)
+                                    {
+                                        <li class="single-product-cart">
+                                            <div class="cart-img">
+                                                <a href="/@ApplicationHelper.PageProductDetail?item=@Rec.ID">
+                                                    <img class="lazy" data-src="@ViewBag.WebsiteImageURL@Rec.Image" style="width:100px;height:100px;">
+                                                </a>
+                                            </div>
+                                            <div class="cart-title">
+                                                <h3>
+                                                    <a href="/@ApplicationHelper.PageProductDetail?item=@Rec.ID"> @Rec.Name</a>
+                                                </h3>
+                                                <div class="product-rating">
+                                                    @{
+                                                        int Rating = ApplicationHelper.ParseInt(Rec.StarRating);
+                                                        for (int i = 1; i < 6; i++)
+                                                        {
+                                                            if (Rating >= i)
+                                                            {
+                                                                <i class="ion-ios-star"></i>
+                                                            }
+                                                            else
+                                                            {
+                                                                <i class="ion-ios-star-outline"></i>
+                                                            }
+                                                        }
+                                                    }
+                                                </div>
+                                                @*@if (Rec.OriginalPrice.HasValue)
+                                                {
+                                                    <span class="old">@ViewBag.CurrencySymbol @Rec.OriginalPrice.Value.ToString("0.00")</span>
+                                                }*@
+                                                <span>@ViewBag.CurrencySymbol @Rec.Price.Value.ToString("0.00")</span>
+                                            </div>
+                                        </li>
+                                    }
+                                </ul>
+
+                            </div>
+                        </div>
+                    }
+                    <br clear="all" />
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="grid-list-product-wrapper pro1">
+                    <div class="product-grid product-view" id="shop_area" data-href="@ViewBag.WebsiteURL/@ApplicationHelper.PageShopListing">
+                        <div class="row">
+                            @if (ViewBag.ShopContent != null)
+                            {
+                @Html.Raw(ViewBag.ShopContent) }
+                            else
+                            {
+                <div class="col-md-12">
+                    <div class="alert alert-danger">No Data</div>
+                </div>}
+                        </div>
+                    </div>
+                    @if (ViewBag.IsLoadMore != null)
+                    {
+            <div class="row load-more">
+                <div class="col-md-12 text-center">
+                    <a href="#" data-page-number="2" class="btn-style mt-10 btn-load-more">Load More</a>
+                </div>
+            </div>}
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+

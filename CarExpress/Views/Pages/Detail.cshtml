@@ -1,0 +1,272 @@
+﻿@using CarExpress.Helpers;
+@using CarExpress.Models;
+@model CarExpress.Models.ProductReviewModel
+@{
+    Html.RenderPartial("_BreadCrumb");
+    ProductModel Record = (ProductModel)ViewBag.ProductRecord;
+}
+<style>
+    .banner-area {
+        display: none
+    }
+    .modal-body {
+        display: flex;
+        justify-content: space-between;
+        padding: 40px 30px 0px;
+    }
+</style>
+<div class="product-details-area hm-3-padding ptb-60 ">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="product-details-img-content">
+                    <div class="product-details-tab">
+                        <div class="product-details-large tab-content">
+                            <div class="tab-pane active  text-center" id="img_first">
+                                <div class="">
+                                    <a href="#">
+                                        <img class="img-fluid" src="@ViewBag.WebsiteImageURL@Record.Image" style="width:auto;max-height: 500px" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            @if (Record.ItemImages.Count > 0)
+                            {
+                                foreach (ProductImageModel Rec in Record.ItemImages)
+                                {
+                                    <div class="tab-pane text-center" id="img_@Rec.ID">
+                                        <div class="">
+                                            <a href="#">
+                                                <img class="img-fluid" src="@ViewBag.WebsiteImageURL@Rec.Image" style="width:auto;max-height: 500px" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                }
+
+                            }
+                        </div>
+                        <div class="product-details-small nav mt-12 product-dec-slider owl-carousel">
+                            <a class="active" href="#img_first">
+                                <img class="img-fluid" src="@ViewBag.WebsiteImageURL@Record.Image" style="width:auto;max-height: 120px;margin:auto;" alt="">
+                            </a>
+                            @if (Record.ItemImages.Count > 0)
+                            {
+                                foreach (ProductImageModel Rec in Record.ItemImages)
+                                {
+                                    <a href="#img_@Rec.ID">
+                                        <img class="img-fluid" src="@ViewBag.WebsiteImageURL@Rec.Image" style="width:auto;max-height: 120px;margin:auto;" alt="">
+                                    </a>
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="product-details-content">
+                    <h2>@Record.Name</h2>
+                    <div class="product-rating">
+                        @{
+                            int Rating = ApplicationHelper.ParseInt(Record.StarRating);
+                            for (int i = 1; i < 6; i++)
+                            {
+                                if (Rating >= i)
+                                {
+                                    <i class="ion-ios-star"></i>
+                                }
+                                else
+                                {
+                                    <i class="ion-ios-star-outline"></i>
+                                }
+                            }
+                        }
+                    </div>
+                    <div class="product-price">
+                        @*@if (Record.OriginalPrice.HasValue)
+                        {
+                            <span class="old">@ViewBag.CurrencySymbol @Record.OriginalPrice.Value.ToString("0.00")</span>
+                        }*@
+                        <span>@ViewBag.CurrencySymbol @Record.Price.Value.ToString("0.00") </span>
+                    </div>
+                    <div class="product-overview">
+                        <h5 class="pd-sub-title text-theme">Product Overview</h5>
+                        @if (Record.Description == null || Record.Description == "")
+                        {<p>
+                                No Description added.
+                            </p>
+                        }
+                        else
+                        {
+                            @*<p>@Record.Description</p>*@
+                            @Html.Raw(Record.Description) 
+                        }
+
+                    </div>
+                    <div class="quickview-plus-minus">
+                        <div class="cart-plus-minus">
+                            <input type="text" value="1" id="cart_quantity" class="cart-plus-minus-box">
+                        </div>
+                        <div class="quickview-btn-cart">
+                            <a class="btn-style cr-btn buy-now add-to-cart" title="Add To Cart" data-id="@Record.ID" data-title="@Record.Name" data-image-src="@Record.Image" data-image-url="@ViewBag.WebsiteImageURL" data-price="@Record.Price" data-url="/@ApplicationHelper.PageProductDetail?item=@Record.ID" href="#"><span>buy now</span></a>
+                        </div>
+                        <div class="quickview-btn-wishlist">
+                            <a class="btn-hover cr-btn add-to-wish-list" title="Wishlist" data-id="@Record.ID" data-title="@Record.Name" data-image-src="@Record.Image" data-image-url="@ViewBag.WebsiteImageURL" data-price="@Record.Price" data-url="/@ApplicationHelper.PageProductDetail?item=@Record.ID" href="#"><span><i class="ion-ios-heart-outline"></i></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-30">
+            <div class="col-lg-12">
+                <h3 class="text-center ">Our Customer Reviews</h3>
+                <!-- blog-details-wrapper -->
+                <div class="col-lg-12 review_address_inner">
+                    @if (Record.Reviews.Count > 0)
+                    {
+                        foreach (ProductReviewModel ReviewRecord in Record.Reviews)
+                        {
+                            <div class="pro_review">
+                                <div class="review_thumb">
+                                    <img alt="review images" src="~/assets/images/usericon.jpg" style="width:80px" />
+                                </div>
+                                <div class="review_details">
+                                    <div class="review_infowdq">
+                                        <h5>@ReviewRecord.Name</h5>
+                                    </div>
+                                    <div class="review_date">
+                                        <span>@ReviewRecord.Email</span>
+                                    </div>
+                                    <div class="product-rating">
+                                        @{
+                                            int Rating1 = ApplicationHelper.ParseInt(ReviewRecord.Star);
+                                            for (int i = 1; i < 6; i++)
+                                            {
+                                                if (Rating1 >= i)
+                                                {
+                                                    <i class="ion-ios-star"></i>
+                                                }
+                                                else
+                                                {
+                                                    <i class="ion-ios-star-outline"></i>
+                                                }
+                                            }
+                                        }
+                                    </div>
+                                    <p>@ReviewRecord.Description</p>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <h5>No Reviews</h5>
+                    }
+                </div>
+                <div class="col-lg-6 offset-3">
+                    <div class="contact-message-wrapper" style="padding: 30px 20px; border: 2px solid #888; border-radius: 15px; box-shadow: 0px 0px 10px 0px #f1efef;">
+                        <h4 class="contact-title">Leave a Reply</h4>
+                        <div class="contact-message">
+                            @using (Ajax.BeginForm(ApplicationHelper.PageReview, "Ajax", null, new AjaxOptions { HttpMethod = "POST", OnBegin = "OnFormBegin", OnComplete = "OnFormComplete", OnSuccess = "OnFormSuccess", OnFailure = "OnFormFailure" }, new { @id = "FormReview", @autocomplete = "off" }))
+                            {
+                                @Html.HiddenFor(m => m.ItemID)
+                                @Html.HiddenFor(m => m.Star)
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="contact-form-style mb-20">
+                                            @Html.TextBoxFor(m => m.Name, null, new { @placeholder = "Name *", @tabindex = "1" })
+                                            @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-lg-12 d-flex">
+                                        <h5 class="pr-4" style="align-self: center;">Rate us now  </h5>
+                                        <fieldset class="rating text-center">
+                                            <input type="radio" id="star5" checked="checked" name="rating" class="rating-selection" value="5"><label class="full" for="star5" title="Awesome - 5 stars"></label>
+                                            <input type="radio" id="star4" name="rating" class="rating-selection" value="4"><label class="full" for="star4" title="Pretty good - 4 stars"></label>
+                                            <input type="radio" id="star3" name="rating" class="rating-selection" value="3"><label class="full" for="star3" title="Meh - 3 stars"></label>
+                                            <input type="radio" id="star2" name="rating" class="rating-selection" value="2"><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+                                            <input type="radio" id="star1" checked="checked" name="rating" class="rating-selection" value="1"><label class="full" for="star1" title="Sucks big time - 1 star"></label>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="contact-form-style">
+                                            @Html.TextAreaFor(m => m.Description, new { @placeholder = "Comment *", @tabindex = "5" })
+                                            @Html.ValidationMessageFor(m => m.Description, "", new { @class = "text-danger" })
+                                            <br clear="all" />
+                                            <button class="submit cr-btn btn-style" type="submit" id="btn_review_submit"><span>Submit</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            <p class="msg-area"></p>
+                        </div>
+                    </div>
+                </div>
+                <!--// blog-details-wrapper -->
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="giftModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span class="ion-android-close" aria-hidden="true"></span>
+    </button>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 style="font-size:22px;margin-bottom:-7px;">Add Gift to Item</h2> 
+            </div>
+            <div class="modal-body" style="overflow-x:auto;">
+                <div class="container">
+                    <div class="row">
+                        @*<div class="col-md-12">
+                            <h1>Add Gift</h1>
+                        </div>*@
+                        @if (ViewBag.GiftRecords != null)
+                        {
+                            foreach (GiftModel Rec in ViewBag.GiftRecords)
+                            {
+                                string imgURL = "http://retailuat.premium-pos.com/assets/images/Upload//Item/637520054994353761.jpg";
+                                if (!string.IsNullOrWhiteSpace(Rec.Image))
+                                {
+                                    imgURL = ViewBag.WebsiteImageURL + Rec.Image;
+                                }
+                                <div class="col-md-4 col-sm-8">
+                                    <div class="product-wrapper mb-45">
+                                        <div class="product-img img-fluid">
+                                            <a href="#">
+                                                <img src="@imgURL" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="product-content text-center">
+                                            <h4><a href="#">@Rec.Name</a></h4>
+                                            <div class="product-rating">
+                                                <input type="checkbox" class="gift-checkbox" data-id="@Rec.ID" data-title="@Rec.Name" data-image-src="@imgURL" data-price="@Rec.Price" style="height:15px;" />
+                                            </div>
+                                            <div class="product-price">
+                                                <span>@ViewBag.CurrencySymbol @Rec.Price</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <div class="col-md-12">
+                                <div class="alert-danger">No Data</div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer ">
+                <input id="item_hidden_id" value="@Record.ID" type="hidden" />
+                <div class="quickview-btn-cart">
+                    <a href="#" class="btn-style cr-btnl" data-dismiss="modal">cancel</a>
+                    <a class="btn-style cr-btn add-to-gift" title="Add To Cart" href="#"><span>add to cart</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,183 @@
+﻿@using CarExpress.Helpers;
+@using CarExpress.Models;
+@{Html.RenderPartial("_BreadCrumb");}
+@{
+    Order Record = (Order)ViewBag.OrderRecord;
+    string delivery_status = "";
+    if (Record.DeliveryStatus == 100)
+    {
+        delivery_status = "Done";
+    }
+    else if (Record.DeliveryStatus == 101)
+    {
+        delivery_status = "InProgress";
+    }
+    else if (Record.DeliveryStatus == 102)
+    {
+        delivery_status = "Shipping";
+    }
+    else if (Record.DeliveryStatus == 103)
+    {
+        delivery_status = "Cancel";
+    }
+    int orderItemCount = Record.OrderDetails.Count();
+    CustomerOrder CustomerOrderRecord = Record.CustomerOrders.FirstOrDefault();
+    OrderCheckout OrderCheckoutRecord = Record.OrderCheckouts.FirstOrDefault();
+    string payment_mode = "Cash";
+    if (OrderCheckoutRecord.PaymentMode == 2)
+    {
+        payment_mode = "Credit/Debit";
+    }
+    string coupon_detail = "Not Applied";
+    if(OrderCheckoutRecord.AmountDiscount > 0)
+    {
+        coupon_detail = "Applied";
+    }
+}
+<div class="product-cart-area hm-3-padding pt-120 pb-130">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 my-3 ">
+                <div class="card">
+                    <div class="card-header font-weight-bold">Order Information</div>
+                    <div class="card-body">
+                        <ul class="list-group scroll-order">
+                            <li class="align-items-center d-flex flex-column flex-md-row justify-content-between list-group-item">
+                                Order No
+                                <span class="font-weight-bold">@Record.OrderNo</span>
+                            </li>
+                            <li class="align-items-center d-flex flex-column flex-md-row justify-content-between list-group-item">
+                                Order Date
+                                <span class="font-weight-bold">@Record.CreatedOn.Value.ToString("dd, MMM, yyyy")</span>
+                            </li>
+                            <li class="align-items-center d-flex flex-column flex-md-row justify-content-between list-group-item">
+                                Total Items
+                                <span class="font-weight-bold">@orderItemCount</span>
+                            </li>
+                            <li class="align-items-center d-flex flex-column flex-md-row justify-content-between list-group-item">
+                                Status
+                                <span class="font-weight-bold text-success">@delivery_status</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 my-3">
+                <div class="card">
+                    <div class="card-header font-weight-bold">Delivery Information</div>
+                    <div class="card-body">
+                        <ul class="list-group scroll-order">
+                            <li class="align-items-center d-flex flex-column flex-md-row justify-content-between list-group-item">
+                                Sender Name
+                                <span class="font-weight-bold">@CustomerOrderRecord.SenderName</span>
+                            </li>
+                            <li class="align-items-center d-flex flex-column flex-md-row justify-content-between list-group-item">
+                                Sender Email
+                                <span class="font-weight-bold">@CustomerOrderRecord.SenderEmail</span>
+                            </li>
+                            <li class="align-items-center d-flex flex-column flex-md-row justify-content-between list-group-item">
+                                Sender Contact
+                                <span class="font-weight-bold">@CustomerOrderRecord.SenderContact</span>
+                            </li>
+                            <li class="align-items-center d-flex flex-column flex-md-row justify-content-between list-group-item">
+                                Recipient Name
+                                <span class="font-weight-bold">@CustomerOrderRecord.CustomerName</span>
+                            </li>
+                            <li class="align-items-center d-flex flex-column flex-md-row justify-content-between list-group-item">
+                                Recipient Contact No
+                                <span class="font-weight-bold">@CustomerOrderRecord.ContactNo</span>
+                            </li>
+                            <li class="align-items-center d-flex flex-column flex-md-row justify-content-between list-group-item">
+                                Recipient Address
+                                <span class="font-weight-bold">@CustomerOrderRecord.Address</span>
+                            </li>
+                            <li class="align-items-center d-flex flex-column flex-md-row justify-content-between list-group-item">
+                                Nearest Place
+                                <span class="font-weight-bold">@CustomerOrderRecord.NearestPlace</span>
+                            </li>
+                            <li class="align-items-center d-flex flex-column flex-md-row justify-content-between list-group-item">
+                                Country
+                                <span class="font-weight-bold">@CustomerOrderRecord.Country</span>
+                            </li>
+                            <li class="align-items-center d-flex flex-column flex-md-row justify-content-between list-group-item">
+                                City
+                                <span class="font-weight-bold">@CustomerOrderRecord.City</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 my-3">
+                <div class="card">
+                    <div class="card-header font-weight-bold">Order Details</div>
+                    <div class="card-body">
+                        <ul class="list-group scroll-order">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="font-weight-bold">Item</span>
+                                <span class="font-weight-bold">Item Desc</span>
+                                <span class="font-weight-bold">Price</span>
+                            </li>
+                            @foreach (OrderDetail detailRecord in Record.OrderDetails)
+                            {
+                                <li class="list-group-item d-flex justify-content-between align-items-center ">
+                                    <span class="">
+                                        <img class="order-detail-img lazy" data-src="@ViewBag.WebsiteImageURL@detailRecord.Item.Image" alt="" style="width:100px">
+
+                                    </span>
+                                    <span class=" font-weight-bold mobile-text px-2  text-center">@detailRecord.Item.Name x @detailRecord.Quantity</span>
+                                    <span class=" font-weight-bold mobile-text px-2 ">@ViewBag.CurrencySymbol @detailRecord.Price.Value.ToString("0.00")</span>
+                                </li>
+                            }
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 my-3">
+                <div class="card">
+                    <div class="card-header font-weight-bold">Billing Information</div>
+                    <div class="card-body">
+                        <ul class="list-group scroll-order">
+                            <li class="align-items-center d-flex flex-column flex-md-row justify-content-between list-group-item">
+                                Payment Method
+                                <span class="font-weight-bold">@payment_mode</span>
+
+                            </li>
+                            <li class="align-items-center d-flex flex-column flex-md-row justify-content-between list-group-item">
+                                Coupon
+                                <span class="font-weight-bold text-danger">@coupon_detail</span>
+
+                            </li>
+                            <li class="align-items-center d-flex flex-column flex-md-row justify-content-between list-group-item">
+                                Total Amount
+                                <span class="font-weight-bold">@ViewBag.CurrencySymbol @OrderCheckoutRecord.AmountTotal.Value.ToString("0.00")</span>
+                            </li>
+                            <li class="align-items-center d-flex flex-column flex-md-row justify-content-between list-group-item">
+                                Delivery Amount
+                                <span class="font-weight-bold">@ViewBag.CurrencySymbol @OrderCheckoutRecord.ServiceCharges.Value.ToString("0.00")</span>
+                            </li>
+                            <li class="align-items-center d-flex flex-column flex-md-row justify-content-between list-group-item">
+                                Tax Amount
+                                <span class="font-weight-bold">@ViewBag.CurrencySymbol @OrderCheckoutRecord.Tax.Value.ToString("0.00")</span>
+                            </li>
+                            <li class="align-items-center d-flex flex-column flex-md-row justify-content-between list-group-item">
+                                Discount Amount
+                                <span class="font-weight-bold">@ViewBag.CurrencySymbol @(OrderCheckoutRecord.AmountDiscount != null ? OrderCheckoutRecord.AmountDiscount.Value.ToString("0.00") : "0.00" )</span>
+                            </li>
+                            <li class="align-items-center d-flex flex-column flex-md-row justify-content-between list-group-item bg-light">
+                                Grand Total
+                                <span class="font-weight-bold">@ViewBag.CurrencySymbol @OrderCheckoutRecord.GrandTotal.Value.ToString("0.00")</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 text-center">
+                <a href="/@ApplicationHelper.PageDashboard" class="btn mt-35">Back to Orders</a>
+            </div>
+        </div>
+
+    </div>
+</div>

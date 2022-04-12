@@ -1,0 +1,123 @@
+﻿@using CarExpress.Helpers;
+@using CarExpress.Models;
+@{Html.RenderPartial("_BreadCrumb");}
+<style>
+    .single-testimonial {
+        background: #f5f5f5;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 40px;
+        border: 1px solid #014e94;
+        box-shadow: 0px 0px 10px 0px #aba3a3;
+    }
+</style>
+<div class="about-us-area hm-3-padding pt-125 pb-125">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="about-us-title">
+                    <h3>Samiacrafts was launched as a small upstart kiosk in Enma Mall, Bahrain by Samia Samiullah.</h3>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="about-us-details">
+                    <p class="about-us-pera-mb">Being a graduate of Interior Design and having an art background I always had a passion for product design and home decor. Samiacrafts aims to be a voice of the unheard hardworking craftsmen and to provide a platform to display their ravishing talent by adding elements of design and a flair of innovativeness.</p>
+                    <p>We hope to indulge you with our extraordinary pieces that are beautifully crafted with intricate designs which will not only transform your space magically but also inspire you everyday.</p>
+                    <p>We’d like to welcome you on this journey with us to allow us to revamp your spaces with our pieces. We hope you enjoy SamiaCrafts.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="services-area hm-3-padding h3-services pb-100">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="single-services sky mb-30">
+                    <div class="services-icon">
+                        <img alt="" src="~/assets/images/icon-img/3.png">
+                    </div>
+                    <div class="services-text">
+                        <h5>FREE SHIPPING</h5>
+                        <p>Free shipping on all order</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="single-services sky mb-30">
+                    <div class="services-icon">
+                        <img alt="" src="~/assets/images/icon-img/4.png">
+                    </div>
+                    <div class="services-text">
+                        <h5>ONLINE SUPPORT</h5>
+                        <p>Online support 24 hours a day</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="single-services sky mb-30">
+                    <div class="services-icon">
+                        <img alt="" src="~/assets/images/icon-img/5.png">
+                    </div>
+                    <div class="services-text">
+                        <h5>MONEY RETURN</h5>
+                        <p>Back guarantee under 5 days</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="single-services sky mb-30">
+                    <div class="services-icon">
+                        <img alt="" src="~/assets/images/icon-img/6.png">
+                    </div>
+                    <div class="services-text">
+                        <h5>MEMBER DISCOUNT</h5>
+                        <p>Onevery order over special occasions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@if (ViewBag.ReviewRecords != null)
+{
+    <div class="dealy-of-product-area " style="background-size:contain; background-image: url(../assets/images/reviewbg.jpg)">
+        <div class="row">
+            <div class="col-lg-4 col-md-12 dealy-product-content-left">
+                <div class="dealy-product-content">
+                    <div class="banner-content-5  text-white">
+                        <small>TESTIMONIALS</small>
+                        <h2 class="text-white">What our Customer says</h2>
+                        <p>We are happy when our customer are too</p>
+                        <a href="/@ApplicationHelper.PageAboutUs" class="cr-btn btn-style cart-btn-style  bg-cart">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-12">
+                <div class="gtco-testimonials">
+                    <div class="owl-carousel owl-carousel1 owl-theme">
+                        @foreach (ProductReviewModel Record in ViewBag.ReviewRecords)
+                        {
+                            <div>
+                                <div class="card text-center">
+                                    <img class="card-img-top" src="~/assets/images/icon-img/commas.png" alt="">
+                                    <div class="card-body">
+                                        <h5>
+                                            @Record.Name
+                                        </h5>
+                                        <p class="card-text">
+                                            “ @Record.Description ”
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+}

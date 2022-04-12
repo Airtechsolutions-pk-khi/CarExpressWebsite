@@ -1,0 +1,51 @@
+﻿@using CarExpress.Models;
+@using CarExpress.Helpers;
+@model CarExpress.Models.ProductModel
+<div class="col-6  col-lg-3">
+    <div class="product-wrapper mb-25">
+        <div class="product-img">
+            <a href="/@ApplicationHelper.PageProductDetail?item=@Model.ID">
+                <img data-src="@ViewBag.WebsiteImageURL@Model.Image" class="lazy" alt="">
+            </a>
+            <div class="product-action">
+                <div class="product-action-style">
+                    <a class="action-plus open-quick-view" title="Quick View" data-id="@Model.ID" href="@ViewBag.WebsiteURL/@ApplicationHelper.PageQuickView">
+                        <i class="ti-plus"></i>
+                    </a>
+                    <a class="action-heart add-to-wish-list" title="Wishlist" data-id="@Model.ID" data-title="@Model.Name" data-image-src="@Model.Image" data-image-url="@ViewBag.WebsiteImageURL" data-price="@Model.Price" data-url="/@ApplicationHelper.PageProductDetail?item=@Model.ID" href="#">
+                        <i class="ti-heart"></i>
+                    </a>
+                    <a class="action-cart add-to-cart" title="Add To Cart" data-id="@Model.ID" data-title="@Model.Name" data-image-src="@Model.Image" data-image-url="@ViewBag.WebsiteImageURL" data-price="@Model.Price" data-url="/@ApplicationHelper.PageProductDetail?item=@Model.ID" href="#">
+                        <i class="ti-shopping-cart"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="product-content text-center">
+            <h4><a href="/@ApplicationHelper.PageProductDetail?item=@Model.ID">@Model.Name</a></h4>
+            <div class="product-rating">
+                @{
+                    int Rating = ApplicationHelper.ParseInt(Model.StarRating);
+                    for (int i = 1; i < 6; i++)
+                    {
+                        if (Rating >= i)
+                        {
+                            <i class="ion-ios-star"></i>
+                        }
+                        else
+                        {
+                            <i class="ion-ios-star-outline"></i>
+                        }
+                    }
+                }
+            </div>
+            <div class="product-price">
+                @*@if (Model.OriginalPrice.HasValue)
+                {
+                    <span class="old">@ViewBag.CurrencySymbol @Model.OriginalPrice.Value.ToString("0.00")</span>
+                }*@
+                <span>@ViewBag.CurrencySymbol @Model.Price.Value.ToString("0.00")</span>
+            </div>
+        </div>
+    </div>
+</div>

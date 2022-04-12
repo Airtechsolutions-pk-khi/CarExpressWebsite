@@ -1,0 +1,128 @@
+﻿@using PremiumPosWebsite.Helpers;
+@using PremiumPosWebsite.Models;
+@{
+    ProductModel Record = (ProductModel)ViewData["ProductRecord"];
+}
+<div class="modal fade" id="quickModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span class="ion-android-close" aria-hidden="true"></span>
+    </button>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="qwick-view-left">
+                    <div class="quick-view-learg-img">
+                        <div class="quick-view-tab-content tab-content">
+                            <div class="tab-pane active show fade" id="modal_1" role="tabpanel">
+                                <img src="@ApplicationHelper.ParseString(ViewData["WebsiteImageURL"])@Record.Image" alt="">
+                            </div>
+                            @if (Record.ItemImages.Count > 0)
+                            {
+                                int count = 2;
+                                foreach (ProductImageModel ImageRecord in Record.ItemImages)
+                                {
+                                    <div class="tab-pane fade" id="modal_@count" role="tabpanel">
+                                        <img src="@ApplicationHelper.ParseString(ViewData["WebsiteImageURL"])@ImageRecord.Image" alt="" style="width:320px;height:380px;">
+                                    </div>
+                                    count += 1;
+                                }
+                            }
+                        </div>
+                    </div>
+
+                    <div class="quick-view-list nav" role="tablist">
+                        <a class="active" href="#modal_1" data-toggle="tab" role="tab" aria-selected="true" aria-controls="home1">
+                            <img src="@ApplicationHelper.ParseString(ViewData["WebsiteImageURL"])@Record.Image" alt="" style="width:100px;height:112px;">
+                        </a>
+                        @if (Record.ItemImages.Count > 0)
+                        {
+                            int count = 2;
+                            foreach (ProductImageModel ImageRecord in Record.ItemImages)
+                            {
+                                <a href="#modal_@count" data-toggle="tab" role="tab" aria-selected="true" aria-controls="home1">
+                                    <img src="@ApplicationHelper.ParseString(ViewData["WebsiteImageURL"])@ImageRecord.Image" alt="" style="width:100px;height:112px;">
+                                </a>
+                                count += 1;
+                            }
+                        }
+                    </div>
+                </div>
+                <div class="qwick-view-right">
+                    <div class="qwick-view-content">
+                        <h3>@Record.Name</h3>
+                        <div class="price">
+                            @*@if (Record.OriginalPrice.HasValue)
+                            {
+                                <span class="old">@ViewBag.CurrencySymbol @Record.OriginalPrice.Value.ToString("0.00")</span>
+                            }*@
+                            <span class="new">@ApplicationHelper.ParseString(ViewData["CurrencySymbol"]) @Record.Price.Value.ToString("0.00")</span>
+                        </div>
+                        <div class="rating-number">
+                            <div class="quick-view-rating">
+                                @{
+                                    int Rating = ApplicationHelper.ParseInt(Record.StarRating);
+                                    for (int i = 1; i < 6; i++)
+                                    {
+                                        if (Rating >= i)
+                                        {
+                                            <i class="ion-ios-star"></i>
+                                        }
+                                        else
+                                        {
+                                            <i class="ion-ios-star-outline"></i>
+                                        }
+                                    }
+                                }
+                            </div>
+                        </div>
+
+                        @if (Record.Description == null || Record.Description == "")
+                        {
+                            <p>
+                                No Description added.
+                            </p>
+                        }
+                        else
+                        {
+                            <p>@Html.Raw(@Record.Description)</p>
+                        }
+                        <div class="quickview-plus-minus">
+                            <div class="cart-plus-minus">
+                                <input type="text" value="1" id="cart_quantity" class="cart-plus-minus-box">
+                            </div>
+                            <div class="quickview-btn-cart">
+                                <a class="btn-style cr-btn quick add-to-cart" title="Add To Cart" data-id="@Record.ID" data-title="@Record.Name" data-image-src="@Record.Image" data-image-url="@ViewBag.WebsiteImageURL" data-price="@Record.Price" data-url="/@ApplicationHelper.PageProductDetail?item=@Record.ID" href="#"><span>add to cart</span></a>
+
+                            </div>
+                            <div class="quickview-btn-wishlist">
+                                <a class="btn-hover cr-btn add-to-wish-list" title="Wishlist" data-id="@Record.ID" data-title="@Record.Name" data-image-src="@Record.Image" data-image-url="@ViewBag.WebsiteImageURL" data-price="@Record.Price" data-url="/@ApplicationHelper.PageProductDetail?item=@Record.ID" href="#"><span><i class="ion-ios-heart-outline"></i></span></a>
+                            </div>
+                        </div>
+                        @if (Record.Reviews.Count > 0)
+                        {
+                            <div class="section-title-2 text-center mt-50">
+                                <h2 class="mb-12">Our Customer Reviews</h2>
+                                <p>There are many variations of passages of Lorem Ipsum. </p>
+                            </div>
+                            <div class="testimonial-active owl-carousel" style="width:320px">
+                                @foreach (ProductReviewModel ReviewRecord in Record.Reviews)
+                                {
+                                    <div class="single-testimonial text-center">
+                                        <p>@ReviewRecord.Description</p>
+                                        <div class="testimonial-icon">
+                                            <i class="ti-direction-alt"></i>
+                                        </div>
+                                        <h4>@ReviewRecord.Name</h4>
+                                    </div>
+                                }
+                            </div>
+                        }
+
+                    </div>
+                </div>
+            </div>
+            
+
+        </div>
+    </div>
+</div>

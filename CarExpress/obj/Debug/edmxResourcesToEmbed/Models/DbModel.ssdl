@@ -1,0 +1,2993 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Banner">
+    <Key>
+      <PropertyRef Name="BannerID" />
+    </Key>
+    <Property Name="BannerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar(max)" />
+    <Property Name="Image" Type="varchar(max)" />
+    <Property Name="IsSilder" Type="int" />
+    <Property Name="IsFeatured" Type="int" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="LastUpdatedBy" Type="varchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="100" />
+    <Property Name="StatusID" Type="int" />
+    <Property Name="Description" Type="nvarchar" MaxLength="300" />
+    <Property Name="ButtonURL" Type="nvarchar(max)" />
+    <Property Name="LocationID" Type="int" />
+  </EntityType>
+  <EntityType Name="CardTypes">
+    <Key>
+      <PropertyRef Name="CardTypeID" />
+    </Key>
+    <Property Name="CardTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Country" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LocationID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="30" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" />
+    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="DisplayOrder" Type="int" Nullable="false" />
+    <Property Name="SortByAlpha" Type="bit" />
+    <Property Name="LastUpdatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="StatusID" Type="int" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="CountryID" Type="int" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="LastUpdatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="StatusID" Type="int" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyURl" Type="varchar" MaxLength="50" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Contact" Type="varchar" MaxLength="50" />
+    <Property Name="LocationID" Type="int" />
+    <Property Name="TAX" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="NTN" Type="nvarchar" MaxLength="100" />
+    <Property Name="StatusID" Type="int" />
+    <Property Name="LastUpdateBy" Type="nvarchar" MaxLength="150" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="logo" Type="nvarchar" MaxLength="200" />
+    <Property Name="Currency" Type="varchar" MaxLength="50" />
+    <Property Name="SNTN" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="LastUpdatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="StatusID" Type="int" />
+  </EntityType>
+  <EntityType Name="Coupons">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="150" />
+    <Property Name="Type" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar" MaxLength="250" />
+    <Property Name="Amount" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="CouponCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="LastUpdatedBy" Type="int" />
+    <Property Name="StatusID" Type="int" />
+    <Property Name="FromDate" Type="datetime" />
+    <Property Name="ToDate" Type="datetime" />
+    <Property Name="UserID" Type="int" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CountryID" Type="int" />
+    <Property Name="CityID" Type="int" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="200" />
+    <Property Name="Email" Type="varchar" MaxLength="150" />
+    <Property Name="Password" Type="nvarchar" MaxLength="250" />
+    <Property Name="DOB" Type="date" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="100" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="Image" Type="varchar(max)" />
+    <Property Name="IsEmail" Type="bit" />
+    <Property Name="IsSms" Type="bit" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="LastUpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="StatusID" Type="int" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="CustomerAddress">
+    <Key>
+      <PropertyRef Name="CustomerAddressID" />
+    </Key>
+    <Property Name="CustomerAddressID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="NickName" Type="nvarchar" MaxLength="250" />
+    <Property Name="Latitude" Type="nvarchar" MaxLength="50" />
+    <Property Name="Longitude" Type="nvarchar" MaxLength="50" />
+    <Property Name="StatusID" Type="int" />
+    <Property Name="StreetName" Type="nvarchar" MaxLength="250" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="Country" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContactNo" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CustomerDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="OrderID" Type="int" />
+    <Property Name="StatusID" Type="int" />
+    <Property Name="LastUpdatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CustomerOrder">
+    <Key>
+      <PropertyRef Name="CustomerOrderID" />
+    </Key>
+    <Property Name="CustomerOrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="NearestPlace" Type="nvarchar" MaxLength="250" />
+    <Property Name="Country" Type="nvarchar" MaxLength="150" />
+    <Property Name="City" Type="nvarchar" MaxLength="150" />
+    <Property Name="ContactNo" Type="nvarchar" MaxLength="150" />
+    <Property Name="OrderID" Type="int" Nullable="false" />
+    <Property Name="DeliveryDate" Type="date" />
+    <Property Name="DeliveryTime" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustomerName" Type="nvarchar" MaxLength="150" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="Latitude" Type="nvarchar" MaxLength="150" />
+    <Property Name="Longitude" Type="nvarchar" MaxLength="150" />
+    <Property Name="PlaceType" Type="nvarchar" MaxLength="150" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="LastUpdatedBy" Type="int" />
+    <Property Name="Email" Type="nvarchar" MaxLength="255" />
+    <Property Name="CardNotes" Type="nvarchar" MaxLength="255" />
+    <Property Name="SelectedTime" Type="nvarchar" MaxLength="150" />
+    <Property Name="SenderName" Type="nvarchar" MaxLength="200" />
+    <Property Name="SenderEmail" Type="nvarchar" MaxLength="200" />
+    <Property Name="SenderContact" Type="nvarchar" MaxLength="200" />
+    <Property Name="CouponCode" Type="nvarchar" MaxLength="250" />
+    <Property Name="ShippingStatus" Type="int" />
+  </EntityType>
+  <EntityType Name="CustomerOrders">
+    <Key>
+      <PropertyRef Name="CustomerOrderID" />
+    </Key>
+    <Property Name="CustomerOrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Email" Type="varchar" MaxLength="150" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Address" Type="nvarchar" MaxLength="500" />
+    <Property Name="Longitude" Type="nvarchar" MaxLength="50" />
+    <Property Name="Latitude" Type="nvarchar" MaxLength="50" />
+    <Property Name="LocationURL" Type="nvarchar" MaxLength="50" />
+    <Property Name="StatusID" Type="int" />
+    <Property Name="LastUpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="OrderID" Type="int" />
+    <Property Name="AddressType" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddressNickName" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="CustomerWishList">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="ItemID" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DealsCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DealID" Type="int" />
+    <Property Name="StatusId" Type="int" />
+    <Property Name="Count" Type="datetime" />
+    <Property Name="CategoryID" Type="float" />
+    <Property Name="CatName" Type="float" />
+  </EntityType>
+  <EntityType Name="DealsDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemID" Type="int" />
+    <Property Name="StatusId" Type="int" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="ItemPrice" Type="float" />
+    <Property Name="ItemCost" Type="float" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="DealID" Type="int" />
+    <Property Name="ItemName" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="DealsHeader">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DealNo" Type="varchar" MaxLength="50" />
+    <Property Name="DealPrice" Type="float" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="DealType" Type="varchar" MaxLength="50" />
+    <Property Name="ItemsCount" Type="int" />
+    <Property Name="DealName" Type="varchar" MaxLength="100" />
+    <Property Name="StatusID" Type="int" />
+    <Property Name="LocationID" Type="int" />
+    <Property Name="IsFeatured" Type="bit" />
+    <Property Name="LastUpdatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="DealCost" Type="float" />
+    <Property Name="Description" Type="varchar(max)" />
+    <Property Name="Image" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Floors">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LocationID" Type="int" />
+    <Property Name="Title" Type="varchar" MaxLength="150" />
+    <Property Name="Name" Type="varchar" MaxLength="150" />
+    <Property Name="LastUpdatedBy" Type="varchar" MaxLength="100" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="StatusID" Type="int" />
+  </EntityType>
+  <EntityType Name="Inventory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LocationID" Type="int" />
+    <Property Name="SupplierID" Type="int" />
+    <Property Name="ItemID" Type="int" />
+    <Property Name="ItemName" Type="nvarchar" MaxLength="1000" />
+    <Property Name="CostPerUnit" Type="float" />
+    <Property Name="PurchasingUnit" Type="varchar" MaxLength="50" />
+    <Property Name="OpenStockLevel" Type="float" />
+    <Property Name="MinStockLevel" Type="float" />
+    <Property Name="CurrentStockLevel" Type="float" />
+    <Property Name="LastUpdatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="StatusId" Type="int" />
+  </EntityType>
+  <EntityType Name="InventoryRecieve">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InventoryID" Type="int" />
+    <Property Name="StoreID" Type="int" />
+    <Property Name="RequestedQty" Type="int" />
+    <Property Name="SKU" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="StatusId" Type="int" />
+  </EntityType>
+  <EntityType Name="InventoryRequest">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InventoryID" Type="int" />
+    <Property Name="StoreID" Type="int" />
+    <Property Name="RequestedQty" Type="int" />
+    <Property Name="SKU" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="StatusId" Type="int" />
+  </EntityType>
+  <EntityType Name="IssueStock">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="FromStoreID" Type="int" />
+    <Property Name="ToStoreID" Type="int" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="LastUpdatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="StatusID" Type="int" />
+    <Property Name="LocationID" Type="int" />
+    <Property Name="Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="IssueStockDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IssueStockID" Type="int" />
+    <Property Name="ItemID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="300" />
+    <Property Name="IssueQty" Type="float" />
+    <Property Name="RequestQty" Type="float" />
+    <Property Name="ReceiveQty" Type="float" />
+    <Property Name="Price" Type="float" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="LastUpdatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="StatusID" Type="int" />
+  </EntityType>
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubCategoryID" Type="int" />
+    <Property Name="UnitID" Type="int" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="NameOnReceipt" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="Barcode" Type="nvarchar" MaxLength="50" />
+    <Property Name="SKU" Type="nvarchar" MaxLength="50" />
+    <Property Name="DisplayOrder" Type="int" />
+    <Property Name="SortByAlpha" Type="bit" />
+    <Property Name="Price" Type="float" />
+    <Property Name="Cost" Type="float" />
+    <Property Name="ItemType" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastUpdatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="StatusID" Type="int" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="HasVariant" Type="bit" />
+    <Property Name="IsVATApplied" Type="bit" />
+  </EntityType>
+  <EntityType Name="ItemImages">
+    <Key>
+      <PropertyRef Name="ItemImagesID" />
+    </Key>
+    <Property Name="ItemImagesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Image" Type="nvarchar" MaxLength="250" />
+    <Property Name="ItemID" Type="int" />
+    <Property Name="StatusID" Type="int" />
+  </EntityType>
+  <EntityType Name="ItemModiferMapping">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemID" Type="int" />
+    <Property Name="ModifierID" Type="int" />
+    <Property Name="VariantID" Type="int" />
+    <Property Name="Type" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="ItemVariant">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemID" Type="int" />
+    <Property Name="VariantID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" />
+    <Property Name="ArabicName" Type="nvarchar" MaxLength="150" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Type" Type="nvarchar" MaxLength="150" />
+    <Property Name="Barcode" Type="nvarchar" MaxLength="150" />
+    <Property Name="SKU" Type="nvarchar" MaxLength="150" />
+    <Property Name="Price" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="StatusID" Type="int" />
+    <Property Name="DisplayOrder" Type="int" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="LastUpdatedBy" Type="int" />
+    <Property Name="LocationID" Type="int" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="CountryID" Type="int" />
+    <Property Name="CityID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" />
+    <Property Name="Address" Type="nvarchar" MaxLength="200" />
+    <Property Name="ContactNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="500" />
+    <Property Name="TimeZoneID" Type="int" />
+    <Property Name="DateFrom" Type="datetime" />
+    <Property Name="DateTo" Type="datetime" />
+    <Property Name="OpenTime" Type="time" Precision="7" />
+    <Property Name="CloseTime" Type="time" Precision="7" />
+    <Property Name="LicenseID" Type="int" Nullable="false" />
+    <Property Name="IndustryType" Type="varchar" MaxLength="250" />
+    <Property Name="DeliveryServices" Type="bit" />
+    <Property Name="DeliveryCharges" Type="float" />
+    <Property Name="DeliveryTime" Type="varchar" MaxLength="250" />
+    <Property Name="MinOrderAmount" Type="float" />
+    <Property Name="Longitude" Type="varchar" MaxLength="20" />
+    <Property Name="Latitude" Type="varchar" MaxLength="20" />
+    <Property Name="LastUpdatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="StatusID" Type="int" />
+    <Property Name="CompanyCode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsDelivery" Type="bit" />
+    <Property Name="RestaurantTypes" Type="nvarchar(max)" />
+    <Property Name="Cuisine" Type="nvarchar(max)" />
+    <Property Name="Features" Type="nvarchar(max)" />
+    <Property Name="ImageURL" Type="nvarchar" MaxLength="550" />
+    <Property Name="TAXID" Type="nvarchar" MaxLength="250" />
+    <Property Name="CRN" Type="nvarchar" MaxLength="100" />
+    <Property Name="FooterNotes" Type="nvarchar" MaxLength="500" />
+    <Property Name="Passcode" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Modifiers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" />
+    <Property Name="ArabicName" Type="nvarchar" MaxLength="150" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Type" Type="nvarchar" MaxLength="150" />
+    <Property Name="Barcode" Type="nvarchar" MaxLength="150" />
+    <Property Name="SKU" Type="nvarchar" MaxLength="150" />
+    <Property Name="Price" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="StatusID" Type="int" />
+    <Property Name="DisplayOrder" Type="int" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="LastUpdatedBy" Type="int" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="Image" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="LocationID" Type="int" />
+    <Property Name="TransactionNo" Type="int" />
+    <Property Name="OrderNo" Type="int" />
+    <Property Name="TableNo" Type="int" />
+    <Property Name="WaiterNo" Type="int" />
+    <Property Name="OrderTakerID" Type="int" />
+    <Property Name="OrderCreatedDT" Type="datetime" />
+    <Property Name="OrderType" Type="varchar" MaxLength="20" />
+    <Property Name="GuestCount" Type="int" />
+    <Property Name="DeliveryAddress" Type="varchar" MaxLength="500" />
+    <Property Name="AgentID" Type="int" />
+    <Property Name="AgentName" Type="varchar" MaxLength="100" />
+    <Property Name="DeliveryTime" Type="varchar" MaxLength="100" />
+    <Property Name="Points" Type="float" />
+    <Property Name="OrderMode" Type="nvarchar" MaxLength="10" />
+    <Property Name="StatusID" Type="int" />
+    <Property Name="SessionID" Type="varchar(max)" />
+    <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdateDT" Type="datetime" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsAvailiable" Type="bit" />
+    <Property Name="CounterType" Type="nvarchar" MaxLength="150" />
+    <Property Name="DeliveryStatus" Type="int" />
+  </EntityType>
+  <EntityType Name="OrderCheckout">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderID" Type="int" />
+    <Property Name="LocationID" Type="int" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="TransactionNo" Type="int" />
+    <Property Name="OrderNo" Type="int" />
+    <Property Name="PaymentMode" Type="int" />
+    <Property Name="AmountPaid" Type="float" />
+    <Property Name="DiscountPercent" Type="float" />
+    <Property Name="DiscountType" Type="int" />
+    <Property Name="AmountDiscount" Type="float" />
+    <Property Name="AmountTotal" Type="float" />
+    <Property Name="GrandTotal" Type="float" />
+    <Property Name="Tax" Type="float" />
+    <Property Name="CardNumber" Type="nvarchar" MaxLength="200" />
+    <Property Name="CardHolderName" Type="nvarchar" MaxLength="500" />
+    <Property Name="CardType" Type="nvarchar" MaxLength="150" />
+    <Property Name="CheckoutDate" Type="datetime" />
+    <Property Name="SessionID" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderStatus" Type="int" />
+    <Property Name="LastUpdateBy" Type="nvarchar" MaxLength="150" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="ServiceCharges" Type="float" />
+    <Property Name="IsPartial" Type="bit" />
+    <Property Name="PartialAmount" Type="float" />
+    <Property Name="DiscountReason" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="OrderDealDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StatusId" Type="int" />
+    <Property Name="OrderDetailID" Type="int" />
+    <Property Name="ItemID" Type="int" />
+    <Property Name="Price" Type="float" />
+    <Property Name="Quantity" Type="int" />
+  </EntityType>
+  <EntityType Name="OrderDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderID" Type="int" />
+    <Property Name="ItemId" Type="int" />
+    <Property Name="TransactionNo" Type="int" />
+    <Property Name="OrderNo" Type="int" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Quantity" Type="float" />
+    <Property Name="Price" Type="float" />
+    <Property Name="DiscountPrice" Type="float" />
+    <Property Name="PriceWithVAT" Type="float" />
+    <Property Name="Cost" Type="float" />
+    <Property Name="TotalCost" Type="float" />
+    <Property Name="LoyaltyPoints" Type="float" />
+    <Property Name="ClientOrderTakeDT" Type="varchar" MaxLength="30" />
+    <Property Name="CurrentQty" Type="float" />
+    <Property Name="IsComplementory" Type="bit" />
+    <Property Name="OrderMode" Type="nvarchar" MaxLength="10" />
+    <Property Name="StatusID" Type="int" />
+    <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdateDT" Type="datetime" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="ItemType" Type="varchar" MaxLength="50" />
+    <Property Name="DealID" Type="int" />
+    <Property Name="IsVATApplied" Type="bit" />
+  </EntityType>
+  <EntityType Name="OrderModifierDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderDetailID" Type="int" />
+    <Property Name="ModifierID" Type="int" />
+    <Property Name="VariantID" Type="int" />
+    <Property Name="Cost" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Price" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Type" Type="nvarchar" MaxLength="150" />
+    <Property Name="StatusID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="OrderType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LocationID" Type="int" />
+    <Property Name="Type" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="StatusID" Type="int" />
+  </EntityType>
+  <EntityType Name="PackageInfo">
+    <Key>
+      <PropertyRef Name="PackageInfoID" />
+    </Key>
+    <Property Name="PackageInfoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PackageName" Type="nvarchar" MaxLength="255" />
+    <Property Name="SetupFee" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="PackagePrice" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="AdminPanel" Type="bit" />
+    <Property Name="LimitedDevice" Type="bit" />
+    <Property Name="DevicesCount" Type="int" />
+    <Property Name="Support" Type="bit" />
+    <Property Name="TrialPeriod" Type="int" />
+    <Property Name="PaymentIntegration" Type="bit" />
+    <Property Name="IOSApp" Type="nvarchar" MaxLength="255" />
+    <Property Name="AndriodApp" Type="nvarchar" MaxLength="255" />
+    <Property Name="Website" Type="nvarchar" MaxLength="255" />
+    <Property Name="StatusID" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CountryCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="BranchLimit" Type="int" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderID" Type="int" />
+    <Property Name="CashPayment" Type="float" />
+    <Property Name="CardPayment" Type="float" />
+    <Property Name="CreditPayment" Type="float" />
+    <Property Name="PaymentType" Type="varchar" MaxLength="50" />
+    <Property Name="CardType" Type="varchar" MaxLength="50" />
+    <Property Name="Total" Type="float" />
+    <Property Name="CardNumber" Type="nvarchar" MaxLength="100" />
+    <Property Name="ReferenceNo" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="PurchaseOrder">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PurchaseOrderNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="StoreID" Type="int" />
+    <Property Name="SupplierID" Type="int" />
+    <Property Name="GrandTotal" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Description" Type="varchar(max)" />
+    <Property Name="LastUpdatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="StatusId" Type="int" />
+    <Property Name="LocationID" Type="int" />
+  </EntityType>
+  <EntityType Name="PurchaseOrderDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PurchaseOrderID" Type="int" />
+    <Property Name="ItemId" Type="int" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="UnitPrice" Type="float" />
+    <Property Name="RequestedQty" Type="int" />
+    <Property Name="Remarks" Type="varchar(max)" />
+    <Property Name="Total" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="LastUpdatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="StatusId" Type="int" />
+  </EntityType>
+  <EntityType Name="PurchaseReturn">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PurchaseOrderID" Type="int" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Cost" Type="float" />
+    <Property Name="Qty" Type="int" />
+    <Property Name="CurrentStock" Type="int" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="LastUpdatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="StatusId" Type="int" />
+  </EntityType>
+  <EntityType Name="ReceiptPermissions">
+    <Key>
+      <PropertyRef Name="ReceiptID" />
+    </Key>
+    <Property Name="ReceiptID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="LocationID" Type="int" />
+    <Property Name="IsLogo" Type="bit" />
+    <Property Name="IsLocationName" Type="bit" />
+    <Property Name="IsEmail" Type="bit" />
+    <Property Name="IsRegistrationNo" Type="bit" />
+    <Property Name="IsTaxID" Type="bit" />
+    <Property Name="IsOrderNo" Type="bit" />
+    <Property Name="IsFooter" Type="bit" />
+    <Property Name="IsContact" Type="bit" />
+    <Property Name="IsAddress" Type="bit" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="IsKitchenReceipt" Type="bit" />
+    <Property Name="FooterNotes" Type="nvarchar" MaxLength="500" />
+    <Property Name="Facebook" Type="nvarchar" MaxLength="50" />
+    <Property Name="Instagram" Type="nvarchar" MaxLength="50" />
+    <Property Name="Snapchat" Type="nvarchar" MaxLength="50" />
+    <Property Name="Twitter" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderNoPrefix" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Reveiws">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Stars" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Contact" Type="nvarchar" MaxLength="50" />
+    <Property Name="StatusID" Type="int" />
+    <Property Name="ItemID" Type="int" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="StatusId" Type="int" />
+  </EntityType>
+  <EntityType Name="Stock">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LocationID" Type="int" />
+    <Property Name="ItemID" Type="int" />
+    <Property Name="StockIn" Type="float" />
+    <Property Name="StockOut" Type="float" />
+    <Property Name="RemainingStock" Type="float" />
+    <Property Name="MinStockLevel" Type="float" />
+    <Property Name="OpenStockLevel" Type="float" />
+    <Property Name="CurrentStockLevel" Type="float" />
+    <Property Name="ReceivedStockLevel" Type="float" />
+    <Property Name="ReturnStock" Type="float" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="Description" Type="nchar" MaxLength="10" />
+    <Property Name="StatusId" Type="int" />
+    <Property Name="PurshaseOrderID" Type="int" />
+    <Property Name="PONum" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="StockStore">
+    <Key>
+      <PropertyRef Name="StockStoreID" />
+    </Key>
+    <Property Name="StockStoreID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InventoryID" Type="int" />
+    <Property Name="StoreID" Type="int" />
+    <Property Name="MinimumStock" Type="float" />
+    <Property Name="CurrentStock" Type="float" />
+    <Property Name="StatusID" Type="int" />
+    <Property Name="LastUpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="OpeningStock" Type="float" />
+    <Property Name="StockSold" Type="float" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="ReturnStock" Type="float" />
+  </EntityType>
+  <EntityType Name="Store">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LocationID" Type="int" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Code" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="IsMainStore" Type="bit" />
+    <Property Name="LastUpdatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="StatusId" Type="int" />
+  </EntityType>
+  <EntityType Name="SubCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="DisplayOrder" Type="int" />
+    <Property Name="SortByAlpha" Type="bit" />
+    <Property Name="LastUpdatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="StatusID" Type="int" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="SubUser">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="LocationID" Type="int" />
+    <Property Name="UserType" Type="varchar" MaxLength="50" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Designation" Type="nvarchar" MaxLength="150" />
+    <Property Name="ImagePath" Type="nvarchar" MaxLength="500" />
+    <Property Name="Password" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar" MaxLength="200" />
+    <Property Name="ContactNo" Type="nvarchar" MaxLength="30" />
+    <Property Name="Address" Type="nvarchar" MaxLength="500" />
+    <Property Name="CityID" Type="int" />
+    <Property Name="CountryID" Type="int" />
+    <Property Name="Subscribe" Type="bit" />
+    <Property Name="GroupID" Type="int" />
+    <Property Name="Passcode" Type="varchar" MaxLength="20" />
+    <Property Name="DateFrom" Type="datetime" />
+    <Property Name="DateTo" Type="datetime" />
+    <Property Name="TimeZoneID" Type="int" />
+    <Property Name="LastUpdatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="StatusID" Type="int" Nullable="false" />
+    <Property Name="States" Type="nvarchar" MaxLength="250" />
+    <Property Name="Zipcode" Type="nvarchar" MaxLength="10" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Supplier">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LocationID" Type="int" />
+    <Property Name="CityID" Type="int" />
+    <Property Name="CountryID" Type="int" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="StatusId" Type="int" />
+    <Property Name="ContactNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Table_orderCheckoutDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderCheckoutID" Type="int" />
+    <Property Name="PaymentMode" Type="int" />
+    <Property Name="AmoutPaid" Type="float" />
+    <Property Name="AmountDiscount" Type="float" />
+    <Property Name="CardNumber" Type="nvarchar" MaxLength="200" />
+    <Property Name="CardHolderName" Type="nvarchar" MaxLength="500" />
+    <Property Name="CardType" Type="nvarchar" MaxLength="150" />
+    <Property Name="ChecoutDate" Type="datetime" />
+    <Property Name="OrderStatus" Type="int" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="LastUpdatedBy" Type="varchar" MaxLength="150" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Tables">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FloorID" Type="int" />
+    <Property Name="Name" Type="varchar" MaxLength="150" />
+    <Property Name="Covers" Type="int" />
+    <Property Name="Type" Type="varchar" MaxLength="100" />
+    <Property Name="LastUpdatedBy" Type="varchar" MaxLength="100" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="StatusID" Type="int" />
+  </EntityType>
+  <EntityType Name="Tax">
+    <Key>
+      <PropertyRef Name="TaxID" />
+    </Key>
+    <Property Name="TaxID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TaxName" Type="nvarchar" MaxLength="50" />
+    <Property Name="TaxDesc" Type="nvarchar" MaxLength="200" />
+    <Property Name="TaxValue" Type="int" />
+    <Property Name="LastUpdatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="StatusID" Type="int" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="CategoryId" Type="int" />
+    <Property Name="UserId" Type="int" />
+  </EntityType>
+  <EntityType Name="TaxJunction">
+    <Key>
+      <PropertyRef Name="TaxJuncID" />
+    </Key>
+    <Property Name="TaxJuncID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LocationID" Type="int" />
+    <Property Name="ItemID" Type="int" />
+    <Property Name="TaxID" Type="int" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Unit">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="DisplayOrder" Type="int" />
+    <Property Name="LastUpdatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="StatusId" Type="int" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CityID" Type="int" />
+    <Property Name="CountryID" Type="int" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="Password" Type="nvarchar(max)" />
+    <Property Name="Company" Type="nvarchar" MaxLength="500" />
+    <Property Name="BusinessType" Type="nvarchar" MaxLength="500" />
+    <Property Name="Email" Type="nvarchar" MaxLength="200" />
+    <Property Name="ContactNo" Type="nvarchar" MaxLength="30" />
+    <Property Name="Address" Type="nvarchar" MaxLength="500" />
+    <Property Name="Website" Type="nvarchar" MaxLength="500" />
+    <Property Name="Subscribe" Type="bit" />
+    <Property Name="RoleID" Type="int" />
+    <Property Name="TimeZoneID" Type="int" />
+    <Property Name="Company_Code" Type="nvarchar" MaxLength="10" />
+    <Property Name="NIC" Type="varchar" MaxLength="15" />
+    <Property Name="Designation" Type="nvarchar" MaxLength="50" />
+    <Property Name="BasicSalary" Type="float" />
+    <Property Name="WorkingStatus" Type="bit" />
+    <Property Name="DateFrom" Type="datetime" />
+    <Property Name="DateTo" Type="datetime" />
+    <Property Name="UserType" Type="varchar" MaxLength="20" />
+    <Property Name="LastUpdatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="StatusID" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="States" Type="nvarchar" MaxLength="250" />
+    <Property Name="Zipcode" Type="nvarchar" MaxLength="10" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CompanyURL" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyDescription" Type="nvarchar(max)" />
+    <Property Name="IsActivate" Type="int" />
+    <Property Name="BusinessKey" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="UserPaymentInfo">
+    <Key>
+      <PropertyRef Name="UserPaymentInfoID" />
+    </Key>
+    <Property Name="UserPaymentInfoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PackageInfoID" Type="int" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="ProductName" Type="nvarchar" MaxLength="150" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="255" />
+    <Property Name="AccountActivated" Type="bit" />
+    <Property Name="StatusID" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastUpdatedBy" Type="int" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Variant">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" />
+    <Property Name="ArabicName" Type="nvarchar" MaxLength="150" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Type" Type="nvarchar" MaxLength="150" />
+    <Property Name="Barcode" Type="nvarchar" MaxLength="150" />
+    <Property Name="SKU" Type="nvarchar" MaxLength="150" />
+    <Property Name="Price" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="StatusID" Type="int" />
+    <Property Name="DisplayOrder" Type="int" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="LastUpdatedBy" Type="int" />
+    <Property Name="UserID" Type="int" />
+  </EntityType>
+  <Association Name="FK__Banner__Location__44952D46">
+    <End Role="Location" Type="Self.Location" Multiplicity="0..1" />
+    <End Role="Banner" Type="Self.Banner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Banner">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Category_Location">
+    <End Role="Location" Type="Self.Location" Multiplicity="0..1" />
+    <End Role="Category" Type="Self.Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Category">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_City_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="City" Type="Self.City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_Location">
+    <End Role="Location" Type="Self.Location" Multiplicity="0..1" />
+    <End Role="Company" Type="Self.Company" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Company">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Company" Type="Self.Company" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Company">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Coupons_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Coupons" Type="Self.Coupons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Coupons">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customer_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customer_Customer">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customer_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerAddress_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="CustomerAddress" Type="Self.CustomerAddress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CustomerAddress">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerDetail_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="CustomerDetail" Type="Self.CustomerDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CustomerDetail">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerDetail_Order">
+    <End Role="Order" Type="Self.Order" Multiplicity="0..1" />
+    <End Role="CustomerDetail" Type="Self.CustomerDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CustomerDetail">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerOrder_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="CustomerOrder" Type="Self.CustomerOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CustomerOrder">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerOrder_Order">
+    <End Role="Order" Type="Self.Order" Multiplicity="1" />
+    <End Role="CustomerOrder" Type="Self.CustomerOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CustomerOrder">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerOrders_Order">
+    <End Role="Order" Type="Self.Order" Multiplicity="0..1" />
+    <End Role="CustomerOrders" Type="Self.CustomerOrders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CustomerOrders">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerWishList_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="CustomerWishList" Type="Self.CustomerWishList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CustomerWishList">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerWishList_Item">
+    <End Role="Item" Type="Self.Item" Multiplicity="1" />
+    <End Role="CustomerWishList" Type="Self.CustomerWishList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CustomerWishList">
+        <PropertyRef Name="ItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DealsCategory_DealsHeader">
+    <End Role="DealsHeader" Type="Self.DealsHeader" Multiplicity="0..1" />
+    <End Role="DealsCategory" Type="Self.DealsCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DealsHeader">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DealsCategory">
+        <PropertyRef Name="DealID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DealsDetail_DealsHeader">
+    <End Role="DealsHeader" Type="Self.DealsHeader" Multiplicity="0..1" />
+    <End Role="DealsDetail" Type="Self.DealsDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DealsHeader">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DealsDetail">
+        <PropertyRef Name="DealID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DealsDetail_Item">
+    <End Role="Item" Type="Self.Item" Multiplicity="0..1" />
+    <End Role="DealsDetail" Type="Self.DealsDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DealsDetail">
+        <PropertyRef Name="ItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DealsHeader_Location">
+    <End Role="Location" Type="Self.Location" Multiplicity="0..1" />
+    <End Role="DealsHeader" Type="Self.DealsHeader" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DealsHeader">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Floors_Location">
+    <End Role="Location" Type="Self.Location" Multiplicity="0..1" />
+    <End Role="Floors" Type="Self.Floors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Floors">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Inventory_Inventory">
+    <End Role="Inventory" Type="Self.Inventory" Multiplicity="1" />
+    <End Role="Inventory1" Type="Self.Inventory" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Inventory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Inventory1">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Inventory_Item">
+    <End Role="Item" Type="Self.Item" Multiplicity="0..1" />
+    <End Role="Inventory" Type="Self.Inventory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Inventory">
+        <PropertyRef Name="ItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Inventory_Location">
+    <End Role="Location" Type="Self.Location" Multiplicity="0..1" />
+    <End Role="Inventory" Type="Self.Inventory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Inventory">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Inventory_Supplier">
+    <End Role="Supplier" Type="Self.Supplier" Multiplicity="0..1" />
+    <End Role="Inventory" Type="Self.Inventory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Inventory">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InventoryRecieve_Store">
+    <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+    <End Role="InventoryRecieve" Type="Self.InventoryRecieve" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="InventoryRecieve">
+        <PropertyRef Name="StoreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InventoryRequest_Store">
+    <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+    <End Role="InventoryRequest" Type="Self.InventoryRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="InventoryRequest">
+        <PropertyRef Name="StoreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IssueStock_Store">
+    <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+    <End Role="IssueStock" Type="Self.IssueStock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="IssueStock">
+        <PropertyRef Name="FromStoreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IssueStock_Store1">
+    <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+    <End Role="IssueStock" Type="Self.IssueStock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="IssueStock">
+        <PropertyRef Name="ToStoreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IssueStock_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="IssueStock" Type="Self.IssueStock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="IssueStock">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IssueStockDetail_IssueStock">
+    <End Role="IssueStock" Type="Self.IssueStock" Multiplicity="0..1" />
+    <End Role="IssueStockDetail" Type="Self.IssueStockDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IssueStock">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="IssueStockDetail">
+        <PropertyRef Name="IssueStockID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IssueStockDetail_Item">
+    <End Role="Item" Type="Self.Item" Multiplicity="0..1" />
+    <End Role="IssueStockDetail" Type="Self.IssueStockDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="IssueStockDetail">
+        <PropertyRef Name="ItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Item_SubCategory">
+    <End Role="SubCategory" Type="Self.SubCategory" Multiplicity="0..1" />
+    <End Role="Item" Type="Self.Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubCategory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Item">
+        <PropertyRef Name="SubCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Item_Unit">
+    <End Role="Unit" Type="Self.Unit" Multiplicity="0..1" />
+    <End Role="Item" Type="Self.Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unit">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Item">
+        <PropertyRef Name="UnitID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ItemModiferMapping_Item">
+    <End Role="Item" Type="Self.Item" Multiplicity="0..1" />
+    <End Role="ItemModiferMapping" Type="Self.ItemModiferMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ItemModiferMapping">
+        <PropertyRef Name="ItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ItemModiferMapping_Modifiers">
+    <End Role="Modifiers" Type="Self.Modifiers" Multiplicity="0..1" />
+    <End Role="ItemModiferMapping" Type="Self.ItemModiferMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modifiers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ItemModiferMapping">
+        <PropertyRef Name="ModifierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ItemModiferMapping_Variant">
+    <End Role="Variant" Type="Self.Variant" Multiplicity="0..1" />
+    <End Role="ItemModiferMapping" Type="Self.ItemModiferMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Variant">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ItemModiferMapping">
+        <PropertyRef Name="VariantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ItemVariant_Item">
+    <End Role="Item" Type="Self.Item" Multiplicity="0..1" />
+    <End Role="ItemVariant" Type="Self.ItemVariant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ItemVariant">
+        <PropertyRef Name="ItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ItemVariant_Variant">
+    <End Role="Variant" Type="Self.Variant" Multiplicity="0..1" />
+    <End Role="ItemVariant" Type="Self.ItemVariant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Variant">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ItemVariant">
+        <PropertyRef Name="VariantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Location_City">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="Location" Type="Self.Location" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Location">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Location_Location">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="Location" Type="Self.Location" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Location">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Location_USer">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Location" Type="Self.Location" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Location">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Modifiers_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Modifiers" Type="Self.Modifiers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Modifiers">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Location">
+    <End Role="Location" Type="Self.Location" Multiplicity="0..1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderCheckout_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="OrderCheckout" Type="Self.OrderCheckout" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OrderCheckout">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderCheckout_Location">
+    <End Role="Location" Type="Self.Location" Multiplicity="0..1" />
+    <End Role="OrderCheckout" Type="Self.OrderCheckout" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OrderCheckout">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderCheckout_Order">
+    <End Role="Order" Type="Self.Order" Multiplicity="0..1" />
+    <End Role="OrderCheckout" Type="Self.OrderCheckout" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OrderCheckout">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderDealDetail_Item">
+    <End Role="Item" Type="Self.Item" Multiplicity="0..1" />
+    <End Role="OrderDealDetail" Type="Self.OrderDealDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OrderDealDetail">
+        <PropertyRef Name="ItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderDealDetail_OrderDetail">
+    <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="0..1" />
+    <End Role="OrderDealDetail" Type="Self.OrderDealDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderDetail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OrderDealDetail">
+        <PropertyRef Name="OrderDetailID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderDetail_Item">
+    <End Role="Item" Type="Self.Item" Multiplicity="0..1" />
+    <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OrderDetail">
+        <PropertyRef Name="ItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderDetail_Order">
+    <End Role="Order" Type="Self.Order" Multiplicity="0..1" />
+    <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OrderDetail">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderModifierDetail_Modifiers">
+    <End Role="Modifiers" Type="Self.Modifiers" Multiplicity="0..1" />
+    <End Role="OrderModifierDetail" Type="Self.OrderModifierDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modifiers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OrderModifierDetail">
+        <PropertyRef Name="ModifierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderModifierDetail_OrderDetail">
+    <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="0..1" />
+    <End Role="OrderModifierDetail" Type="Self.OrderModifierDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderDetail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OrderModifierDetail">
+        <PropertyRef Name="OrderDetailID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderModifierDetail_Variant">
+    <End Role="Variant" Type="Self.Variant" Multiplicity="0..1" />
+    <End Role="OrderModifierDetail" Type="Self.OrderModifierDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Variant">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OrderModifierDetail">
+        <PropertyRef Name="VariantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderType_Location">
+    <End Role="Location" Type="Self.Location" Multiplicity="0..1" />
+    <End Role="OrderType" Type="Self.OrderType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OrderType">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Payment_Order">
+    <End Role="Order" Type="Self.Order" Multiplicity="0..1" />
+    <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PurchaseOrder_Location">
+    <End Role="Location" Type="Self.Location" Multiplicity="0..1" />
+    <End Role="PurchaseOrder" Type="Self.PurchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PurchaseOrder">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PurchaseOrder_Store">
+    <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+    <End Role="PurchaseOrder" Type="Self.PurchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PurchaseOrder">
+        <PropertyRef Name="StoreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PurchaseOrder_Supplier">
+    <End Role="Supplier" Type="Self.Supplier" Multiplicity="0..1" />
+    <End Role="PurchaseOrder" Type="Self.PurchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PurchaseOrder">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PurchaseOrder_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="PurchaseOrder" Type="Self.PurchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PurchaseOrder">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PurchaseOrderDetail_Item">
+    <End Role="Item" Type="Self.Item" Multiplicity="0..1" />
+    <End Role="PurchaseOrderDetail" Type="Self.PurchaseOrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PurchaseOrderDetail">
+        <PropertyRef Name="ItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PurchaseOrderDetail_PurchaseOrder1">
+    <End Role="PurchaseOrder" Type="Self.PurchaseOrder" Multiplicity="0..1" />
+    <End Role="PurchaseOrderDetail" Type="Self.PurchaseOrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PurchaseOrder">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PurchaseOrderDetail">
+        <PropertyRef Name="PurchaseOrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PurchaseReturn_PurchaseOrder">
+    <End Role="PurchaseOrder" Type="Self.PurchaseOrder" Multiplicity="0..1" />
+    <End Role="PurchaseReturn" Type="Self.PurchaseReturn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PurchaseOrder">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PurchaseReturn">
+        <PropertyRef Name="PurchaseOrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReceiptPermissions_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="ReceiptPermissions" Type="Self.ReceiptPermissions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ReceiptPermissions">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reveiws_Item">
+    <End Role="Item" Type="Self.Item" Multiplicity="0..1" />
+    <End Role="Reveiws" Type="Self.Reveiws" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Reveiws">
+        <PropertyRef Name="ItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Stock_Item">
+    <End Role="Item" Type="Self.Item" Multiplicity="0..1" />
+    <End Role="Stock" Type="Self.Stock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Stock">
+        <PropertyRef Name="ItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Stock_Location">
+    <End Role="Location" Type="Self.Location" Multiplicity="0..1" />
+    <End Role="Stock" Type="Self.Stock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Stock">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Stock_PurchaseOrder">
+    <End Role="PurchaseOrder" Type="Self.PurchaseOrder" Multiplicity="0..1" />
+    <End Role="Stock" Type="Self.Stock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PurchaseOrder">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Stock">
+        <PropertyRef Name="PurshaseOrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StockStore_StockStore">
+    <End Role="StockStore" Type="Self.StockStore" Multiplicity="1" />
+    <End Role="StockStore1" Type="Self.StockStore" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="StockStore">
+        <PropertyRef Name="StockStoreID" />
+      </Principal>
+      <Dependent Role="StockStore1">
+        <PropertyRef Name="StockStoreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StockStore_Store">
+    <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+    <End Role="StockStore" Type="Self.StockStore" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="StockStore">
+        <PropertyRef Name="StoreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StockStore_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="StockStore" Type="Self.StockStore" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="StockStore">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Store_Location">
+    <End Role="Location" Type="Self.Location" Multiplicity="0..1" />
+    <End Role="Store" Type="Self.Store" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Store">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubCategory_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="SubCategory" Type="Self.SubCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SubCategory">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubUser_City">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="SubUser" Type="Self.SubUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SubUser">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubUser_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="SubUser" Type="Self.SubUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SubUser">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubUser_Location">
+    <End Role="Location" Type="Self.Location" Multiplicity="0..1" />
+    <End Role="SubUser" Type="Self.SubUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SubUser">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubUser_USer">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="SubUser" Type="Self.SubUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SubUser">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Supplier_Location">
+    <End Role="Location" Type="Self.Location" Multiplicity="0..1" />
+    <End Role="Supplier" Type="Self.Supplier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Supplier">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_orderCheckoutDetail1_OrderCheckout">
+    <End Role="OrderCheckout" Type="Self.OrderCheckout" Multiplicity="0..1" />
+    <End Role="Table_orderCheckoutDetail" Type="Self.Table_orderCheckoutDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderCheckout">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Table_orderCheckoutDetail">
+        <PropertyRef Name="OrderCheckoutID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tables_Floors">
+    <End Role="Floors" Type="Self.Floors" Multiplicity="0..1" />
+    <End Role="Tables" Type="Self.Tables" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Floors">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tables">
+        <PropertyRef Name="FloorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Variant_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Variant" Type="Self.Variant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Variant">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="ABC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CurrDate" Type="datetime" Mode="In" />
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Get_EmailConfigByName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ConfigName" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_CheckCategorySubcategoryForItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+    <Parameter Name="CurrentLocationID" Type="int" Mode="In" />
+    <Parameter Name="SubCategoryID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_CreateLocation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="Descripiton" Type="nvarchar" Mode="In" />
+    <Parameter Name="Address" Type="nvarchar" Mode="In" />
+    <Parameter Name="ContactNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="TimeZoneID" Type="int" Mode="In" />
+    <Parameter Name="DateFrom" Type="datetime" Mode="In" />
+    <Parameter Name="DateTo" Type="datetime" Mode="In" />
+    <Parameter Name="CountryID" Type="varchar" Mode="In" />
+    <Parameter Name="CityID" Type="int" Mode="In" />
+    <Parameter Name="Open_Time" Type="time" Mode="In" />
+    <Parameter Name="Close_Time" Type="time" Mode="In" />
+    <Parameter Name="UserID" Type="int" Mode="In" />
+    <Parameter Name="LicenseID" Type="int" Mode="In" />
+    <Parameter Name="IndustryType" Type="varchar" Mode="In" />
+    <Parameter Name="DeliveryServices" Type="bit" Mode="In" />
+    <Parameter Name="DeliveryCharges" Type="float" Mode="In" />
+    <Parameter Name="DeliveryTime" Type="varchar" Mode="In" />
+    <Parameter Name="MinOrderAmount" Type="float" Mode="In" />
+    <Parameter Name="Longitude" Type="varchar" Mode="In" />
+    <Parameter Name="Latitude" Type="varchar" Mode="In" />
+    <Parameter Name="LastUpdatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="LastUpdatedDate" Type="datetime" Mode="In" />
+    <Parameter Name="StatusID" Type="int" Mode="In" />
+    <Parameter Name="CompanyCode" Type="varchar" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="IsDelivery" Type="bit" Mode="In" />
+    <Parameter Name="RestaurantTypes" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Cuisine" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Features" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="ImageURL" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_DatewiseSalesSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OrderStartDate" Type="varchar" Mode="In" />
+    <Parameter Name="OrderLastDate" Type="varchar" Mode="In" />
+    <Parameter Name="LocationId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DatewiseSalesSummaryMulitLoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OrderStartDate" Type="varchar" Mode="In" />
+    <Parameter Name="OrderLastDate" Type="varchar" Mode="In" />
+    <Parameter Name="LocationId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_deductinventory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ItemID" Type="int" Mode="In" />
+    <Parameter Name="Quantity" Type="float" Mode="In" />
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeductStockAdmin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ItemID" Type="int" Mode="In" />
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+    <Parameter Name="Quantity" Type="float" Mode="In" />
+    <Parameter Name="LastUpdatedDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_Delete_InventoryandStock" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="sp_Delete InventoryandStock">
+    <Parameter Name="ItemId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeleteLocation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeleteUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="int" Mode="In" />
+    <Parameter Name="LastUpdatedDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_FilterOrder" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OrderStartDate" Type="datetime" Mode="In" />
+    <Parameter Name="OrderLastDate" Type="datetime" Mode="In" />
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_FinishItemsList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetAdminOrders_api" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+    <Parameter Name="StartDate" Type="datetime" Mode="In" />
+    <Parameter Name="EndDate" Type="datetime" Mode="In" />
+    <Parameter Name="Search" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_GetAllBanners" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_getallusers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_GetBanners" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_GetCategory_menu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetCompany" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetCustomerOrders_api" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetDashboardData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+    <Parameter Name="OrderLastDate" Type="varchar" Mode="In" />
+    <Parameter Name="OrderStartDate" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_GetDashboardDataMultiLoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Locations" Type="nvarchar" Mode="In" />
+    <Parameter Name="OrderLastDate" Type="varchar" Mode="In" />
+    <Parameter Name="OrderStartDate" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_GetDashboardLastThreeMonthsSales" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetDashboardtop5Items" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+    <Parameter Name="LastDate" Type="varchar" Mode="In" />
+    <Parameter Name="StartDate" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_GetDashboardTopSellingItems" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+    <Parameter Name="LastDate" Type="varchar" Mode="In" />
+    <Parameter Name="StartDate" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_GetInventoryItems" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ItemID" Type="int" Mode="In" />
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetItem_menu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetItemModifierMapping_menu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_GetItemsList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+    <Parameter Name="ItemID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetItemsNotInInventory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetLocation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetModifierAndVariant" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetModifiers_menu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetModifiersForItem_menu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetReceiptInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OrderID" Type="int" Mode="In" />
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+    <Parameter Name="UserID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetReceiptPermissions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="int" Mode="In" />
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetStockOfMultipleItems" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+    <Parameter Name="ItemIDs" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_GetSubCategory_menu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetSubCategoryID_admin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+    <Parameter Name="SubCategoryID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetTables" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+    <Parameter Name="FloorID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetVariants_menu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetVariantsForItem_menu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_InsertItemsMapping" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ItemID" Type="int" Mode="In" />
+    <Parameter Name="IDs" Type="nvarchar" Mode="In" />
+    <Parameter Name="Type" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_InsertUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+    <Parameter Name="FirstName" Type="nvarchar" Mode="In" />
+    <Parameter Name="LastName" Type="nvarchar" Mode="In" />
+    <Parameter Name="ImagePath" Type="nvarchar" Mode="In" />
+    <Parameter Name="Password" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Company" Type="nvarchar" Mode="In" />
+    <Parameter Name="BusinessType" Type="nvarchar" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="ContactNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Address" Type="nvarchar" Mode="In" />
+    <Parameter Name="CityID" Type="int" Mode="In" />
+    <Parameter Name="CountryID" Type="varchar" Mode="In" />
+    <Parameter Name="Website" Type="nvarchar" Mode="In" />
+    <Parameter Name="Subscribe" Type="bit" Mode="In" />
+    <Parameter Name="RoleID" Type="int" Mode="In" />
+    <Parameter Name="TimeZoneID" Type="int" Mode="In" />
+    <Parameter Name="Emp_Code" Type="nvarchar" Mode="In" />
+    <Parameter Name="NIC" Type="varchar" Mode="In" />
+    <Parameter Name="Designation" Type="nvarchar" Mode="In" />
+    <Parameter Name="BasicSalary" Type="float" Mode="In" />
+    <Parameter Name="WorkingStatus" Type="bit" Mode="In" />
+    <Parameter Name="DateFrom" Type="datetime" Mode="In" />
+    <Parameter Name="DateTo" Type="datetime" Mode="In" />
+    <Parameter Name="UserType" Type="varchar" Mode="In" />
+    <Parameter Name="LastUpdatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="LastUpdatedDate" Type="datetime" Mode="In" />
+    <Parameter Name="StatusID" Type="int" Mode="In" />
+    <Parameter Name="CreatedDate" Type="datetime" Mode="In" />
+    <Parameter Name="States" Type="nvarchar" Mode="In" />
+    <Parameter Name="Zipcode" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompanyURL" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompanyDescription" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_InsertUserPaymentInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PackageType" Type="nvarchar" Mode="In" />
+    <Parameter Name="CountryCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ProductName" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompanyName" Type="nvarchar" Mode="In" />
+    <Parameter Name="AccountActivated" Type="bit" Mode="In" />
+    <Parameter Name="PaymentStatusID" Type="int" Mode="In" />
+    <Parameter Name="PaymentCreatedDate" Type="datetime" Mode="In" />
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+    <Parameter Name="FirstName" Type="nvarchar" Mode="In" />
+    <Parameter Name="LastName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Password" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Company" Type="nvarchar" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="ContactNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="TimeZoneID" Type="int" Mode="In" />
+    <Parameter Name="UserType" Type="varchar" Mode="In" />
+    <Parameter Name="StatusID" Type="int" Mode="In" />
+    <Parameter Name="CreatedDate" Type="datetime" Mode="In" />
+    <Parameter Name="IsActivate" Type="int" Mode="In" />
+    <Parameter Name="BusinessKey" Type="bigint" Mode="In" />
+    <Parameter Name="BusinessType" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_IssueStockAdmin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ItemID" Type="int" Mode="In" />
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+    <Parameter Name="Quantity" Type="float" Mode="In" />
+    <Parameter Name="LastUpdatedDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_Last7DaysSales" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CurrDate" Type="datetime" Mode="In" />
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Login" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="varchar" Mode="In" />
+    <Parameter Name="pass" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_Login_SubUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="varchar" Mode="In" />
+    <Parameter Name="pass" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_OrderReportDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OrderID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_OrderReportHeader" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OrderStartDate" Type="varchar" Mode="In" />
+    <Parameter Name="OrderLastDate" Type="varchar" Mode="In" />
+    <Parameter Name="LocationId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_OrderReportHeaderMultiLoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OrderStartDate" Type="varchar" Mode="In" />
+    <Parameter Name="OrderLastDate" Type="varchar" Mode="In" />
+    <Parameter Name="LocationId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_PRoductSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+    <Parameter Name="OrderLastDate" Type="varchar" Mode="In" />
+    <Parameter Name="OrderStartDate" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_PRoductSummaryMultiLoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+    <Parameter Name="OrderLastDate" Type="varchar" Mode="In" />
+    <Parameter Name="OrderStartDate" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_PurchaseOrderDetailList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="POID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_RemoveItemVariant" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_RptCreditSales_MultiLoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OrderStartDate" Type="varchar" Mode="In" />
+    <Parameter Name="OrderLastDate" Type="varchar" Mode="In" />
+    <Parameter Name="LocationId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_SalesSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+    <Parameter Name="OrderLastDate" Type="varchar" Mode="In" />
+    <Parameter Name="OrderStartDate" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_SalesSummaryMultiLoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+    <Parameter Name="OrderLastDate" Type="varchar" Mode="In" />
+    <Parameter Name="OrderStartDate" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_ShiftData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="date" Type="datetime" Mode="In" />
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_SignupUserWebApi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FirstName" Type="varchar" Mode="In" />
+    <Parameter Name="LastName" Type="varchar" Mode="In" />
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+    <Parameter Name="Image" Type="varchar" Mode="In" />
+    <Parameter Name="RoleID" Type="int" Mode="In" />
+    <Parameter Name="UserType" Type="nvarchar" Mode="In" />
+    <Parameter Name="LastUpdatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="LastUpdatedDate" Type="datetime" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="StatusID" Type="int" Mode="In" />
+    <Parameter Name="BusinessKey" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_SignupWizard" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="int" Mode="In" />
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+    <Parameter Name="SubPassword" Type="varchar" Mode="In" />
+    <Parameter Name="Passcode" Type="varchar" Mode="In" />
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="SubEmail" Type="varchar" Mode="In" />
+    <Parameter Name="UserType" Type="varchar" Mode="In" />
+    <Parameter Name="LocEmail" Type="varchar" Mode="In" />
+    <Parameter Name="Company" Type="varchar" Mode="In" />
+    <Parameter Name="CompanyCode" Type="varchar" Mode="In" />
+    <Parameter Name="LocationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="LocationDescription" Type="nvarchar" Mode="In" />
+    <Parameter Name="LicenseID" Type="int" Mode="In" />
+    <Parameter Name="LastUpdatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="LastUpdatedDate" Type="datetime" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="StatusID" Type="int" Mode="In" />
+    <Parameter Name="compcontact" Type="nvarchar" Mode="In" />
+    <Parameter Name="comptax" Type="decimal" Mode="In" />
+    <Parameter Name="compntn" Type="nvarchar" Mode="In" />
+    <Parameter Name="FirstName" Type="varchar" Mode="In" />
+    <Parameter Name="LastName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Contactno" Type="nvarchar" Mode="In" />
+    <Parameter Name="Address" Type="nvarchar" Mode="In" />
+    <Parameter Name="locContactno" Type="nvarchar" Mode="In" />
+    <Parameter Name="locAddress" Type="nvarchar" Mode="In" />
+    <Parameter Name="StoreName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_SignUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FirstName" Type="varchar" Mode="In" />
+    <Parameter Name="LastName" Type="varchar" Mode="In" />
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+    <Parameter Name="Company" Type="varchar" Mode="In" />
+    <Parameter Name="CompanyCode" Type="varchar" Mode="In" />
+    <Parameter Name="RoleID" Type="int" Mode="In" />
+    <Parameter Name="UserType" Type="nvarchar" Mode="In" />
+    <Parameter Name="LocationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="LocationDescription" Type="nvarchar" Mode="In" />
+    <Parameter Name="LicenseID" Type="int" Mode="In" />
+    <Parameter Name="LastUpdatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="LastUpdatedDate" Type="datetime" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="StatusID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_StockInNotifcation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_StockNotification" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_StockReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+    <Parameter Name="StartDate" Type="varchar" Mode="In" />
+    <Parameter Name="EndDate" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_StockReportDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+    <Parameter Name="ItemID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_StockReportMultiLoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+    <Parameter Name="StartDate" Type="varchar" Mode="In" />
+    <Parameter Name="EndDate" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_StockStoreReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+    <Parameter Name="StartDate" Type="varchar" Mode="In" />
+    <Parameter Name="EndDate" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_StockStoreSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_StockStoreSummaryMultiLoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Locations" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_UpdateInventory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+    <Parameter Name="Qty" Type="int" Mode="In" />
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="ItemID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_UpdateLocation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+    <Parameter Name="Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="Descripiton" Type="nvarchar" Mode="In" />
+    <Parameter Name="Address" Type="nvarchar" Mode="In" />
+    <Parameter Name="ContactNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="TimeZoneID" Type="int" Mode="In" />
+    <Parameter Name="DateFrom" Type="datetime" Mode="In" />
+    <Parameter Name="DateTo" Type="datetime" Mode="In" />
+    <Parameter Name="CountryID" Type="varchar" Mode="In" />
+    <Parameter Name="CityID" Type="int" Mode="In" />
+    <Parameter Name="Open_Time" Type="time" Mode="In" />
+    <Parameter Name="Close_Time" Type="time" Mode="In" />
+    <Parameter Name="UserID" Type="int" Mode="In" />
+    <Parameter Name="LicenseID" Type="int" Mode="In" />
+    <Parameter Name="IndustryType" Type="varchar" Mode="In" />
+    <Parameter Name="DeliveryServices" Type="bit" Mode="In" />
+    <Parameter Name="DeliveryCharges" Type="float" Mode="In" />
+    <Parameter Name="DeliveryTime" Type="varchar" Mode="In" />
+    <Parameter Name="MinOrderAmount" Type="float" Mode="In" />
+    <Parameter Name="Longitude" Type="varchar" Mode="In" />
+    <Parameter Name="Latitude" Type="varchar" Mode="In" />
+    <Parameter Name="LastUpdatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="LastUpdatedDate" Type="datetime" Mode="In" />
+    <Parameter Name="StatusID" Type="int" Mode="In" />
+    <Parameter Name="CompanyCode" Type="varchar" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="IsDelivery" Type="bit" Mode="In" />
+    <Parameter Name="RestaurantTypes" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Cuisine" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Features" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="ImageURL" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_UpdateStockRefund" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ItemID" Type="int" Mode="In" />
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+    <Parameter Name="Quantity" Type="float" Mode="In" />
+  </Function>
+  <Function Name="sp_UpdateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="int" Mode="In" />
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+    <Parameter Name="FirstName" Type="nvarchar" Mode="In" />
+    <Parameter Name="LastName" Type="nvarchar" Mode="In" />
+    <Parameter Name="ImagePath" Type="nvarchar" Mode="In" />
+    <Parameter Name="Password" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Company" Type="nvarchar" Mode="In" />
+    <Parameter Name="BusinessType" Type="nvarchar" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="ContactNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Address" Type="nvarchar" Mode="In" />
+    <Parameter Name="CityID" Type="int" Mode="In" />
+    <Parameter Name="CountryID" Type="varchar" Mode="In" />
+    <Parameter Name="Website" Type="nvarchar" Mode="In" />
+    <Parameter Name="Subscribe" Type="bit" Mode="In" />
+    <Parameter Name="RoleID" Type="int" Mode="In" />
+    <Parameter Name="TimeZoneID" Type="int" Mode="In" />
+    <Parameter Name="Emp_Code" Type="nvarchar" Mode="In" />
+    <Parameter Name="NIC" Type="varchar" Mode="In" />
+    <Parameter Name="Designation" Type="nvarchar" Mode="In" />
+    <Parameter Name="BasicSalary" Type="float" Mode="In" />
+    <Parameter Name="WorkingStatus" Type="bit" Mode="In" />
+    <Parameter Name="DateFrom" Type="datetime" Mode="In" />
+    <Parameter Name="DateTo" Type="datetime" Mode="In" />
+    <Parameter Name="UserType" Type="varchar" Mode="In" />
+    <Parameter Name="LastUpdatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="LastUpdatedDate" Type="datetime" Mode="In" />
+    <Parameter Name="StatusID" Type="int" Mode="In" />
+    <Parameter Name="CreatedDate" Type="datetime" Mode="In" />
+    <Parameter Name="States" Type="nvarchar" Mode="In" />
+    <Parameter Name="Zipcode" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreatedOn" Type="datetime" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompanyURL" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompanyDescription" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_UserActivateApi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_UserPaymentAccountActivate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserPaymentInfoID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_UserPaymentDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_UserSalesMultiLoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+    <Parameter Name="OrderStartDate" Type="varchar" Mode="In" />
+    <Parameter Name="OrderLastDate" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_ValidateEmail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_ZXReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SubUserID" Type="int" Mode="In" />
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+    <Parameter Name="OrderLastDate" Type="varchar" Mode="In" />
+    <Parameter Name="OrderStartDate" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SplitString" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Input" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Character" Type="char" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="Item" Type="nvarchar" MaxLength="1000" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="SplitStringGroup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="GroupIDS" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="PriortyIDS" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="MinutesIDS" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="AttemptIDS" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Offsetval" Type="float" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="GroupID" Type="bigint" />
+          <Property Name="PriortyID" Type="bigint" />
+          <Property Name="MinuteID" Type="bigint" />
+          <Property Name="Elapsed" Type="datetime" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="ValidateLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Email" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Password" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="accounttypeid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ValidateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Email" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Contact" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <EntityContainer Name="db_modelStoreContainer">
+    <EntitySet Name="Banner" EntityType="Self.Banner" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CardTypes" EntityType="Self.CardTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Coupons" EntityType="Self.Coupons" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomerAddress" EntityType="Self.CustomerAddress" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomerDetail" EntityType="Self.CustomerDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomerOrder" EntityType="Self.CustomerOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomerOrders" EntityType="Self.CustomerOrders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomerWishList" EntityType="Self.CustomerWishList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DealsCategory" EntityType="Self.DealsCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DealsDetail" EntityType="Self.DealsDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DealsHeader" EntityType="Self.DealsHeader" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Floors" EntityType="Self.Floors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Inventory" EntityType="Self.Inventory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InventoryRecieve" EntityType="Self.InventoryRecieve" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InventoryRequest" EntityType="Self.InventoryRequest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IssueStock" EntityType="Self.IssueStock" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IssueStockDetail" EntityType="Self.IssueStockDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Item" EntityType="Self.Item" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ItemImages" EntityType="Self.ItemImages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ItemModiferMapping" EntityType="Self.ItemModiferMapping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ItemVariant" EntityType="Self.ItemVariant" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Location" EntityType="Self.Location" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Modifiers" EntityType="Self.Modifiers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderCheckout" EntityType="Self.OrderCheckout" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderDealDetail" EntityType="Self.OrderDealDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderModifierDetail" EntityType="Self.OrderModifierDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderType" EntityType="Self.OrderType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PackageInfo" EntityType="Self.PackageInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PurchaseOrder" EntityType="Self.PurchaseOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PurchaseOrderDetail" EntityType="Self.PurchaseOrderDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PurchaseReturn" EntityType="Self.PurchaseReturn" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReceiptPermissions" EntityType="Self.ReceiptPermissions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reveiws" EntityType="Self.Reveiws" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Stock" EntityType="Self.Stock" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StockStore" EntityType="Self.StockStore" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Store" EntityType="Self.Store" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SubCategory" EntityType="Self.SubCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SubUser" EntityType="Self.SubUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_orderCheckoutDetail" EntityType="Self.Table_orderCheckoutDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tables" EntityType="Self.Tables" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tax" EntityType="Self.Tax" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TaxJunction" EntityType="Self.TaxJunction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Unit" EntityType="Self.Unit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserPaymentInfo" EntityType="Self.UserPaymentInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Variant" EntityType="Self.Variant" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Banner__Location__44952D46" Association="Self.FK__Banner__Location__44952D46">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="Banner" EntitySet="Banner" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Category_Location" Association="Self.FK_Category_Location">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="Category" EntitySet="Category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_City_Country" Association="Self.FK_City_Country">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="City" EntitySet="City" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_Location" Association="Self.FK_Company_Location">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="Company" EntitySet="Company" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_User" Association="Self.FK_Company_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Company" EntitySet="Company" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Coupons_User" Association="Self.FK_Coupons_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Coupons" EntitySet="Coupons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_Country" Association="Self.FK_Customer_Country">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Customer" EntitySet="Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_Customer" Association="Self.FK_Customer_Customer">
+      <End Role="City" EntitySet="City" />
+      <End Role="Customer" EntitySet="Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_User" Association="Self.FK_Customer_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Customer" EntitySet="Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerAddress_Customer" Association="Self.FK_CustomerAddress_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="CustomerAddress" EntitySet="CustomerAddress" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerDetail_Customer" Association="Self.FK_CustomerDetail_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="CustomerDetail" EntitySet="CustomerDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerDetail_Order" Association="Self.FK_CustomerDetail_Order">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="CustomerDetail" EntitySet="CustomerDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerOrder_Customer" Association="Self.FK_CustomerOrder_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="CustomerOrder" EntitySet="CustomerOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerOrder_Order" Association="Self.FK_CustomerOrder_Order">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="CustomerOrder" EntitySet="CustomerOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerOrders_Order" Association="Self.FK_CustomerOrders_Order">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="CustomerOrders" EntitySet="CustomerOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerWishList_Customer" Association="Self.FK_CustomerWishList_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="CustomerWishList" EntitySet="CustomerWishList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerWishList_Item" Association="Self.FK_CustomerWishList_Item">
+      <End Role="Item" EntitySet="Item" />
+      <End Role="CustomerWishList" EntitySet="CustomerWishList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DealsCategory_DealsHeader" Association="Self.FK_DealsCategory_DealsHeader">
+      <End Role="DealsHeader" EntitySet="DealsHeader" />
+      <End Role="DealsCategory" EntitySet="DealsCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DealsDetail_DealsHeader" Association="Self.FK_DealsDetail_DealsHeader">
+      <End Role="DealsHeader" EntitySet="DealsHeader" />
+      <End Role="DealsDetail" EntitySet="DealsDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DealsDetail_Item" Association="Self.FK_DealsDetail_Item">
+      <End Role="Item" EntitySet="Item" />
+      <End Role="DealsDetail" EntitySet="DealsDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DealsHeader_Location" Association="Self.FK_DealsHeader_Location">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="DealsHeader" EntitySet="DealsHeader" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Floors_Location" Association="Self.FK_Floors_Location">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="Floors" EntitySet="Floors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Inventory_Inventory" Association="Self.FK_Inventory_Inventory">
+      <End Role="Inventory" EntitySet="Inventory" />
+      <End Role="Inventory1" EntitySet="Inventory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Inventory_Item" Association="Self.FK_Inventory_Item">
+      <End Role="Item" EntitySet="Item" />
+      <End Role="Inventory" EntitySet="Inventory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Inventory_Location" Association="Self.FK_Inventory_Location">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="Inventory" EntitySet="Inventory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Inventory_Supplier" Association="Self.FK_Inventory_Supplier">
+      <End Role="Supplier" EntitySet="Supplier" />
+      <End Role="Inventory" EntitySet="Inventory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventoryRecieve_Store" Association="Self.FK_InventoryRecieve_Store">
+      <End Role="Store" EntitySet="Store" />
+      <End Role="InventoryRecieve" EntitySet="InventoryRecieve" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventoryRequest_Store" Association="Self.FK_InventoryRequest_Store">
+      <End Role="Store" EntitySet="Store" />
+      <End Role="InventoryRequest" EntitySet="InventoryRequest" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IssueStock_Store" Association="Self.FK_IssueStock_Store">
+      <End Role="Store" EntitySet="Store" />
+      <End Role="IssueStock" EntitySet="IssueStock" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IssueStock_Store1" Association="Self.FK_IssueStock_Store1">
+      <End Role="Store" EntitySet="Store" />
+      <End Role="IssueStock" EntitySet="IssueStock" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IssueStock_User" Association="Self.FK_IssueStock_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="IssueStock" EntitySet="IssueStock" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IssueStockDetail_IssueStock" Association="Self.FK_IssueStockDetail_IssueStock">
+      <End Role="IssueStock" EntitySet="IssueStock" />
+      <End Role="IssueStockDetail" EntitySet="IssueStockDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IssueStockDetail_Item" Association="Self.FK_IssueStockDetail_Item">
+      <End Role="Item" EntitySet="Item" />
+      <End Role="IssueStockDetail" EntitySet="IssueStockDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Item_SubCategory" Association="Self.FK_Item_SubCategory">
+      <End Role="SubCategory" EntitySet="SubCategory" />
+      <End Role="Item" EntitySet="Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Item_Unit" Association="Self.FK_Item_Unit">
+      <End Role="Unit" EntitySet="Unit" />
+      <End Role="Item" EntitySet="Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ItemModiferMapping_Item" Association="Self.FK_ItemModiferMapping_Item">
+      <End Role="Item" EntitySet="Item" />
+      <End Role="ItemModiferMapping" EntitySet="ItemModiferMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ItemModiferMapping_Modifiers" Association="Self.FK_ItemModiferMapping_Modifiers">
+      <End Role="Modifiers" EntitySet="Modifiers" />
+      <End Role="ItemModiferMapping" EntitySet="ItemModiferMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ItemModiferMapping_Variant" Association="Self.FK_ItemModiferMapping_Variant">
+      <End Role="Variant" EntitySet="Variant" />
+      <End Role="ItemModiferMapping" EntitySet="ItemModiferMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ItemVariant_Item" Association="Self.FK_ItemVariant_Item">
+      <End Role="Item" EntitySet="Item" />
+      <End Role="ItemVariant" EntitySet="ItemVariant" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ItemVariant_Variant" Association="Self.FK_ItemVariant_Variant">
+      <End Role="Variant" EntitySet="Variant" />
+      <End Role="ItemVariant" EntitySet="ItemVariant" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Location_City" Association="Self.FK_Location_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="Location" EntitySet="Location" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Location_Location" Association="Self.FK_Location_Location">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Location" EntitySet="Location" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Location_USer" Association="Self.FK_Location_USer">
+      <End Role="User" EntitySet="User" />
+      <End Role="Location" EntitySet="Location" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Modifiers_User" Association="Self.FK_Modifiers_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Modifiers" EntitySet="Modifiers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Customer" Association="Self.FK_Order_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Location" Association="Self.FK_Order_Location">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderCheckout_Customer" Association="Self.FK_OrderCheckout_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="OrderCheckout" EntitySet="OrderCheckout" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderCheckout_Location" Association="Self.FK_OrderCheckout_Location">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="OrderCheckout" EntitySet="OrderCheckout" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderCheckout_Order" Association="Self.FK_OrderCheckout_Order">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="OrderCheckout" EntitySet="OrderCheckout" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderDealDetail_Item" Association="Self.FK_OrderDealDetail_Item">
+      <End Role="Item" EntitySet="Item" />
+      <End Role="OrderDealDetail" EntitySet="OrderDealDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderDealDetail_OrderDetail" Association="Self.FK_OrderDealDetail_OrderDetail">
+      <End Role="OrderDetail" EntitySet="OrderDetail" />
+      <End Role="OrderDealDetail" EntitySet="OrderDealDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderDetail_Item" Association="Self.FK_OrderDetail_Item">
+      <End Role="Item" EntitySet="Item" />
+      <End Role="OrderDetail" EntitySet="OrderDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderDetail_Order" Association="Self.FK_OrderDetail_Order">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="OrderDetail" EntitySet="OrderDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderModifierDetail_Modifiers" Association="Self.FK_OrderModifierDetail_Modifiers">
+      <End Role="Modifiers" EntitySet="Modifiers" />
+      <End Role="OrderModifierDetail" EntitySet="OrderModifierDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderModifierDetail_OrderDetail" Association="Self.FK_OrderModifierDetail_OrderDetail">
+      <End Role="OrderDetail" EntitySet="OrderDetail" />
+      <End Role="OrderModifierDetail" EntitySet="OrderModifierDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderModifierDetail_Variant" Association="Self.FK_OrderModifierDetail_Variant">
+      <End Role="Variant" EntitySet="Variant" />
+      <End Role="OrderModifierDetail" EntitySet="OrderModifierDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderType_Location" Association="Self.FK_OrderType_Location">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="OrderType" EntitySet="OrderType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Payment_Order" Association="Self.FK_Payment_Order">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="Payment" EntitySet="Payment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PurchaseOrder_Location" Association="Self.FK_PurchaseOrder_Location">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="PurchaseOrder" EntitySet="PurchaseOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PurchaseOrder_Store" Association="Self.FK_PurchaseOrder_Store">
+      <End Role="Store" EntitySet="Store" />
+      <End Role="PurchaseOrder" EntitySet="PurchaseOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PurchaseOrder_Supplier" Association="Self.FK_PurchaseOrder_Supplier">
+      <End Role="Supplier" EntitySet="Supplier" />
+      <End Role="PurchaseOrder" EntitySet="PurchaseOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PurchaseOrder_User" Association="Self.FK_PurchaseOrder_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="PurchaseOrder" EntitySet="PurchaseOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PurchaseOrderDetail_Item" Association="Self.FK_PurchaseOrderDetail_Item">
+      <End Role="Item" EntitySet="Item" />
+      <End Role="PurchaseOrderDetail" EntitySet="PurchaseOrderDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PurchaseOrderDetail_PurchaseOrder1" Association="Self.FK_PurchaseOrderDetail_PurchaseOrder1">
+      <End Role="PurchaseOrder" EntitySet="PurchaseOrder" />
+      <End Role="PurchaseOrderDetail" EntitySet="PurchaseOrderDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PurchaseReturn_PurchaseOrder" Association="Self.FK_PurchaseReturn_PurchaseOrder">
+      <End Role="PurchaseOrder" EntitySet="PurchaseOrder" />
+      <End Role="PurchaseReturn" EntitySet="PurchaseReturn" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReceiptPermissions_User" Association="Self.FK_ReceiptPermissions_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="ReceiptPermissions" EntitySet="ReceiptPermissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reveiws_Item" Association="Self.FK_Reveiws_Item">
+      <End Role="Item" EntitySet="Item" />
+      <End Role="Reveiws" EntitySet="Reveiws" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Stock_Item" Association="Self.FK_Stock_Item">
+      <End Role="Item" EntitySet="Item" />
+      <End Role="Stock" EntitySet="Stock" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Stock_Location" Association="Self.FK_Stock_Location">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="Stock" EntitySet="Stock" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Stock_PurchaseOrder" Association="Self.FK_Stock_PurchaseOrder">
+      <End Role="PurchaseOrder" EntitySet="PurchaseOrder" />
+      <End Role="Stock" EntitySet="Stock" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StockStore_StockStore" Association="Self.FK_StockStore_StockStore">
+      <End Role="StockStore" EntitySet="StockStore" />
+      <End Role="StockStore1" EntitySet="StockStore" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StockStore_Store" Association="Self.FK_StockStore_Store">
+      <End Role="Store" EntitySet="Store" />
+      <End Role="StockStore" EntitySet="StockStore" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StockStore_User" Association="Self.FK_StockStore_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="StockStore" EntitySet="StockStore" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Store_Location" Association="Self.FK_Store_Location">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="Store" EntitySet="Store" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubCategory_Category" Association="Self.FK_SubCategory_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="SubCategory" EntitySet="SubCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubUser_City" Association="Self.FK_SubUser_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="SubUser" EntitySet="SubUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubUser_Country" Association="Self.FK_SubUser_Country">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="SubUser" EntitySet="SubUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubUser_Location" Association="Self.FK_SubUser_Location">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="SubUser" EntitySet="SubUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubUser_USer" Association="Self.FK_SubUser_USer">
+      <End Role="User" EntitySet="User" />
+      <End Role="SubUser" EntitySet="SubUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Supplier_Location" Association="Self.FK_Supplier_Location">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="Supplier" EntitySet="Supplier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_orderCheckoutDetail1_OrderCheckout" Association="Self.FK_Table_orderCheckoutDetail1_OrderCheckout">
+      <End Role="OrderCheckout" EntitySet="OrderCheckout" />
+      <End Role="Table_orderCheckoutDetail" EntitySet="Table_orderCheckoutDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tables_Floors" Association="Self.FK_Tables_Floors">
+      <End Role="Floors" EntitySet="Floors" />
+      <End Role="Tables" EntitySet="Tables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Variant_User" Association="Self.FK_Variant_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Variant" EntitySet="Variant" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

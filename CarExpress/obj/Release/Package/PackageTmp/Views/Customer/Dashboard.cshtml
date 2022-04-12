@@ -1,0 +1,75 @@
+﻿@using PremiumPosWebsite.Helpers;
+@using PremiumPosWebsite.Models;
+@{Html.RenderPartial("_BreadCrumb");}
+<div class="product-cart-area hm-3-padding pt-120 pb-130">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="table-content table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="product-name">#</th>
+                                <th class="product-price">order#</th>
+                                <th class="product-price">Invoice#</th>
+                                <th class="product-name">Recipient Name</th>
+                                <th class="product-price">Total</th>
+                                <th class="product-quantity">Order Date</th>
+                                <th class="product-price">Status</th>
+                                <th class="product-subtotal">#</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (ViewBag.OrderRecords != null)
+                            {
+                                int count = 1;
+                                foreach (Order Record in ViewBag.OrderRecords)
+                                {
+                            <tr>
+                                <td>@count</td>
+                                <td>@Record.OrderNo</td>
+                                <td>@Record.TransactionNo</td>
+                                <td>@Record.CustomerOrders.FirstOrDefault().CustomerName</td>
+                                <td>@ViewBag.CurrencySymbol @Record.OrderCheckouts.FirstOrDefault().GrandTotal</td>
+                                <td>@Record.CreatedOn</td>
+                                @{
+                                    if (Record.DeliveryStatus == 100)
+                                    {
+                                        @:<td>Done</td>
+                                    }
+                                    else if (Record.DeliveryStatus == 101)
+                                    {
+                                        @:<td>InProgress</td>
+                                    }
+                                    else if (Record.DeliveryStatus == 102)
+                                    {
+                                        @:<td>Shipping</td>
+                                    }
+                                    else if (Record.DeliveryStatus == 103)
+                                    {
+                                        @:<td>Cancel</td>
+                                    }
+                                    else
+                                    {
+                                        @:<td>-</td>
+                                    }
+                                }
+                                <td><a class="btn btn-style btn-dashboard-view" href="/@ApplicationHelper.PageOrderDetail?id=@Record.ID">View</a></td>
+                            </tr>
+                                    count += 1;
+                                }
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="8" class="text-center">No Orders</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+      
+    </div>
+</div>

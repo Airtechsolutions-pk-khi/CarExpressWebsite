@@ -1,0 +1,183 @@
+﻿@using PremiumPosWebsite.Helpers;
+@using PremiumPosWebsite.Models;
+@{
+    ShopDataModel ShopDataRecord = (ShopDataModel)ViewData["ShopDataRecord"];
+}
+@foreach (ProductModel Record in ShopDataRecord.ProductRecords)
+{
+    <div class="product-width col-6 col-lg-4">
+        <div class="product-wrapper mb-25">
+            <div class="product-img">
+                <a href="/@ApplicationHelper.PageProductDetail?item=@Record.ID">
+                    <img class="lazy" data-src="@ApplicationHelper.ParseString(ViewData["WebsiteImageURL"])@Record.Image" alt="">
+                </a>
+                <div class="product-action-3">
+                    <a class="action-plus-2 open-quick-view" title="Quick View" data-id="@Record.ID" href="@ApplicationHelper.ParseString(ViewData["WebsiteURL"])/@ApplicationHelper.PageQuickView">
+                        <i class="ti-plus"></i> Quict View
+                    </a>
+                </div>
+            </div>
+            <div class="product-content">
+                <div class="product-title-wishlist">
+                    <div class="product-title-3">
+                        <h4><a href="/@ApplicationHelper.PageProductDetail?item=@Record.ID">@Record.Name</a></h4>
+                        <div class="product-rating">
+                            @{
+                                int Rating = ApplicationHelper.ParseInt(Record.StarRating);
+                                for (int i = 1; i < 6; i++)
+                                {
+                                    if (Rating >= i)
+                                    {
+                                        <i class="ion-ios-star"></i>
+                                    }
+                                    else
+                                    {
+                                        <i class="ion-ios-star-outline"></i>
+                                    }
+                                }
+                            }
+                        </div>
+                    </div>
+                    <div class="product-wishlist-3">
+                        <a href="#" class="add-to-wish-list" title="Wishlist" data-id="@Record.ID" data-title="@Record.Name" data-image-src="@Record.Image" data-image-url="@ViewBag.WebsiteImageURL" data-price="@Record.Price" data-url="/@ApplicationHelper.PageProductDetail?item=@Record.ID">
+                            <i class="ti-heart"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="product-peice-addtocart">
+                    <div class="product-peice-3">
+                        @*@if (Record.OriginalPrice.HasValue)
+                        {
+                            <span class="old">@ApplicationHelper.ParseString(ViewData["CurrencySymbol"]) @Record.OriginalPrice.Value.ToString("0.00")</span>
+                        }*@
+                        <span>@ApplicationHelper.ParseString(ViewData["CurrencySymbol"]) @Record.Price.Value.ToString("0.00")</span>
+                    </div>
+                    <div class="product-addtocart">
+                        <a class="add-to-cart" data-id="@Record.ID" data-title="@Record.Name" data-image-src="@Record.Image" data-image-url="@ApplicationHelper.ParseString(ViewData["WebsiteImageURL"])" data-price="@Record.Price" data-url="/@ApplicationHelper.PageProductDetail?item=@Record.ID" href="#"> <i class="ti-shopping-cart"></i> Add to cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="product-list-details">
+                <h2><a href="/@ApplicationHelper.PageProductDetail?item=@Record.ID">@Record.Name</a></h2>
+                <div class="product-rating">
+                    @{
+                        for (int i = 1; i < 6; i++)
+                        {
+                            if (Rating >= i)
+                            {
+                                <i class="ion-ios-star"></i>
+                            }
+                            else
+                            {
+                                <i class="ion-ios-star-outline"></i>
+                            }
+                        }
+                    }
+                </div>
+                <div class="product-price">
+                    @*@if (Record.OriginalPrice.HasValue)
+                    {
+                        <span class="old">@ApplicationHelper.ParseString(ViewData["CurrencySymbol"]) @Record.OriginalPrice.Value.ToString("0.00")</span>
+                    }*@
+                    <span>@ApplicationHelper.ParseString(ViewData["CurrencySymbol"]) @Record.Price.Value.ToString("0.00")</span>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipic it, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat</p>
+                <div class="shop-list-cart">
+                    <a class="add-to-cart" data-id="@Record.ID" data-title="@Record.Name" data-image-src="@Record.Image" data-image-url="@ApplicationHelper.ParseString(ViewData["WebsiteImageURL"])" data-price="@Record.Price" href="#"><i class="ti-shopping-cart"></i> Add to cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@*@if (ShopDataRecord.ProductRecords != null && ShopDataRecord.PaginationCount > 0)
+    {
+        <div class="pagination-style text-center mt-30">
+                    <ul>
+                        @if (ShopDataRecord.CurrentPageNumber > 1)
+                        {
+                            <li>
+                                <a href="#" data-page-number="@(ShopDataRecord.CurrentPageNumber - 1)" class="shop-page-number">
+                                    <i class="ion-chevron-left"></i>
+                                </a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li>
+                                <a href="#" class="disabled">
+                                    <i class="ion-chevron-left"></i>
+                                </a>
+                            </li>
+                        }
+                        @{
+                            int currentPage = ShopDataRecord.CurrentPageNumber;
+                            int pageCount = ShopDataRecord.PaginationCount;
+                            // How many pages views right or left of currentPage
+                            const int PageLeft = 2;
+                            const int PagesRight = 2;
+                            // get first page befor ...
+                            var fromPage = Math.Max(1, currentPage - PageLeft);
+                            // get last page after ...
+                            var toPage = Math.Min(pageCount, currentPage + PagesRight);
+                            if (pageCount - toPage == 1)
+                            {
+                                toPage = pageCount;
+                            }
+                            if (fromPage > 1)
+                            {
+                                // view First page
+                                <li>
+                                    <a href="#" data-page-number="1" class="shop-page-number">1</a>
+                                </li>
+                                if (fromPage > 2)
+                                {
+                                    // view first ...
+                                    // calculate number page for link ..., it's middle between first page and fromPage
+                                    var middleNumber = (int)Math.Ceiling((double)(fromPage - 2) / 2) + 1;
+                                    <li>
+                                        <a href="#" data-page-number="@middleNumber" class="shop-page-number">...</a>
+                                    </li>
+                                }
+                            }
+                            // view paginator between currentPage
+                            for (int i = fromPage; i <= toPage; i++)
+                            {
+                                <li>
+                                    <a @Html.Raw(currentPage == i ? "class=\"active\"" : "") href="#" data-page-number="@i" class="shop-page-number">@i</a>
+                                </li>
+                            }
+                            // view second ...
+                            if (toPage < pageCount)
+                            {
+                                int middleNumber = (int)Math.Ceiling((double)(pageCount - toPage) / 2) + toPage;
+                                <li>
+                                    <a href="#" data-page-number="@middleNumber" class="shop-page-number">...</a>
+                                </li>
+                                // view last page
+                                if (toPage < pageCount - 1)
+                                {
+                                    <li>
+                                        <a href="#" data-page-number="@pageCount" class="shop-page-number">@pageCount</a>
+                                    </li>
+                                }
+                            }
+                        }
+                        @if (ShopDataRecord.CurrentPageNumber < ShopDataRecord.PaginationCount)
+                        {
+                            <li>
+                                <a href="#" data-page-number="@(ShopDataRecord.CurrentPageNumber + 1)" class="shop-page-number">
+                                    <i class="ion-chevron-right"></i>
+                                </a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li>
+                                <a href="#" class="disabled">
+                                    <i class="ion-chevron-right"></i>
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            }*@
